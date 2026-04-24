@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  margin-left: auto;
+  perspective: 1400px;
+  overflow: visible;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(227, 222, 214, 0.92);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 20px 60px rgba(32, 24, 16, 0.07);
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    margin: 0 auto;
+    transform: scale(0.92);
+    transform-origin: center center;
+  }
+}
+
+@media (max-width: 820px) {
+  .container {
+    transform: scale(0.82);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    transform: scale(0.72);
+  }
+}
