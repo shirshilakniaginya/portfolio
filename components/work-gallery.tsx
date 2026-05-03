@@ -1,51 +1,68 @@
-import Image from "next/image";
 import { works } from "@/lib/portfolio-content";
 
-const previewImages = [
-  "/work-gallery/editorial-01.webp",
-  "/work-gallery/editorial-02.webp",
-  "/work-gallery/editorial-03.avif",
-  "/work-gallery/editorial-01.webp",
+const gradients = [
+  "linear-gradient(135deg, #FDFDFD 0%, #EAEFF6 100%)",
+  "linear-gradient(135deg, #F0EAE4 0%, #DFD1C7 100%)",
+  "linear-gradient(135deg, #FBFBFF 0%, #EBE8F7 100%)",
+  "linear-gradient(135deg, #FAFAFA 0%, #E6E6E6 100%)",
 ] as const;
 
-const galleryCases = works.map((work, index) => ({
-  title: work.title,
-  description: work.description,
-  image: previewImages[index % previewImages.length],
-}));
+const categories = [
+  "UI/UX, WEB DESIGN, NEXT.JS",
+  "UI/UX, WEB DESIGN, TILDA",
+  "UI/UX, WEB DESIGN, NEXT.JS",
+  "UI/UX, WEB DESIGN, NEXT.JS",
+] as const;
 
 export function WorkGallery() {
   return (
-    <section className="works-list-section reveal-block" id="work">
+    <section className="works-section reveal-block" id="work">
       <div className="main-container">
-        <div className="section-head works-list-head">
-          <div>
-            <p className="eyebrow">ИЗБРАННЫЕ РАБОТЫ</p>
-            <h2>Работы</h2>
-            <p className="works-list-head__copy">
-              Короткая curated selection из реальных направлений: портфолио, экспертный сайт,
-              продуктовая подача и редакторская презентация кейсов.
+        <div className="section-header">
+          <div className="header-subtitle">ИЗБРАННЫЕ РАБОТЫ</div>
+          <div className="header-row">
+            <h2>Короткая подборка проектов<br />в разных направлениях.</h2>
+            <p className="header-desc">
+              Каждый проект — это продуманная структура,<br />
+              аккуратная визуальная система и фокус<br />
+              на целях пользователя и бизнеса.
             </p>
+            <a href="#" className="btn-secondary">
+              Смотреть все работы
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <div className="works-list-grid">
-          {galleryCases.map((work, index) => (
-            <article className="work-list-card" key={work.title}>
-              <div className="work-list-card__visual">
-                <Image
-                  alt={work.title}
-                  className="work-list-card__image"
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 900px) 100vw, 25vw"
-                  src={work.image}
-                />
-              </div>
-
-              <div className="work-list-card__copy">
-                <h3>{work.title}</h3>
-                <p>{work.description}</p>
+        <div className="works-grid">
+          {works.map((work, index) => (
+            <article className="work-card" key={work.title}>
+              <div
+                className="work-card-image"
+                style={{ background: gradients[index % gradients.length] }}
+              />
+              <div className="work-card-content">
+                <div className="work-card-category">
+                  {categories[index % categories.length]}
+                </div>
+                <h3 className="work-card-title">{work.title}</h3>
+                <p className="work-card-desc">{work.description}</p>
+                <div className="work-card-bottom">
+                  <div className="work-card-year">
+                    {work.label?.includes("01")
+                      ? "2024"
+                      : work.label?.includes("02")
+                        ? "2024"
+                        : "2024"}
+                  </div>
+                  <button className="work-card-link-btn">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </article>
           ))}
