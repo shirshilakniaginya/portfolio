@@ -1521,26 +1521,21 @@ h3 {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  transition: all 0.2s;
-}
-
-.btn-contact-primary {
-  background-color: var(--accent);
+  background: #1b1a19;
   color: #fff;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  transition: background 0.2s, transform 0.2s;
 }
 
-.btn-contact-primary:hover {
-  opacity: 0.9;
+.btn-contact:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
 }
 
 .btn-contact-outline {
-  background-color: transparent;
+  background: rgba(255, 255, 255, 0.86);
   color: var(--text);
   border: 1px solid var(--line);
-}
-
-.btn-contact-outline:hover {
-  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .btn-icon {
