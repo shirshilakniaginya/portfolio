@@ -83,32 +83,17 @@ export default function Home() {
 
             <div className="contact-col-middle">
               <div className="contact-buttons">
-                 <a href="mailto:hello@portfolio.dev" className="btn-contact">
-                  <span className="btn-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                  </span>
-                  <span className="btn-text">Написать на почту</span>
-                  <span className="btn-arrow">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                  </span>
+                <a href="mailto:hello@portfolio.dev" className="btn btn-dark">
+                  <span className="btn__face btn__face--front">Написать на почту</span>
+                  <span className="btn__face btn__face--back">Написать на почту</span>
                 </a>
-                <a href="https://t.me/" className="btn-contact btn-contact-outline" rel="noreferrer" target="_blank">
-                  <span className="btn-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                  </span>
-                  <span className="btn-text">Telegram</span>
-                  <span className="btn-arrow">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                  </span>
+                <a href="https://t.me/" className="btn btn-light" rel="noreferrer" target="_blank">
+                  <span className="btn__face btn__face--front">Telegram</span>
+                  <span className="btn__face btn__face--back">Telegram</span>
                 </a>
-                <a href="#about" className="btn-contact btn-contact-outline">
-                  <span className="btn-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                  </span>
-                  <span className="btn-text">Скачать CV</span>
-                  <span className="btn-arrow">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                  </span>
+                <a href="#about" className="btn btn-light">
+                  <span className="btn__face btn__face--front">Скачать CV</span>
+                  <span className="btn__face btn__face--back">Скачать CV</span>
                 </a>
               </div>
               <div className="contact-status">
