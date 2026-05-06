@@ -1,0 +1,183 @@
+.section {
+  padding: 64px 0 72px;
+  border-bottom: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 620px 420px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--line);
+  padding-right: 40px;
+}
+
+.title {
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text);
+  margin: 0 0 32px;
+  letter-spacing: -1px;
+}
+
+.description {
+  font-size: var(--body-text-size);
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 400;
+}
+
+.middleColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.contactButton {
+  width: 100%;
+  max-width: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted-soft);
+  font-weight: 500;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.rightColumn {
+  display: flex;
+}
+
+.contactCard {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.03) 100%);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.contactCardLabel {
+  font-size: var(--label-text-size);
+  font-weight: 600;
+  color: var(--muted-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.contactCardText {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.5;
+  margin: 0 0 32px;
+}
+
+.contactCardImage {
+  border-radius: 16px;
+  flex: 1;
+  min-height: 180px;
+  background: linear-gradient(135deg, #eae2d8 0%, #d4c9bd 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCardImage::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #b4a292;
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(255, 255, 255, 0.4);
+}
+
+.contactCardImage::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  bottom: -20px;
+  width: 120px;
+  height: 80px;
+  background: #f4f1ed;
+  transform: rotate(-15deg);
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 1440px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .leftColumn {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    padding-right: 0;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .leftColumn {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 820px) {
+  .section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leftColumn {
+    border-right: none;
+    padding-right: 0;
+  }
+}

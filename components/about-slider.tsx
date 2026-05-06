@@ -130,17 +130,17 @@ export function AboutSlider() {
             <button
               key={card.id}
               type="button"
-              className="about-card about-card--small"
+              className="about-card--small"
               onClick={() => setActiveId(card.id)}
             >
-              <div className="about-card__small-body">
+              <div className="about-card__small-top">
                 <span className="about-card__small-icon">{card.icon}</span>
-                <p className="about-card__label">{card.label}</p>
-                <strong>{card.shortTitle ?? card.title}</strong>
-                <p className="about-card__small-text">
-                  {card.shortText ?? card.text}
-                </p>
+                <span className="about-card__small-label">{card.label}</span>
               </div>
+              <strong className="about-card__small-title">{card.shortTitle ?? card.title}</strong>
+              <p className="about-card__small-text">
+                {card.shortText ?? card.text}
+              </p>
             </button>
           ))}
         </div>

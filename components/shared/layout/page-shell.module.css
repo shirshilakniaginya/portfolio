@@ -1,0 +1,46 @@
+.pageShell {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sideRail {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: #f1ece8;
+  border-right: 1px solid var(--line);
+}
+
+.railLine {
+  position: absolute;
+  inset: 0;
+}
+
+.railCopy {
+  position: absolute;
+  inset: 18px 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 9px;
+  color: var(--muted-soft);
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.pageContent {
+  min-width: 0;
+}
+
+@media (max-width: 1120px) {
+  .pageShell {
+    grid-template-columns: 1fr;
+  }
+
+  .sideRail {
+    display: none;
+  }
+}
