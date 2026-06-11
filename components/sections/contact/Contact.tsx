@@ -212,12 +212,17 @@ function BriefForm({ onSent }: { onSent: () => void }) {
 
   if (status === "sent") {
     return (
-      <div className={styles.formSuccess}>
-        <span className={styles.formSuccessIcon}>
-          <CheckIcon />
-        </span>
-        <strong className={styles.formSuccessTitle}>Бриф получен</strong>
-        <p className={styles.formSuccessText}>Отвечу в течение 24 часов.</p>
+      <div className={styles.formState}>
+        <div className={styles.formSuccessCard}>
+          <div className={styles.formSuccess}>
+            <span className={styles.formSuccessIcon}>
+              <CheckIcon />
+            </span>
+            <strong className={styles.formSuccessTitle}>Бриф получен</strong>
+            <p className={styles.formSuccessText}>Отвечу в течение 24 часов.</p>
+          </div>
+        </div>
+        <div className={styles.formFeedback} aria-hidden="true" />
       </div>
     );
   }
