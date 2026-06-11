@@ -286,6 +286,20 @@ function BriefForm({ onSent }: { onSent: () => void }) {
           />
         </div>
 
+        <button
+          className={styles.formSubmit}
+          disabled={status === "sending" || status === "verifying"}
+          type="submit"
+        >
+          {status === "sending"
+            ? "Отправляю..."
+            : status === "verifying"
+              ? "Проверяю..."
+              : "Отправить бриф"}
+        </button>
+      </form>
+
+      <div className={styles.formFeedback} aria-live="polite">
         {status === "error" && (
           <p className={styles.formError}>
             {validationError ?? (
@@ -299,19 +313,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
             )}
           </p>
         )}
-
-        <button
-          className={styles.formSubmit}
-          disabled={status === "sending" || status === "verifying"}
-          type="submit"
-        >
-          {status === "sending"
-            ? "Отправляю..."
-            : status === "verifying"
-              ? "Проверяю..."
-              : "Отправить бриф"}
-        </button>
-      </form>
+      </div>
 
       <div aria-hidden="true" className={styles.captchaHidden}>
         <HCaptcha

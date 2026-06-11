@@ -241,7 +241,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   width: 100%;
+  min-height: 56px;
   padding: 18px 20px;
   background: transparent;
   color: var(--text);
@@ -255,6 +257,7 @@
   cursor: pointer;
   transition: background 150ms ease;
   text-align: left;
+  white-space: nowrap;
 }
 
 .formSubmit::after {
@@ -274,13 +277,16 @@
   cursor: default;
 }
 
+.formFeedback {
+  min-height: 44px;
+  padding-top: 12px;
+}
+
 .formError {
   margin: 0;
-  padding: 14px 20px;
   font-size: 13px;
   line-height: 1.4;
   color: var(--error);
-  border-top: 1px solid var(--line-color);
 }
 
 .formErrorLink {
@@ -467,6 +473,11 @@
   .formSubmit {
     padding: 18px 18px;
     font-size: 10px;
+  }
+
+  .formFeedback {
+    min-height: 40px;
+    padding-top: 10px;
   }
 
 }
