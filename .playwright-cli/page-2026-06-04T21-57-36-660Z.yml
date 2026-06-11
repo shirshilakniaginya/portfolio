@@ -1,0 +1,90 @@
+- main [ref=e2]:
+  - generic [ref=e3]: Бесплатная доставка на первый заказ от 2 500 ₽
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Магазин" [ref=e6] [cursor=pointer]:
+        - /url: "#collection"
+      - link "О компании" [ref=e7] [cursor=pointer]:
+        - /url: "#philosophy"
+    - link "Coffee People" [ref=e8] [cursor=pointer]:
+      - /url: "#home"
+      - img "Coffee People" [ref=e9]
+      - text: Coffee People
+    - generic [ref=e10]:
+      - link "8 (800) 200-85-86" [ref=e11] [cursor=pointer]:
+        - /url: tel:88002008586
+      - button "Корзина" [ref=e12]
+    - button "Открыть меню" [ref=e13]
+  - generic [ref=e14]:
+    - link "Магазин" [ref=e15] [cursor=pointer]:
+      - /url: "#collection"
+    - link "О компании" [ref=e16] [cursor=pointer]:
+      - /url: "#philosophy"
+    - link "Контакты" [ref=e17] [cursor=pointer]:
+      - /url: "#contacts"
+  - generic [ref=e18]:
+    - img "Кофе премиальной обжарки" [ref=e19]
+    - generic [ref=e20]:
+      - text: Обжарка малыми партиями · Москва
+      - heading "Кофе, который хочется заварить ещё раз." [level=1] [ref=e21]:
+        - text: Кофе, который
+        - text: хочется заварить
+        - text: ещё раз.
+      - paragraph [ref=e22]: Шесть сортов средней обжарки. К каждому — откуда зерно, на что похож вкус и как лучше заварить дома.
+      - generic [ref=e23]:
+        - link "Выбрать кофе" [ref=e24] [cursor=pointer]:
+          - /url: "#collection"
+        - link "О нас" [ref=e25] [cursor=pointer]:
+          - /url: "#philosophy"
+  - generic [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - text: Каталог
+        - heading "Шесть сортов. Найди свой." [level=2] [ref=e29]
+      - paragraph [ref=e30]: Нажми на пакет — справа появятся вкусовые ноты, происхождение и рекомендации по заварке.
+    - generic [ref=e31]: Загружаем меню…
+  - generic [ref=e32]:
+    - text: О нас
+    - heading "Хороший кофе говорит сам за себя." [level=2] [ref=e33]
+    - paragraph [ref=e34]: Каждый лот — конкретное зерно с конкретной фермы. Описание вкуса — то, что мы слышим в чашке, а не маркетинговый текст. Рекомендации по заварке — чтобы первая попытка дома получилась.
+  - generic [ref=e36]:
+    - img "Coffee People interior" [ref=e37]
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - text: Контакты
+        - heading "Где нас найти" [level=2] [ref=e40]
+        - paragraph [ref=e41]: Работаем с частными заказами, подписками и поставками для кафе и офисов. Пишите — ответим быстро.
+      - generic [ref=e42]:
+        - link "Телефон8 (800) 200-85-86" [ref=e43] [cursor=pointer]:
+          - /url: tel:88002008586
+        - link "Emailhello@coffeeatelier.ru" [ref=e44] [cursor=pointer]:
+          - /url: mailto:hello@coffeeatelier.ru
+        - generic [ref=e45]: АдресМосковская область, г. Долгопрудный, Старое Дмитровское шоссе, д. 2, стр. 1
+        - generic [ref=e46]: Режим работыЕжедневно с 10:00 до 20:00
+  - generic [ref=e47]:
+    - generic [ref=e48]:
+      - generic [ref=e49]:
+        - link "Coffee People" [ref=e50] [cursor=pointer]:
+          - /url: "#home"
+          - img "Coffee People" [ref=e51]
+          - text: Coffee People
+        - paragraph [ref=e52]: "Спокойная подача кофе без визуального шума: выбрать, заказать и вернуться за любимым вкусом."
+      - navigation "Footer" [ref=e53]:
+        - text: Разделы
+        - generic [ref=e54]:
+          - link "Магазин" [ref=e55] [cursor=pointer]:
+            - /url: "#collection"
+          - link "О компании" [ref=e56] [cursor=pointer]:
+            - /url: "#philosophy"
+          - link "Истории" [ref=e57] [cursor=pointer]:
+            - /url: "#stories"
+          - link "Контакты" [ref=e58] [cursor=pointer]:
+            - /url: "#contacts"
+      - generic [ref=e59]:
+        - text: На связи
+        - link "8 (800) 200-85-86" [ref=e60] [cursor=pointer]:
+          - /url: tel:88002008586
+        - link "hello@coffeeatelier.ru" [ref=e61] [cursor=pointer]:
+          - /url: mailto:hello@coffeeatelier.ru
+        - paragraph [ref=e62]: Московская область, г. Долгопрудный, Старое Дмитровское шоссе, д. 2, стр. 1
+    - generic [ref=e63]: © 2026 Coffee PeopleЕжедневно с 10:00 до 20:00

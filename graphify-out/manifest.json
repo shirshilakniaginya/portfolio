@@ -1,0 +1,182 @@
+{
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\.qa-resolve.js": {
+    "mtime": 1778119895.6067674,
+    "ast_hash": "12c40d27054c41002c9477bdaafb52a9",
+    "semantic_hash": "12c40d27054c41002c9477bdaafb52a9"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\DESIGN.json": {
+    "mtime": 1779132125.6360266,
+    "ast_hash": "40555084276368f82ec5969249be9631",
+    "semantic_hash": "40555084276368f82ec5969249be9631"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\app\\layout.tsx": {
+    "mtime": 1781205841.3120809,
+    "ast_hash": "91105aab771f37c0f4ff29f6b7830397",
+    "semantic_hash": "91105aab771f37c0f4ff29f6b7830397"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\app\\page.tsx": {
+    "mtime": 1779469447.3567922,
+    "ast_hash": "b2e40e70f5d68658b031d6e75ed7ecec",
+    "semantic_hash": "b2e40e70f5d68658b031d6e75ed7ecec"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\app\\robots.ts": {
+    "mtime": 1781202468.6792827,
+    "ast_hash": "cd72cd71703fbb08b9c2aee3a848fe92",
+    "semantic_hash": "cd72cd71703fbb08b9c2aee3a848fe92"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\app\\sitemap.ts": {
+    "mtime": 1781202476.5414357,
+    "ast_hash": "fc9f1c6f2e7188c5068500aaf26d7d5d",
+    "semantic_hash": "fc9f1c6f2e7188c5068500aaf26d7d5d"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components.json": {
+    "mtime": 1780957442.6602407,
+    "ast_hash": "3a40633bb2b32c9cac2259ac0ef1a44d",
+    "semantic_hash": "3a40633bb2b32c9cac2259ac0ef1a44d"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\Silk.jsx": {
+    "mtime": 1780957451.3217578,
+    "ast_hash": "db8678afe58da71fb393ac2005e841da",
+    "semantic_hash": "db8678afe58da71fb393ac2005e841da"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\scroll-reveal.tsx": {
+    "mtime": 1776693772.0552127,
+    "ast_hash": "3c564d60206731efab3f13aa5727bdf9",
+    "semantic_hash": "3c564d60206731efab3f13aa5727bdf9"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\contact\\Contact.tsx": {
+    "mtime": 1781058104.6639202,
+    "ast_hash": "ddd070c0fd3b50ff887907977cce368f",
+    "semantic_hash": "ddd070c0fd3b50ff887907977cce368f"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\AboutDemo.tsx": {
+    "mtime": 1781144095.2153454,
+    "ast_hash": "88a62519f4e2f1cb3f98427afdfa81f2",
+    "semantic_hash": "88a62519f4e2f1cb3f98427afdfa81f2"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\BuildDemo.tsx": {
+    "mtime": 1781159296.9995787,
+    "ast_hash": "6b867d0ab47645431db1862d803aac72",
+    "semantic_hash": "6b867d0ab47645431db1862d803aac72"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\DesignSystemPanel.tsx": {
+    "mtime": 1781160293.0885293,
+    "ast_hash": "9727ce21efda2548655e1166e81ba2d7",
+    "semantic_hash": "9727ce21efda2548655e1166e81ba2d7"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\DesignSystemVisual.tsx": {
+    "mtime": 1779626132.4572046,
+    "ast_hash": "defbcc9350ddc901913540cfd026c555",
+    "semantic_hash": "defbcc9350ddc901913540cfd026c555"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\Hero.tsx": {
+    "mtime": 1781157879.0396395,
+    "ast_hash": "1b8903fe08cece4ef8828704da75d218",
+    "semantic_hash": "1b8903fe08cece4ef8828704da75d218"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\SilkBackground.tsx": {
+    "mtime": 1780956587.4374723,
+    "ast_hash": "7b0d70813d3f209d2944012ce0cc0178",
+    "semantic_hash": "7b0d70813d3f209d2944012ce0cc0178"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\UserFlowDemo.tsx": {
+    "mtime": 1781143517.1237092,
+    "ast_hash": "178a4793077e903aecddeb73a39748b8",
+    "semantic_hash": "178a4793077e903aecddeb73a39748b8"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\hero\\visuals\\SystemCard.tsx": {
+    "mtime": 1780535287.7715838,
+    "ast_hash": "51dfb54b817e0ad80fad0871d8732501",
+    "semantic_hash": "51dfb54b817e0ad80fad0871d8732501"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\sections\\work-gallery\\WorkGallery.tsx": {
+    "mtime": 1781207310.776435,
+    "ast_hash": "98689006dc6cba339c0ef8c2f334f217",
+    "semantic_hash": "98689006dc6cba339c0ef8c2f334f217"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\shared\\footer\\Footer.tsx": {
+    "mtime": 1781047690.2848096,
+    "ast_hash": "61f119661f2043cc479593854ac39146",
+    "semantic_hash": "61f119661f2043cc479593854ac39146"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\shared\\header\\Header.tsx": {
+    "mtime": 1781159306.7660835,
+    "ast_hash": "023786e367fcb4f2f28a79e03c50a791",
+    "semantic_hash": "023786e367fcb4f2f28a79e03c50a791"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\ui\\button.tsx": {
+    "mtime": 1780957424.8211722,
+    "ast_hash": "e04ce5251d6b0dd04020988126c905e9",
+    "semantic_hash": "e04ce5251d6b0dd04020988126c905e9"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\components\\utils\\GsapSmoothScroll.tsx": {
+    "mtime": 1780760869.3874037,
+    "ast_hash": "5aebd85ecefa413934ac6d1a76fa7e8b",
+    "semantic_hash": "5aebd85ecefa413934ac6d1a76fa7e8b"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\eslint.config.mjs": {
+    "mtime": 1780760797.909172,
+    "ast_hash": "aa99b87cc001182336d8701452d8e320",
+    "semantic_hash": "aa99b87cc001182336d8701452d8e320"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\lib\\design-system.ts": {
+    "mtime": 1779564889.0324411,
+    "ast_hash": "c219aa66f92eac775658343dff2e07ce",
+    "semantic_hash": "c219aa66f92eac775658343dff2e07ce"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\lib\\gsap-setup.ts": {
+    "mtime": 1779625879.5094726,
+    "ast_hash": "e3a4ebe15c2becdecb87b0576f06dac3",
+    "semantic_hash": "e3a4ebe15c2becdecb87b0576f06dac3"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\lib\\motion.ts": {
+    "mtime": 1778769106.7745261,
+    "ast_hash": "5c7e207bfbbb29839fad1cfe6fbda28e",
+    "semantic_hash": "5c7e207bfbbb29839fad1cfe6fbda28e"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\lib\\portfolio-content.ts": {
+    "mtime": 1781129652.1687198,
+    "ast_hash": "aace8967ca2c357956ab307b0b87c3ac",
+    "semantic_hash": "aace8967ca2c357956ab307b0b87c3ac"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\lib\\utils.ts": {
+    "mtime": 1780957425.2020118,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\next.config.ts": {
+    "mtime": 1781207113.7277858,
+    "ast_hash": "769e237a0a665c3fbcb66d2af1038249",
+    "semantic_hash": "769e237a0a665c3fbcb66d2af1038249"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\package.json": {
+    "mtime": 1781205904.464229,
+    "ast_hash": "cfcd9f5a5c5eceb5de9eeda453f65e15",
+    "semantic_hash": "cfcd9f5a5c5eceb5de9eeda453f65e15"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\postcss.config.mjs": {
+    "mtime": 1780957504.9883094,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\tsconfig.json": {
+    "mtime": 1776614857.1672778,
+    "ast_hash": "02fc19ad21338c2ab820a70136310db4",
+    "semantic_hash": "02fc19ad21338c2ab820a70136310db4"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\AGENTS.md": {
+    "mtime": 1781207738.7226815,
+    "ast_hash": "541b86c5d5836d590c1b7149a8761143",
+    "semantic_hash": "541b86c5d5836d590c1b7149a8761143"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\DESIGN.md": {
+    "mtime": 1780007747.9164734,
+    "ast_hash": "07f207047c736f3f18a56c8f56d3607f",
+    "semantic_hash": "07f207047c736f3f18a56c8f56d3607f"
+  },
+  "C:\\Users\\Shtutik\\Desktop\\WEBSHIT\\WEB\\MY PORTFOLIO SITE\\PRODUCT.md": {
+    "mtime": 1780007771.9710672,
+    "ast_hash": "bec3ea21e35acd404042a02305f22cfe",
+    "semantic_hash": "bec3ea21e35acd404042a02305f22cfe"
+  }
+}

@@ -1,0 +1,349 @@
+.demo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 48px 56px;
+}
+
+.browser {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid var(--line-color);
+}
+
+/* ── Chrome bar ──────────────────────────────────────────────── */
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.browserDots {
+  display: flex;
+  gap: 6px;
+}
+
+.browserDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--surface-strong);
+}
+
+.browserUrl {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted-soft);
+}
+
+.browserTab {
+  margin-left: auto;
+  padding: 5px 14px;
+  border: 1px solid var(--line-color);
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* ── Workspace ───────────────────────────────────────────────── */
+.workspace {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.editor {
+  display: flex;
+  flex: 0 0 46%;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 32px 36px;
+  border-right: 1px solid var(--line-color);
+  overflow: hidden;
+}
+
+.code {
+  margin: 0;
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre;
+  color: var(--muted);
+}
+
+/* Block-level lines keep line breaks intact after SplitText splits chars */
+.codeLine {
+  display: block;
+}
+
+.lineSelector {
+  color: var(--text);
+}
+
+.linePunct {
+  color: var(--muted-soft);
+}
+
+.lineProperty {
+  color: var(--muted);
+}
+
+.lineValue {
+  color: var(--accent-strong);
+}
+
+/* ── Live preview ────────────────────────────────────────────── */
+.preview {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 44px;
+  overflow: hidden;
+}
+
+.previewGrid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.previewGrid span {
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  width: 1px;
+  background: var(--line-color);
+}
+
+.previewGrid span:nth-child(1) {
+  left: 25%;
+}
+
+.previewGrid span:nth-child(2) {
+  left: 50%;
+}
+
+.previewGrid span:nth-child(3) {
+  left: 75%;
+}
+
+.previewContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.previewHeading {
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(40px, 3.4vw, 64px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.previewLede {
+  margin: 0;
+  max-width: 300px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.previewButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 15px 34px;
+  background: var(--accent);
+  color: #0d0d10;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ── Status bar ──────────────────────────────────────────────── */
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 13px 22px;
+  border-top: 1px solid var(--line-color);
+}
+
+.statusBuild {
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--muted-soft);
+}
+
+.statusDeploy {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+.statusCheck {
+  color: var(--accent-active);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1440px) {
+  .demo {
+    padding: 40px 44px;
+  }
+
+  .editor {
+    padding: 26px 28px;
+    gap: 16px;
+  }
+
+  .preview {
+    padding: 28px 32px;
+  }
+
+  .code {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .demo {
+    padding: 28px 24px;
+  }
+
+  .editor {
+    flex-basis: 50%;
+    gap: 14px;
+    padding: 24px 26px;
+  }
+
+  .preview {
+    padding: 26px 28px;
+  }
+
+  .code {
+    font-size: 11px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 760px) {
+  .demo {
+    padding: 24px 20px;
+  }
+
+  .workspace {
+    flex-direction: column;
+  }
+
+  .browserBar {
+    gap: 14px;
+    padding: 10px 16px;
+  }
+
+  .editor {
+    flex-basis: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line-color);
+    gap: 12px;
+    padding: 18px 16px;
+  }
+
+  /* Mobile mini version: each fragment reads as a single flowing line */
+  .code {
+    font-size: 11.5px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+
+  .codeLine {
+    display: inline;
+  }
+
+  .preview {
+    padding: 22px 16px;
+  }
+
+  .previewGrid span {
+    top: 10px;
+    bottom: 10px;
+  }
+
+  .previewContent {
+    gap: 14px;
+  }
+
+  .previewHeading {
+    font-size: clamp(30px, 8vw, 40px);
+  }
+
+  .previewLede {
+    font-size: 13px;
+    max-width: 240px;
+  }
+
+  .previewButton {
+    margin-top: 2px;
+    padding: 12px 24px;
+    font-size: 11px;
+  }
+
+  .statusBar {
+    padding: 10px 16px;
+  }
+}
+
+/* ── 2K / wide displays ──────────────────────────────────────── */
+@media (min-width: 2200px) {
+  .demo {
+    padding: 64px 72px;
+  }
+
+  .editor {
+    gap: 22px;
+    padding: 40px 44px;
+  }
+
+  .code {
+    font-size: 14px;
+  }
+
+  .preview {
+    padding: 44px 52px;
+  }
+
+  .previewContent {
+    gap: 24px;
+  }
+
+  .previewLede {
+    font-size: 16px;
+    max-width: 340px;
+  }
+}

@@ -1,0 +1,37 @@
+# --- graphify scope: index real source only ---
+
+# Static build output of case studies (deployed artifacts, not this project's source).
+# coffeeshop is built from a separate project; horseschool/noxa are generated pages.
+public/cases/
+
+# Build / dependency output (mostly covered by defaults, listed for clarity)
+.next/
+out/
+node_modules/
+
+# Agent tooling & generated dirs
+.claude/
+.impeccable/
+graphify-out/
+.qa/
+.playwright-cli/
+test-results/
+
+# Logs and TS build info
+*.log
+*.tsbuildinfo
+next-env.d.ts
+
+# Lockfile (huge, not meaningful as a graph node)
+package-lock.json
+
+# Binary/visual assets (not architectural; vision extraction is costly)
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.svg
+*.ico
+*.ttf
+*.woff
+*.woff2

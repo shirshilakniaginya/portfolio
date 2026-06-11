@@ -1,0 +1,616 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  padding: 0;
+  overflow: visible;
+  background: var(--bg);
+  border-bottom: var(--section-border);
+}
+
+.heroInner {
+  position: relative;
+  width: 100%;
+}
+
+.heroFrame {
+  position: relative;
+  display: block;
+  padding-top: var(--site-header-h);
+  min-height: auto;
+  height: auto;
+  width: 100%;
+  background: none;
+  overflow: visible;
+}
+
+.switchIndex,
+.switchLabel,
+.centerPanelLabel,
+.metaLabel {
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.bottomBand {
+  display: grid;
+  grid-template-rows: auto auto;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  overflow: visible;
+  border-top: var(--section-border);
+  border-bottom: var(--section-border);
+}
+
+/* ── Selector row ────────────────────────────────────────────── */
+.selectorRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.selectorRow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      transparent calc(25% - 0.5px),
+      var(--line-color) calc(25% - 0.5px),
+      var(--line-color) calc(25% + 0.5px),
+      transparent calc(25% + 0.5px),
+      transparent calc(50% - 0.5px),
+      var(--line-color) calc(50% - 0.5px),
+      var(--line-color) calc(50% + 0.5px),
+      transparent calc(50% + 0.5px),
+      transparent calc(75% - 0.5px),
+      var(--line-color) calc(75% - 0.5px),
+      var(--line-color) calc(75% + 0.5px),
+      transparent calc(75% + 0.5px)
+    );
+}
+
+.switchCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  padding: 34px 40px 36px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  text-align: left;
+  color: var(--text);
+  cursor: pointer;
+  min-height: clamp(220px, 23vh, 270px);
+  overflow: hidden;
+  border-bottom: var(--section-border);
+  z-index: 1;
+  transition:
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.switchCard::before {
+  content: "";
+  position: absolute;
+  inset: 1px 0;
+  z-index: -1;
+  background: transparent;
+  pointer-events: none;
+  transition: background 180ms ease;
+}
+
+.switchCard:disabled {
+  cursor: default;
+}
+
+.switchCard:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: -2px;
+}
+
+.switchCard:hover::before,
+.switchCardActive::before {
+  background: var(--card-hover);
+}
+
+.selectorDot {
+  position: absolute;
+  top: 36px;
+  right: 40px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.switchCardActive .selectorDot {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.switchMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.switchIndex {
+  color: var(--text);
+}
+
+.switchLabel {
+  color: var(--muted);
+}
+
+.switchTitle {
+  display: block;
+  max-width: none;
+  margin-bottom: 32px;
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(22px, 1.45vw, 28px);
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.switchDescription {
+  max-width: 320px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* ── Active panel: text left, coded visual right ─────────────── */
+.activeHero {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: clamp(660px, 72vh, 800px);
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.heroContentColumn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 0 0 600px;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 48px 40px 48px 56px;
+  border: 0;
+  overflow: hidden;
+}
+
+.heroContentStage {
+  display: grid;
+  width: 100%;
+}
+
+.heroContentInner {
+  grid-area: 1 / 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heroContentOverlay {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.heroContentSizer {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.heroContentInner [data-hero-reveal] {
+  will-change: transform, opacity;
+}
+
+.centerPanelMeta {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.centerPanelLabel,
+.metaLabel {
+  color: var(--muted-soft);
+}
+
+.centerTitle {
+  display: block;
+  margin: 0 0 32px;
+  width: 100%;
+  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-size: clamp(2.4rem, 2.7vw, 3.3rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.titleLineMask {
+  display: block;
+  overflow: hidden;
+}
+
+.titleLine {
+  display: block;
+  will-change: transform, opacity;
+}
+
+.centerTextBlock {
+  width: 100%;
+  min-height: 0;
+  max-width: 470px;
+}
+
+.centerText {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.centerText + .centerText {
+  margin-top: 16px;
+}
+
+.centerSkillsGroup {
+  width: 100%;
+  max-width: 470px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line-color);
+}
+
+.skillsText {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 0;
+  margin: 0;
+  max-width: 660px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.skillItem {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.skillDivider {
+  width: 5px;
+  height: 5px;
+  margin: 0 12px;
+  flex: 0 0 auto;
+  background: var(--accent);
+}
+
+/* ── Visual stage (right cell): all demos stacked, crossfaded ── */
+.heroVisualStage {
+  position: relative;
+  display: grid;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.heroVisualFrame {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.heroVisualFrameActive {
+  opacity: 1;
+}
+
+.mobileHeroNavigator {
+  display: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1440px) {
+  .heroContentColumn {
+    flex-basis: 520px;
+    padding: 40px 32px 40px 48px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .heroFrame {
+    min-height: auto;
+  }
+
+  .selectorRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .selectorRow::before {
+    display: none;
+  }
+
+  .switchCard {
+    min-height: 180px;
+  }
+
+  .switchCard:nth-child(even) {
+    border-left: 0;
+  }
+
+  .switchCard:nth-child(even)::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 0;
+    width: 1px;
+    background: var(--line-color);
+    pointer-events: none;
+  }
+
+  .switchCard:nth-child(n + 3) {
+    border-top: var(--section-border);
+  }
+
+  .activeHero {
+    flex-direction: column;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .heroContentColumn {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 32px 24px 8px;
+    justify-content: flex-start;
+  }
+
+  .heroVisualStage {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 820px) {
+  .bottomBand {
+    display: flex;
+    flex-direction: column;
+    border-top: 0;
+  }
+
+  .activeHero {
+    order: 0;
+    gap: 0;
+  }
+
+  .selectorRow {
+    display: none;
+  }
+
+  /* Compact selector cards — index + label + title only, no description */
+  .centerTitle {
+    font-size: clamp(2.1rem, 7.4vw, 2.8rem);
+  }
+
+  .centerSkillsGroup {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+
+  .heroContentColumn {
+    padding: 24px 20px 0;
+  }
+
+  .heroFrame {
+    padding-top: var(--site-header-h);
+  }
+
+  .mobileHeroNavigator {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 0 20px 16px;
+  }
+
+  .mobileHeroNavTop {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .mobileHeroCount {
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted-soft);
+  }
+
+  .mobileHeroNavTitle {
+    font-family: var(--font-display), var(--font-body), sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--text);
+  }
+
+  .mobileHeroNavBottom {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobileHeroArrow {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line-color);
+    background: transparent;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      background 180ms ease,
+      color 180ms ease,
+      border-color 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .mobileHeroArrow:hover:not(:disabled) {
+    background: var(--card-hover);
+    border-color: var(--accent-soft);
+  }
+
+  .mobileHeroArrow:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  .mobileHeroArrow:focus-visible,
+  .mobileHeroStep:focus-visible {
+    outline: 2px solid var(--accent-soft);
+    outline-offset: 2px;
+  }
+
+  .mobileHeroSteps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .mobileHeroStep {
+    height: 6px;
+    border: none;
+    background: var(--line-color);
+    cursor: pointer;
+    transition:
+      background 180ms ease,
+      transform 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .mobileHeroStep:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--accent) 55%, var(--line-color));
+  }
+
+  .mobileHeroStep:disabled {
+    cursor: default;
+  }
+
+  .mobileHeroStepActive {
+    background: var(--accent);
+  }
+}
+
+@media (max-width: 560px) {
+  .heroFrame {
+    background: none;
+  }
+
+  .skillDivider {
+    width: 4px;
+    height: 4px;
+    margin-inline: 9px;
+  }
+}
+
+/* ── 2K / wide display adaptation ─────────────────────────────── */
+@media (min-width: 2200px) {
+  .heroFrame {
+    padding-top: var(--site-header-h);
+  }
+
+  .switchCard {
+    min-height: clamp(300px, 24vh, 400px);
+    padding: 48px 56px 52px;
+  }
+
+  .switchTitle {
+    font-size: clamp(30px, 1.7vw, 46px);
+  }
+
+  .switchDescription {
+    font-size: 17px;
+    max-width: 440px;
+  }
+
+  .activeHero {
+    height: clamp(720px, 58vh, 920px);
+  }
+
+  .heroContentColumn {
+    flex-basis: 760px;
+    padding: 56px 48px 56px 64px;
+  }
+
+  .centerTitle {
+    font-size: 4.4rem;
+    line-height: 1.02;
+    margin-bottom: 36px;
+  }
+
+  .centerTextBlock {
+    max-width: 540px;
+  }
+
+  .centerText {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .centerSkillsGroup {
+    margin-top: 44px;
+    max-width: 540px;
+  }
+
+  .skillsText {
+    font-size: 18px;
+  }
+}

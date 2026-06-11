@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOXA - Beauty Intelligence</title>
+  <link rel="preload" href="css/styles.css" as="style" />
+  <link rel="preload" href="assets/first_generation_2k_transparent.webp" as="image" fetchpriority="high" />
+  <style>
+    html, body {
+      margin: 0;
+      min-width: 320px;
+      background: #000504;
+      color: #d7e4df;
+      overflow-x: hidden;
+    }
+  </style>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>.mobile-nav { display: none !important; }</style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <canvas class="site-atmosphere" id="shader-bg" aria-hidden="true"></canvas>
+  <div class="site-noise" aria-hidden="true"></div>
+  <div class="page-shell">
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="NOXA home">
+        <img class="brand__logo" src="assets/noxa-logo-white.webp" alt="NOXA" />
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#technology">Tech</a>
+        <a href="#collection">Collection</a>
+        <a href="#studios">Mission</a>
+        <a href="#journal">Journal</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#">Cart (0)</a>
+        <button class="round-button" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-frame" aria-labelledby="hero-title">
+        <div class="hero__visual" aria-hidden="true">
+          <img
+            class="hero__visual-image"
+            src="assets/first_generation_2k_transparent.webp"
+            alt=""
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+        <div class="hero__content">
+          <p class="eyebrow">New era of wearables <span></span></p>
+          <h1 id="hero-title">Beauty<br />Intelligence<br />Evolved<span class="accent-dot">.</span></h1>
+
+          <div class="index-line" aria-label="Slide 1 of 4">
+            <span class="index-line__track" aria-hidden="true"></span>
+            <strong>01</strong>
+            <em>/ 04</em>
+          </div>
+
+          <p class="hero__copy">NOXA merges advanced biosensing with adaptive light therapy to reveal your most intelligent expression.</p>
+
+          <a class="line-link line-link--arrow" href="#technology">Discover the system <span></span></a>
+        </div>
+
+        <div class="scroll-note" aria-hidden="true">
+          <span>Scroll</span>
+          <span>to explore</span>
+          <i class="scroll-note__track"></i>
+        </div>
+      </section>
+
+      <section class="philosophy section-frame" id="studios" aria-labelledby="philosophy-title">
+
+        <!-- Col 1: manifesto content -->
+        <div class="philosophy__content">
+          <div class="philosophy__stack">
+            <span class="philosophy__marker" aria-label="Section 02">02</span>
+            <h2 id="philosophy-title">Technology<br />Should Disappear.<br />You Shouldn't<span class="accent-dot">.</span></h2>
+            <p class="philosophy__copy">We build wearables that adapt to you, respond in the moment, and grow more attuned the longer you wear them.</p>
+            <a class="line-link line-link--arrow" href="#technology">Discover the system <span></span></a>
+          </div>
+        </div>
+
+        <!-- Col 2: spine bridge / timeline -->
+        <div class="philosophy__bridge" aria-label="System highlights">
+          <div class="philosophy__timeline">
+            <div class="spine-item">
+              <span class="spine-item__num">01</span>
+              <span class="spine-item__label">Adaptive<br />Light</span>
+            </div>
+            <div class="spine-item">
+              <span class="spine-item__num">02</span>
+              <span class="spine-item__label">Biometric<br />Intelligence</span>
+            </div>
+            <div class="spine-item">
+              <span class="spine-item__num">03</span>
+              <span class="spine-item__label">Effortless<br />Form</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3: image, full-bleed right -->
+        <div class="philosophy__visual" aria-hidden="true"></div>
+
+      </section>
+
+      <section class="technology section-frame" id="technology" aria-labelledby="technology-title">
+        <div class="tech-inner">
+
+          <div class="tech-header">
+            <p id="technology-title" class="tech-header__label">Engineered for you</p>
+            <span class="tech-header__counter" aria-hidden="true">03</span>
+          </div>
+
+          <a class="tech-row" href="#" aria-label="Adaptive Light вЂ” learn more">
+            <span class="tech-row__num" aria-hidden="true">01</span>
+            <h3 class="tech-row__name">Adaptive Light</h3>
+            <p class="tech-row__copy">Precision wavelengths respond to your environment and biology in real time.</p>
+            <span class="tech-row__arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="tech-row" href="#" aria-label="Biometric Intelligence вЂ” learn more">
+            <span class="tech-row__num" aria-hidden="true">02</span>
+            <h3 class="tech-row__name">Biometric Intelligence</h3>
+            <p class="tech-row__copy">Advanced sensors decode skin signals to personalize every interaction.</p>
+            <span class="tech-row__arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="tech-row" href="#" aria-label="Effortless Form вЂ” learn more">
+            <span class="tech-row__num" aria-hidden="true">03</span>
+            <h3 class="tech-row__name">Effortless Form</h3>
+            <p class="tech-row__copy">Form follows function. Light enough to forget you are wearing it, distinct enough to notice.</p>
+            <span class="tech-row__arrow" aria-hidden="true"></span>
+          </a>
+
+        </div>
+      </section>
+
+      <section class="campaign section-frame" id="collection" aria-labelledby="campaign-title">
+
+        <div class="campaign__copy">
+          <span class="campaign__marker" aria-label="Section 04">04</span>
+          <h2 id="campaign-title">Human,<br />Enhanced.<br />Naturally<span class="accent-dot">.</span></h2>
+          <p>A celebration of the synergy between technology and human expression.</p>
+          <a class="line-link line-link--arrow" href="#gallery">View gallery <span></span></a>
+        </div>
+
+        <div class="campaign__gallery" id="gallery">
+          <figure class="gallery-panel gallery-panel--tall">
+            <img src="assets/Lastgrid1.webp" alt="Close-up portrait in red neon light" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-panel">
+            <img src="assets/lastgrid2.webp" alt="Neck and shoulder with crimson rim light" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="gallery-panel">
+            <img src="assets/lastgrid4.webp" alt="Backlit fashion-tech campaign image" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="footer-cta section-frame" id="journal" aria-labelledby="footer-title">
+
+        <!-- Tier 1: heading + newsletter side-by-side -->
+        <div class="footer-upper">
+          <div class="footer-heading">
+            <h2 id="footer-title">Stay Ahead<br />of What's Next</h2>
+            <p>Insights on tech, beauty, and the future of self.</p>
+          </div>
+
+          <form class="signup" action="#" method="get">
+            <label for="email">Enter your email</label>
+            <div class="signup__row">
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-label="Enter your email" aria-describedby="email-error" />
+              <button type="submit" aria-label="Submit email"><span></span></button>
+            </div>
+            <p class="signup__error" id="email-error" role="alert" aria-live="polite"></p>
+            <p class="signup__success" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Tier 2: nav band -->
+        <div class="footer-nav">
+          <nav class="footer-links footer-links--social" aria-label="Social links">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
+          </nav>
+          <nav class="footer-links footer-links--company" aria-label="Company links">
+            <a href="#">Contact</a>
+            <a href="#">Careers</a>
+            <a href="#">Press</a>
+            <a href="#">Legal</a>
+          </nav>
+        </div>
+
+        <!-- Tier 3: bottom bar -->
+        <div class="footer-bottom">
+          <div class="footer-brand">
+            <small>В© 2024 NOXA Labs</small>
+          </div>
+          <div class="footer-bottom__links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Mobile navigation overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="mobile-nav__bar">
+      <a class="brand" href="#" aria-label="NOXA home" tabindex="-1">
+        <img class="brand__logo" src="assets/noxa-logo-white.webp" alt="NOXA" />
+      </a>
+      <button class="round-button mobile-nav__close" type="button" aria-label="Close menu" tabindex="-1">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav__links" aria-label="Mobile navigation">
+      <a class="mobile-nav__link" href="#technology" tabindex="-1">Tech</a>
+      <a class="mobile-nav__link" href="#collection" tabindex="-1">Collection</a>
+      <a class="mobile-nav__link" href="#studios" tabindex="-1">Mission</a>
+      <a class="mobile-nav__link" href="#journal" tabindex="-1">Journal</a>
+    </nav>
+
+    <div class="mobile-nav__foot">
+      <a class="mobile-nav__cart" href="#" tabindex="-1">Cart (0)</a>
+      <div class="mobile-nav__rule"></div>
+    </div>
+  </div>
+
+  <script src="js/smoke-bg.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
+
+

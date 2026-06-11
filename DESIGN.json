@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-18T00:00:00+03:00",
+  "title": "Design System: Portfolio Site",
+  "extensions": {
+    "northStar": {
+      "name": "Calm Editorial Precision",
+      "summary": "A restrained portfolio system built on warm neutrals, thin structure lines, rounded surfaces, and sparse violet signals."
+    },
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f7f5f2"
+      },
+      "surface": {
+        "role": "surface",
+        "displayName": "Clean Surface",
+        "canonical": "#ffffff"
+      },
+      "surface-soft": {
+        "role": "surface",
+        "displayName": "Soft Card",
+        "canonical": "#fbfaf7"
+      },
+      "accent-violet": {
+        "role": "primary",
+        "displayName": "Studio Violet",
+        "canonical": "#a984dd"
+      },
+      "accent-green": {
+        "role": "secondary",
+        "displayName": "Signal Green",
+        "canonical": "#3fb64f"
+      }
+    },
+    "motion": {
+      "defaultEase": "cubic-bezier(0.22, 1, 0.36, 1)",
+      "principle": "Motion should clarify sequencing and focus, never dominate the page."
+    },
+    "doDont": {
+      "do": [
+        "Use warm off-white backgrounds and calm white cards.",
+        "Keep labels small, uppercase, and sparse.",
+        "Let spacing and hierarchy do more work than decoration."
+      ],
+      "dont": [
+        "Do not use neon gradients, glossy black demo cards, or dashboard-like surfaces.",
+        "Do not overuse the violet accent.",
+        "Do not rely on loud motion or decorative 3D effects."
+      ]
+    }
+  }
+}
