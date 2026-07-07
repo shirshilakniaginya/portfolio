@@ -109,10 +109,10 @@ const avatarNodes: AvatarNode[] = [
 ];
 
 const orbitConfig = {
-  1: { className: styles.orbitOne, spin: styles.spinLeft, spinDir: "left", radius: "176px" },
-  2: { className: styles.orbitTwo, spin: styles.spinRight, spinDir: "right", radius: "250px" },
-  3: { className: styles.orbitThree, spin: styles.spinRight, spinDir: "right", radius: "324px" },
-  4: { className: styles.orbitFour, spin: styles.spinLeft, spinDir: "left", radius: "398px" },
+  1: { className: styles.orbitOne, spin: styles.spinLeft, spinDir: "left", radius: "var(--orbit-1-radius)" },
+  2: { className: styles.orbitTwo, spin: styles.spinRight, spinDir: "right", radius: "var(--orbit-2-radius)" },
+  3: { className: styles.orbitThree, spin: styles.spinRight, spinDir: "right", radius: "var(--orbit-3-radius)" },
+  4: { className: styles.orbitFour, spin: styles.spinLeft, spinDir: "left", radius: "var(--orbit-4-radius)" },
 } satisfies Record<
   AvatarNode["orbit"],
   { className: string; spin: string; spinDir: "left" | "right"; radius: string }

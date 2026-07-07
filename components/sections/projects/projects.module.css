@@ -352,6 +352,12 @@
 }
 
 @media (max-width: 560px) {
+  .inner {
+    width: min(1840px, calc(100vw - 32px));
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   .row {
     grid-template-columns: 1fr;
     gap: 18px;

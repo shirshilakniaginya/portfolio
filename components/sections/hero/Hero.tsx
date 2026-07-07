@@ -1,12 +1,14 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { useLayoutEffect, useRef } from "react";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "@/lib/gsap-setup";
 import { heroTags } from "@/lib/home-content";
 import { PortfolioOrbit } from "./PortfolioOrbit";
 import styles from "./hero.module.css";
 
-const TITLE_LINES = ["Создаю сайты", "и редизайню", "под заявки"] as const;
+const TITLE_LINES = ["Создам сайт", "Сделаю редизайн" ] as const;
 
 const PARAGRAPH =
   "Делаю лендинги, промо-сайты и сайты услуг для бизнеса: продумываю структуру, дизайн, адаптив и фронтенд так, чтобы страница выглядела цельно и вела человека к заявке.";
@@ -27,6 +29,18 @@ function ArrowIcon() {
 
 export function Hero() {
   const rootRef = useRef<HTMLElement | null>(null);
+
+  const handleContactClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById("contact");
+    if (!target) return;
+
+    event.preventDefault();
+
+    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 72);
+    const smoother = ScrollSmoother.get();
+    if (smoother) smoother.scrollTo(top, true);
+    else window.scrollTo({ top, behavior: "smooth" });
+  };
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -89,7 +103,7 @@ export function Hero() {
             {PARAGRAPH}
           </p>
 
-          <a className={styles.cta} href="#contact" data-hero-reveal>
+          <a className={styles.cta} href="#contact" onClick={handleContactClick} data-hero-reveal>
             Обсудить сайт
             <ArrowIcon />
           </a>

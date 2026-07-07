@@ -2,6 +2,14 @@
 :global([data-portfolio-orbit]) {
   position: relative;
   --visual-scale: 1;
+  --orbit-1-size: 353px;
+  --orbit-2-size: 501px;
+  --orbit-3-size: 649px;
+  --orbit-4-size: 797px;
+  --orbit-1-radius: 176px;
+  --orbit-2-radius: 250px;
+  --orbit-3-radius: 324px;
+  --orbit-4-radius: 398px;
   width: 720px;
   height: 720px;
   max-width: 100%;
@@ -48,29 +56,29 @@
 
 .orbitOne,
 :global([data-orbit="1"]) {
-  width: 353px;
-  height: 353px;
+  width: var(--orbit-1-size);
+  height: var(--orbit-1-size);
   --spin-time: 30s;
 }
 
 .orbitTwo,
 :global([data-orbit="2"]) {
-  width: 501px;
-  height: 501px;
+  width: var(--orbit-2-size);
+  height: var(--orbit-2-size);
   --spin-time: 40s;
 }
 
 .orbitThree,
 :global([data-orbit="3"]) {
-  width: 649px;
-  height: 649px;
+  width: var(--orbit-3-size);
+  height: var(--orbit-3-size);
   --spin-time: 50s;
 }
 
 .orbitFour,
 :global([data-orbit="4"]) {
-  width: 797px;
-  height: 797px;
+  width: var(--orbit-4-size);
+  height: var(--orbit-4-size);
   --spin-time: 60s;
 }
 
@@ -324,7 +332,50 @@
 @media (max-width: 480px) {
   .visual,
   :global([data-portfolio-orbit]) {
-    --visual-scale: 0.4;
+    --visual-scale: 1;
+    --orbit-1-size: 128px;
+    --orbit-2-size: 194px;
+    --orbit-3-size: 258px;
+    --orbit-4-size: 318px;
+    --orbit-1-radius: 64px;
+    --orbit-2-radius: 97px;
+    --orbit-3-radius: 129px;
+    --orbit-4-radius: 159px;
+    width: min(92vw, 360px);
+    height: min(92vw, 360px);
+    max-width: none;
+    margin-top: 0;
+    transform-origin: center center;
+  }
+
+  .centerPortrait,
+  :global([data-center-portrait]) {
+    width: 102px;
+    height: 102px;
+  }
+
+  .sm,
+  :global([data-size="sm"]) {
+    width: 42px;
+    height: 42px;
+  }
+
+  .md,
+  :global([data-size="md"]) {
+    width: 46px;
+    height: 46px;
+  }
+
+  .lg,
+  :global([data-size="lg"]) {
+    width: 52px;
+    height: 52px;
+  }
+
+  .xl,
+  :global([data-size="xl"]) {
+    width: 58px;
+    height: 58px;
   }
 }
 
