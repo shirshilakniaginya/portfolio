@@ -1,0 +1,92 @@
+/* ==========================================================================
+   tokens.css — single source of truth for Formwork Studio.
+   Custom properties mirror the WordPress theme.json preset shape
+   (--wp--preset--{kind}--{slug}) so a later block-theme port is copy-paste.
+   Semantic role aliases reference those presets.
+   Values are canonical from DESIGN.md (the Béton Brut monochrome system).
+   ========================================================================== */
+:root {
+  /* --- Color presets (monochrome cast; contrast is the only color) --- */
+  --wp--preset--color--void:     #0A0A0A;
+  --wp--preset--color--carbon:   #161616;
+  --wp--preset--color--graphite: #2A2A2A;
+  --wp--preset--color--steel:    #6E6E6E;
+  --wp--preset--color--smoke:    #B4B4B4;
+  --wp--preset--color--concrete: #D4D4D2;
+  --wp--preset--color--chalk:    #F4F4F2;
+
+  /* Semantic color roles */
+  --color-void:     var(--wp--preset--color--void);
+  --color-carbon:   var(--wp--preset--color--carbon);
+  --color-graphite: var(--wp--preset--color--graphite);
+  --color-steel:    var(--wp--preset--color--steel);
+  --color-smoke:    var(--wp--preset--color--smoke);
+  --color-concrete: var(--wp--preset--color--concrete);
+  --color-chalk:    var(--wp--preset--color--chalk);
+
+  --hairline-on-dark:  rgba(255, 255, 255, 0.14);
+  --hairline-on-light: rgba(17, 17, 17, 0.13);
+
+  /* --- Font family presets --- */
+  --wp--preset--font-family--display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --wp--preset--font-family--mono:    'Geist Mono', ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--wp--preset--font-family--display);
+  --font-mono:    var(--wp--preset--font-family--mono);
+
+  /* --- Fluid type scale (>=1.25 step; mega intentionally past the 96px ceiling) --- */
+  --wp--preset--font-size--mega:     clamp(3.5rem, 15vw, 15rem);
+  --wp--preset--font-size--display:  clamp(2.4rem, 5.4vw, 5.5rem);
+  --wp--preset--font-size--headline: clamp(1.6rem, 3vw, 2.6rem);
+  --wp--preset--font-size--title:    1.25rem;
+  --wp--preset--font-size--body:     1.0625rem;
+  --wp--preset--font-size--label:    0.75rem;
+  --fs-mega:     var(--wp--preset--font-size--mega);
+  --fs-display:  var(--wp--preset--font-size--display);
+  --fs-headline: var(--wp--preset--font-size--headline);
+  --fs-title:    var(--wp--preset--font-size--title);
+  --fs-body:     var(--wp--preset--font-size--body);
+  --fs-label:    var(--wp--preset--font-size--label);
+  --fs-mono:     0.75rem;
+  --fs-stat:     clamp(3.25rem, 7vw, 6.5rem);
+
+  --lh-mega: 0.86;
+  --lh-tight: 0.96;
+  --lh-body: 1.6;
+  --tracking-mega: -0.04em;
+  --tracking-display: -0.03em;
+  --tracking-label: 0.12em;
+
+  /* --- Spacing presets --- */
+  --wp--preset--spacing--xs: 8px;
+  --wp--preset--spacing--sm: 16px;
+  --wp--preset--spacing--md: 32px;
+  --wp--preset--spacing--lg: 64px;
+  --wp--preset--spacing--xl: 120px;
+  --space-xs: var(--wp--preset--spacing--xs);
+  --space-sm: var(--wp--preset--spacing--sm);
+  --space-md: var(--wp--preset--spacing--md);
+  --space-lg: var(--wp--preset--spacing--lg);
+  --space-xl: var(--wp--preset--spacing--xl);
+  --space-section: clamp(56px, 7vw, 104px);
+
+  /* --- Layout --- */
+  --container: 1560px;
+  --gutter: clamp(20px, 4vw, 64px);
+
+  /* --- Radius (square by mandate; circle is the one exception) --- */
+  --radius-none: 0;
+  --radius-circle: 9999px;
+
+  /* --- Motion --- */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-state: 0.3s;
+  --dur-slow: 0.6s;
+
+  /* --- z-index scale (semantic, never arbitrary) --- */
+  --z-base: 1;
+  --z-media: 2;
+  --z-content: 3;
+  --z-nav: 100;
+  --z-grain: 9000;
+}

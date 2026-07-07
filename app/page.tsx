@@ -1,13 +1,13 @@
-import { Contact } from "@/components/sections/contact/Contact";
 import { Hero } from "@/components/sections/hero/Hero";
-import { WorkGallery } from "@/components/sections/work-gallery/WorkGallery";
+import { Projects } from "@/components/sections/projects/Projects";
+import { Contact } from "@/components/sections/contact/Contact";
 import { Footer } from "@/components/shared/footer/Footer";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <WorkGallery />
+      <Projects />
       <Contact />
       <Footer />
     </>

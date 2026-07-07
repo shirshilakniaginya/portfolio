@@ -23,27 +23,37 @@ export function GsapSmoothScroll() {
     const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 2.5,
-      effects: true,
-      normalizeScroll: true,
+      smooth: 1.25,
+      effects: false,
+      normalizeScroll: false,
       ignoreMobileResize: true,
     });
 
     // --- Custom Scrollbar Logic ---
+    let thumbRaf = 0;
+    let refreshTimer = 0;
+
     const updateThumbHeight = () => {
       if (!thumbRef.current) return;
-      const vh = window.innerHeight;
-      const sh = document.documentElement.scrollHeight;
-      // Proportional height, min 30px, minus 8px for margins
-      const height = Math.max(30, (vh / sh) * vh - 8);
-      gsap.set(thumbRef.current, { height });
-      
-      // Refresh ScrollTrigger to recalculate max scroll distances
-      ScrollTrigger.refresh();
+      if (thumbRaf) window.cancelAnimationFrame(thumbRaf);
+      thumbRaf = window.requestAnimationFrame(() => {
+        if (!thumbRef.current) return;
+        const vh = window.innerHeight;
+        const sh = document.documentElement.scrollHeight;
+        // Proportional height, min 30px, minus 8px for margins
+        const height = Math.max(30, (vh / sh) * vh - 8);
+        gsap.set(thumbRef.current, { height });
+      });
+
+      // Body resize can fire repeatedly while images/fonts settle on reload.
+      // Debounce the expensive global ScrollTrigger recalculation.
+      window.clearTimeout(refreshTimer);
+      refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 180);
     };
 
     updateThumbHeight();
     window.addEventListener("resize", updateThumbHeight);
+    window.addEventListener("load", updateThumbHeight, { once: true });
 
     const observer = new ResizeObserver(updateThumbHeight);
     observer.observe(document.body);
@@ -67,6 +77,9 @@ export function GsapSmoothScroll() {
       window.removeEventListener("wheel", allowCtrlZoom, { capture: true });
       observer.disconnect();
       window.removeEventListener("resize", updateThumbHeight);
+      window.removeEventListener("load", updateThumbHeight);
+      window.cancelAnimationFrame(thumbRaf);
+      window.clearTimeout(refreshTimer);
       st.kill();
       smoother.kill();
     };

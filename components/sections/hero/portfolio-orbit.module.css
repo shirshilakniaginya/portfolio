@@ -1,0 +1,352 @@
+.visual,
+:global([data-portfolio-orbit]) {
+  position: relative;
+  --visual-scale: 1;
+  width: 720px;
+  height: 720px;
+  max-width: 100%;
+  margin: -70px auto 0;
+  opacity: 0;
+  transform: scale(calc(var(--visual-scale) * 0.85));
+  animation: scaleIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+  isolation: isolate;
+  contain: layout;
+}
+
+.orbit,
+:global([data-portfolio-orbit-layer]) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  pointer-events: none;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.orbitBorder,
+:global([data-orbit-border]) {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(217, 161, 255, 0) 0%,
+    rgba(217, 161, 255, 1) 43%,
+    rgba(217, 161, 255, 0) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.72;
+}
+
+.orbitOne,
+:global([data-orbit="1"]) {
+  width: 353px;
+  height: 353px;
+  --spin-time: 30s;
+}
+
+.orbitTwo,
+:global([data-orbit="2"]) {
+  width: 501px;
+  height: 501px;
+  --spin-time: 40s;
+}
+
+.orbitThree,
+:global([data-orbit="3"]) {
+  width: 649px;
+  height: 649px;
+  --spin-time: 50s;
+}
+
+.orbitFour,
+:global([data-orbit="4"]) {
+  width: 797px;
+  height: 797px;
+  --spin-time: 60s;
+}
+
+.spinLeft,
+:global([data-spin="left"]) {
+  animation: spinLeft var(--spin-time) linear infinite;
+}
+
+.spinRight,
+:global([data-spin="right"]) {
+  animation: spinRight var(--spin-time) linear infinite;
+}
+
+.spinLeft .upright,
+:global([data-spin="left"] [data-upright]) {
+  animation: counterRight var(--spin-time) linear infinite;
+}
+
+.spinRight .upright,
+:global([data-spin="right"] [data-upright]) {
+  animation: counterLeft var(--spin-time) linear infinite;
+}
+
+.centerPortrait,
+:global([data-center-portrait]) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 164px;
+  height: 164px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid color-mix(in oklab, var(--accent) 36%, transparent);
+  background: color-mix(in oklab, var(--bg) 88%, var(--surface));
+  transform: translate(-50%, -50%);
+}
+
+.centerPortrait .upright,
+:global([data-center-portrait] [data-upright]) {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.centerPortrait img,
+:global([data-center-photo]) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: saturate(0.96) contrast(1.03);
+}
+
+.avatarSlot,
+:global([data-avatar-slot]) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(var(--avatar-angle)) translate(var(--avatar-radius)) rotate(calc(-1 * var(--avatar-angle)));
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.upright,
+:global([data-upright]) {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.avatar,
+:global([data-avatar]) {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--text) 16%, var(--line-color));
+  background: color-mix(in oklab, var(--surface) 82%, var(--bg));
+  transform: scale(0.3) rotate(-180deg);
+  opacity: 0;
+  animation: avatarFlyIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--avatar-delay) forwards;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.circle,
+:global([data-shape="circle"]) {
+  border-radius: 50%;
+}
+
+.squircle,
+:global([data-shape="squircle"]) {
+  border-radius: 22px;
+}
+
+.sm,
+:global([data-size="sm"]) {
+  width: 58px;
+  height: 58px;
+}
+
+.md,
+:global([data-size="md"]) {
+  width: 64px;
+  height: 64px;
+}
+
+.lg,
+:global([data-size="lg"]) {
+  width: 78px;
+  height: 78px;
+}
+
+.xl,
+:global([data-size="xl"]) {
+  width: 88px;
+  height: 88px;
+}
+
+.violet,
+.amber,
+.blue,
+.pink,
+.neutral {
+}
+
+.avatarIcon,
+:global([data-avatar-icon]) {
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+}
+
+.avatarPhoto,
+:global([data-avatar-photo]) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 17%;
+  filter: saturate(0.95) contrast(1.04);
+}
+
+.avatarMark,
+:global([data-avatar-mark]) {
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  color: var(--text);
+}
+
+.avatarLabel,
+:global([data-avatar-label]) {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  z-index: 4;
+  color: #fff;
+  font-family: var(--font-sans), var(--font-body), sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 6px);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.avatarSlot:hover .avatarLabel,
+:global([data-avatar-slot]:hover [data-avatar-label]) {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.amber .avatarMark,
+:global([data-tone="amber"] [data-avatar-mark]) {
+  color: oklch(0.94 0.04 72);
+}
+
+@keyframes spinLeft {
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spinRight {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes counterLeft {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes counterRight {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes avatarFlyIn {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(var(--visual-scale));
+  }
+}
+
+@media (max-width: 1280px) {
+  .visual,
+  :global([data-portfolio-orbit]) {
+    --visual-scale: 0.78;
+  }
+}
+
+@media (max-width: 1024px) {
+  .visual,
+  :global([data-portfolio-orbit]) {
+    --visual-scale: 0.7;
+    margin-top: 0;
+    width: 720px;
+    height: 720px;
+    transform-origin: center top;
+  }
+}
+
+@media (max-width: 768px) {
+  .visual,
+  :global([data-portfolio-orbit]) {
+    --visual-scale: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .visual,
+  :global([data-portfolio-orbit]) {
+    --visual-scale: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visual,
+  :global([data-portfolio-orbit]),
+  .spinLeft,
+  .spinRight,
+  :global([data-spin="left"]),
+  :global([data-spin="right"]),
+  .spinLeft .upright,
+  .spinRight .upright,
+  :global([data-spin="left"] [data-upright]),
+  :global([data-spin="right"] [data-upright]),
+  .avatar,
+  :global([data-avatar]) {
+    animation: none;
+    opacity: 1;
+  }
+
+  .avatar,
+  :global([data-avatar]) {
+    transform: none;
+  }
+}

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/cases/motion-club/">
+  <meta name="description" content="MOTION CLUB — персональные тренировки в Москве. Контроль техники, программа под вашу цель и результат, который держится. Запишитесь на тренировку.">
+  <meta name="theme-color" content="#131c1d">
+  <title>MOTION CLUB — Персональный тренер в Москве</title>
+
+  <link rel="preload" href="assets/fonts/bebas-neue-bold-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-700-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <!-- ============================================================
+       SVG ICON SPRITE  (in WP this lives in a small block/part)
+       ============================================================ -->
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <symbol id="ic-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M12.5 5.5 19 12l-6.5 6.5"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5 9.5 17.5 19.5 6.5"/></symbol>
+    <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+    <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="ic-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="ic-tg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 4-3 16-6-4.5L9 19l-1-5.5L3.5 12 21 4z"/><path d="m8 13.5 9-6.5"/></symbol>
+    <symbol id="ic-wa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.6-4.7A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.2c.3 3 2.8 5.5 5.8 5.8.7.07 1.3-.5 1.3-1.2v-.6l-2-.7-1 1a6.4 6.4 0 0 1-2.6-2.6l1-1-.7-2H10c-.7 0-1.3.6-1 1.1z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="ic-yt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="m10.5 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="ic-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7v10M4 9.5v5M17 7v10M20 9.5v5M7 12h10"/></symbol>
+    <symbol id="ic-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/></symbol>
+    <symbol id="ic-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6"/></symbol>
+    <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="ic-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="ic-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></symbol>
+    <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V11M9.3 20V5M14.6 20v-6M20 20V8"/></symbol>
+    <symbol id="ic-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C9 4 4 11 4 20c9 0 16-5 16-16z"/><path d="M4 20C8 14 13 10.5 18 9"/></symbol>
+    <symbol id="ic-support" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 2z"/><path d="M20 13v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2z"/><path d="M17 18a3 3 0 0 1-3 2.5h-2"/></symbol>
+    <symbol id="ic-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c.8-3.8 3.8-5.5 7.5-5.5s6.7 1.7 7.5 5.5"/></symbol>
+    <symbol id="ic-mark" viewBox="0 0 44 44"><circle cx="22" cy="22" r="20.5" fill="none" stroke="currentColor" stroke-width="2" opacity=".22"/><path d="M12 13.5 20.5 22 12 30.5" fill="none" stroke="var(--wp--preset--color--lime)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21.5 13.5 30 22l-8.5 8.5" fill="none" stroke="var(--wp--preset--color--aqua)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- ============================================================
+       pattern: header  (parts/header.html)
+       ============================================================ -->
+  <header class="site-header" data-header>
+    <div class="container container--wide site-header__inner">
+      <a class="brand" href="#top" aria-label="MOTION CLUB — на главную">
+        <img class="brand__logo" src="assets/img/New logo v1 (1).webp" alt="MOTION CLUB">
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#pricing">Программы</a></li>
+          <li><a href="#results">Результаты</a></li>
+          <li><a href="#results">Отзывы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn--primary site-header__cta" href="#contact">Записаться на тренировку</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="nav-toggle__box" aria-hidden="true"><span class="nav-toggle__bar"></span></span>
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <nav aria-label="Мобильная навигация">
+        <ul class="mobile-nav__list">
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#pricing">Программы</a></li>
+          <li><a href="#results">Результаты</a></li>
+          <li><a href="#results">Отзывы</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--primary btn--block" href="#contact">Записаться на тренировку</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         pattern: hero  (patterns/hero.php)
+         ============================================================ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__bg">
+        <img class="hero__bg-img" src="assets/img/hero-bg.webp" alt="" aria-hidden="true">
+        <span class="hero__scrim" aria-hidden="true"></span>
+        <a class="hero__badge" href="#about" aria-label="Всегда в движении, реальный прогресс">
+          <svg class="hero__badge-ring" viewBox="0 0 200 200" aria-hidden="true">
+            <defs><path id="badge-curve" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"/></defs>
+            <text><textPath href="#badge-curve">ВСЕГДА В ДВИЖЕНИИ · РЕАЛЬНЫЙ ПРОГРЕСС · </textPath></text>
+          </svg>
+          <span class="hero__badge-mark"><img src="assets/img/New logo v2 (2).webp" alt="" aria-hidden="true"></span>
+        </a>
+      </div>
+      <img class="hero__man" src="assets/img/hero-man.webp" alt="Тренер Motion Club в движении" width="540" height="810">
+      <span class="hero__watermark u-accent" aria-hidden="true">Motion</span>
+
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title"><span class="hero__title-line">Двигайся&nbsp;вперед</span><span class="hero__title-line">Результат&nbsp;за&nbsp;тобой</span></h1>
+          <p class="hero__eyebrow"><span>Тренировки</span><span>Питание</span><span>Результат</span></p>
+          <p class="hero__lead">Тренирую так, чтобы через месяц вы увидели разницу в&nbsp;зеркале, на весах и&nbsp;на тренировке.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#contact">Начать сейчас <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+            <a class="btn btn--ghost btn--lg" href="#pricing">Смотреть программы</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__strip">
+        <ul class="container hero__strip-inner">
+          <li class="feature"><svg class="feature__icon" aria-hidden="true"><use href="#ic-dumbbell"/></svg><span>Индивидуальные тренировки</span></li>
+          <li class="feature"><svg class="feature__icon" aria-hidden="true"><use href="#ic-leaf"/></svg><span>Программы питания</span></li>
+          <li class="feature"><svg class="feature__icon" aria-hidden="true"><use href="#ic-chart"/></svg><span>Контроль результатов</span></li>
+          <li class="feature"><svg class="feature__icon" aria-hidden="true"><use href="#ic-support"/></svg><span>Поддержка 24/7</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         pattern: services  (patterns/services.php)
+         ============================================================ -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Форматы работы</p>
+          <h2 class="section-title" id="services-title">Тренируйтесь так,<br>как удобно вам</h2>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card">
+            <span class="service-card__icon"><svg aria-hidden="true"><use href="#ic-user"/></svg></span>
+            <h3 class="service-card__title">Персональные тренировки</h3>
+            <p class="service-card__text">Личный план под вашу цель, разбор техники и тренер, который считает повторения, а не часы в зале.</p>
+            <a class="link-arrow" href="#contact">Подробнее <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </article>
+          <article class="service-card">
+            <span class="service-card__icon"><svg aria-hidden="true"><use href="#ic-laptop"/></svg></span>
+            <h3 class="service-card__title">Онлайн-сопровождение</h3>
+            <p class="service-card__text">Программа, видеоразбор техники и тренер на связи — тренируйтесь там, где вам удобно.</p>
+            <a class="link-arrow" href="#contact">Подробнее <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </article>
+          <article class="service-card">
+            <span class="service-card__icon"><svg aria-hidden="true"><use href="#ic-grid"/></svg></span>
+            <h3 class="service-card__title">Программы тренировок</h3>
+            <p class="service-card__text">Готовые программы для дома и зала: набор массы, рельеф или выносливость — на выбор.</p>
+            <a class="link-arrow" href="#contact">Подробнее <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         pattern: about  (patterns/about.php)
+         ============================================================ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__intro">
+          <p class="eyebrow">Обо мне</p>
+          <h2 class="section-title" id="about-title">Подход, который<br>дает результат</h2>
+          <p class="about__lead">Тренирую в Москве больше восьми лет — от новичков до тех, кто готовится к соревнованиям. Никаких шаблонов: только то, что действительно работает на ваше тело.</p>
+          <ul class="about__list">
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Высшее образование в сфере физической культуры</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg>8 лет практики и сотни проведенных тренировок</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Слежу за исследованиями, обновляю программы</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Поддержка 24/7 и результат без драмы</li>
+          </ul>
+          <a class="btn btn--dark" href="#contact">Узнать больше <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+        </div>
+
+        <div class="about__media">
+          <span class="about__ring" aria-hidden="true"></span>
+          <figure class="about__photo media">
+            <img src="assets/img/trainer.webp" alt="Персональный тренер Motion Club" width="700" height="900">
+          </figure>
+          <p class="about__tag">Дисциплина сегодня <span>=</span> результат завтра</p>
+        </div>
+
+        <div class="about__approach">
+          <p class="about__approach-title">Мой подход</p>
+          <ul class="approach-list">
+            <li class="approach">
+              <span class="approach__icon"><svg aria-hidden="true"><use href="#ic-target"/></svg></span>
+              <div><h3 class="approach__title">Индивидуальность</h3><p>Программа под вас, а не шаблон.</p></div>
+            </li>
+            <li class="approach">
+              <span class="approach__icon"><svg aria-hidden="true"><use href="#ic-shield"/></svg></span>
+              <div><h3 class="approach__title">Безопасность</h3><p>Техника и контроль превыше всего.</p></div>
+            </li>
+            <li class="approach">
+              <span class="approach__icon"><svg aria-hidden="true"><use href="#ic-layers"/></svg></span>
+              <div><h3 class="approach__title">Системность</h3><p>План, который работает в реальной жизни.</p></div>
+            </li>
+            <li class="approach">
+              <span class="approach__icon"><svg aria-hidden="true"><use href="#ic-bolt"/></svg></span>
+              <div><h3 class="approach__title">Мотивация</h3><p>Не даю бросить на третьей неделе.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         pattern: pricing  (patterns/pricing.php)
+         ============================================================ -->
+    <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="pricing__head">
+          <div>
+            <p class="eyebrow">Программы и цены</p>
+            <h2 class="section-title" id="pricing-title">Выберите свой формат</h2>
+          </div>
+          <p class="pricing__note">Все программы включают: план тренировок, рекомендации по питанию и поддержку на связи.</p>
+        </div>
+
+        <div class="pricing__body">
+        <div class="pricing__grid">
+          <article class="price-card">
+            <header class="price-card__head">
+              <h3 class="price-card__name">Старт</h3>
+              <p class="price-card__meta">4 тренировки / месяц</p>
+            </header>
+            <p class="price-card__price"><span class="price-card__amount">18 000</span><span class="price-card__cur">₽</span></p>
+            <ul class="price-card__list">
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Индивидуальные тренировки</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>План питания</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Поддержка в мессенджере</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#contact">Выбрать <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <span class="price-card__badge">Популярно</span>
+            <header class="price-card__head">
+              <h3 class="price-card__name">Прогресс</h3>
+              <p class="price-card__meta">8 тренировок / месяц</p>
+            </header>
+            <p class="price-card__price"><span class="price-card__amount">32 000</span><span class="price-card__cur">₽</span></p>
+            <ul class="price-card__list">
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Индивидуальные тренировки</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Персональный план питания</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Анализ прогресса</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Поддержка 24/7</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#contact">Выбрать <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </article>
+
+          <article class="price-card">
+            <header class="price-card__head">
+              <h3 class="price-card__name">Премиум</h3>
+              <p class="price-card__meta">12 тренировок / месяц</p>
+            </header>
+            <p class="price-card__price"><span class="price-card__amount">45 000</span><span class="price-card__cur">₽</span></p>
+            <ul class="price-card__list">
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Максимум внимания и результата</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Приоритетная поддержка</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Коррекция 7 дней в неделю</li>
+              <li><svg aria-hidden="true"><use href="#ic-check"/></svg>Чек-ап раз в месяц</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#contact">Выбрать <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          </article>
+        </div>
+
+        <aside class="pricing__aside">
+          <p class="pricing__pitch"><span class="pricing__pitch-bar" aria-hidden="true"></span>Выберите ритм, который сможете держать весь месяц.</p>
+          <div class="pricing__arcs" aria-hidden="true">
+            <svg viewBox="0 0 480 760" fill="none" preserveAspectRatio="xMaxYMid meet">
+              <g stroke-linecap="round">
+                <circle class="arc arc--flow" cx="470" cy="380" r="150" stroke="var(--color-aqua)" stroke-width="2.5"/>
+                <circle class="arc" cx="470" cy="380" r="212" stroke="var(--color-turquoise)" stroke-width="2"/>
+                <circle class="arc" cx="470" cy="380" r="274" stroke="var(--color-aqua)" stroke-width="2"/>
+                <circle class="arc" cx="470" cy="380" r="336" stroke="var(--color-sky)" stroke-width="1.6"/>
+                <circle class="arc" cx="470" cy="380" r="398" stroke="var(--color-turquoise)" stroke-width="1.4"/>
+              </g>
+            </svg>
+          </div>
+        </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         pattern: results  (patterns/results.php)
+         ============================================================ -->
+    <section class="section results" id="results" aria-labelledby="results-title">
+      <div class="container">
+        <div class="section-head results__head">
+          <div>
+            <p class="eyebrow">Результаты клиентов</p>
+            <h2 class="section-title" id="results-title">Реальные люди.<br>Реальные результаты.</h2>
+          </div>
+          <div class="results__nav" aria-hidden="true">
+            <button class="results__arrow" type="button" data-results-prev aria-label="Предыдущий"><svg style="transform:rotate(180deg)"><use href="#ic-arrow"/></svg></button>
+            <button class="results__arrow" type="button" data-results-next aria-label="Следующий"><svg><use href="#ic-arrow"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="results__viewport container" data-results-viewport>
+        <ul class="results__track" data-results-track>
+          <li class="result-card">
+            <figure class="result-card__media media"><img src="assets/img/results anna.webp" alt="Анна, клиент Motion Club" width="600" height="760"></figure>
+            <div class="result-card__body">
+              <p class="result-card__name">Анна, 29 лет</p>
+              <p class="result-card__metric">−7 кг</p>
+              <p class="result-card__quote">Перестала бояться зеркала, бегаю 5 км без одышки.</p>
+              <p class="result-card__time"><svg aria-hidden="true"><use href="#ic-chart"/></svg>12 недель</p>
+            </div>
+          </li>
+          <li class="result-card">
+            <figure class="result-card__media media"><img src="assets/img/results dmitry.webp" alt="Дмитрий, клиент Motion Club" width="600" height="760"></figure>
+            <div class="result-card__body">
+              <p class="result-card__name">Дмитрий, 34 года</p>
+              <p class="result-card__metric">+6 кг мышц</p>
+              <p class="result-card__quote">Жим вырос с 60 до 90 кг, а спина наконец перестала болеть.</p>
+              <p class="result-card__time"><svg aria-hidden="true"><use href="#ic-chart"/></svg>16 недель</p>
+            </div>
+          </li>
+          <li class="result-card">
+            <figure class="result-card__media media"><img src="assets/img/results ekaterina.webp" alt="Екатерина, клиент Motion Club" width="600" height="760"></figure>
+            <div class="result-card__body">
+              <p class="result-card__name">Екатерина, 31 год</p>
+              <p class="result-card__metric">−9 кг</p>
+              <p class="result-card__quote">Тренировки стали привычкой, а не подвигом раз в месяц.</p>
+              <p class="result-card__time"><svg aria-hidden="true"><use href="#ic-chart"/></svg>14 недель</p>
+            </div>
+          </li>
+          <li class="result-card">
+            <figure class="result-card__media media"><img src="assets/img/placeholder.svg" alt="Игорь, клиент Motion Club" width="600" height="760"></figure>
+            <div class="result-card__body">
+              <p class="result-card__name">Игорь, 38 лет</p>
+              <p class="result-card__metric">−12 кг</p>
+              <p class="result-card__quote">После пятнадцати лет за столом снова поднимаюсь по лестнице бегом.</p>
+              <p class="result-card__time"><svg aria-hidden="true"><use href="#ic-chart"/></svg>20 недель</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="results__dots" data-results-dots role="tablist" aria-label="Истории клиентов"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         pattern: contact  (patterns/contact.php)
+         CF7 stub: in WP replace .contact-form with the shortcode block.
+         ============================================================ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div class="contact__intro">
+          <p class="eyebrow">Заявка</p>
+          <h2 class="section-title" id="contact-title">Готовы начать<br>тренироваться?</h2>
+          <p class="contact__lead">Оставьте номер — позвоню сегодня и подберем время первой тренировки.</p>
+          <span class="contact__badge" aria-hidden="true">
+            <svg class="contact__badge-ring" viewBox="0 0 200 200">
+              <defs><path id="contact-curve" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+              <text><textPath href="#contact-curve">ПЕРВЫЙ ШАГ СЕГОДНЯ · РЕЗУЛЬТАТ ЧЕРЕЗ МЕСЯЦ · </textPath></text>
+            </svg>
+            <svg class="contact__badge-arrow"><use href="#ic-arrow"/></svg>
+          </span>
+        </div>
+
+        <div class="contact__form-wrap">
+          <!-- WP: replace this form with [contact-form-7 id="..."] -->
+          <form class="contact-form" data-contact-form novalidate>
+            <div class="field">
+              <label for="cf-name">Ваше имя</label>
+              <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Как к вам обращаться" required>
+            </div>
+            <div class="field">
+              <label for="cf-phone">Телефон / WhatsApp</label>
+              <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            <div class="field">
+              <label for="cf-msg">Сообщение <span class="field__hint">(необязательно)</span></label>
+              <textarea id="cf-msg" name="message" rows="3" placeholder="Цель, опыт, удобное время"></textarea>
+            </div>
+            <button class="btn btn--primary btn--block btn--lg" type="submit">Отправить заявку <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></button>
+            <p class="contact-form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+            <p class="contact-form__success" data-form-success hidden>Спасибо! Заявка получена — позвоню вам в течение дня.</p>
+          </form>
+        </div>
+
+        <ul class="contact__list">
+          <li class="contact-item">
+            <span class="contact-item__icon"><svg aria-hidden="true"><use href="#ic-pin"/></svg></span>
+            <div><p class="contact-item__title">Москва, Россия</p><p class="contact-item__sub">Тренировки в зале и онлайн</p></div>
+          </li>
+          <li class="contact-item">
+            <span class="contact-item__icon"><svg aria-hidden="true"><use href="#ic-ig"/></svg></span>
+            <div><p class="contact-item__title"><a href="#">@motionclub.msk</a></p><p class="contact-item__sub">Подписывайтесь в Instagram</p></div>
+          </li>
+          <li class="contact-item">
+            <span class="contact-item__icon"><svg aria-hidden="true"><use href="#ic-phone"/></svg></span>
+            <div><p class="contact-item__title"><a href="tel:+79991234567">+7 (999) 123-45-67</a></p><p class="contact-item__sub">Звоните или пишите по любым вопросам</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       pattern: footer  (parts/footer.html)
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="brand brand--light footer__brand-link" href="#top" aria-label="MOTION CLUB — на главную">
+          <img class="brand__logo footer__logo" src="assets/img/footer.webp" alt="MOTION CLUB">
+        </a>
+        <p class="footer__lead">Персональные тренировки в Москве и онлайн: техника, питание и контроль результата без хаоса в расписании.</p>
+        <p class="footer__copy">© 2026 Motion Club. Все права защищены.</p>
+      </div>
+
+      <div class="footer__content">
+        <div class="footer__section">
+          <p class="footer__label">Контакты</p>
+          <ul class="footer__links">
+            <li><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
+            <li><a href="#">@motionclub.msk</a></li>
+            <li>Москва, зал и онлайн</li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <p class="footer__label">Форматы</p>
+          <ul class="footer__links">
+            <li>Индивидуальные тренировки</li>
+            <li>План питания</li>
+            <li>Поддержка в мессенджере</li>
+          </ul>
+        </div>
+
+        <nav class="footer__section footer__nav" aria-label="Навигация в подвале">
+          <p class="footer__label">Разделы</p>
+          <ul>
+            <li><a href="#about">Обо мне</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#pricing">Программы</a></li>
+            <li><a href="#results">Результаты</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__section footer__cta">
+          <p class="footer__label">Первый шаг</p>
+          <p>Оставьте заявку, я подберу формат и время первой тренировки.</p>
+          <a class="btn btn--primary" href="#contact">Записаться</a>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <ul class="footer__social">
+          <li><a href="#" aria-label="Instagram"><svg aria-hidden="true"><use href="#ic-ig"/></svg></a></li>
+          <li><a href="#" aria-label="Telegram"><svg aria-hidden="true"><use href="#ic-tg"/></svg></a></li>
+          <li><a href="#" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#ic-wa"/></svg></a></li>
+          <li><a href="#" aria-label="YouTube"><svg aria-hidden="true"><use href="#ic-yt"/></svg></a></li>
+        </ul>
+        <a class="footer__top" href="#top">Наверх <svg class="btn__arrow" aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

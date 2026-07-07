@@ -15,19 +15,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${SITE_URL}/cases/formwork/`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/cases/voidheir/`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/cases/motion-club/`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.8,
+    },
+    {
       url: `${SITE_URL}/cases/horseschool/live/`,
       lastModified,
       changeFrequency: "yearly",
       priority: 0.8,
     },
     {
-      url: `${SITE_URL}/cases/coffeeshop/`,
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/cases/noxa/`,
+      url: `${SITE_URL}/cases/citydog/`,
       lastModified,
       changeFrequency: "yearly",
       priority: 0.8,

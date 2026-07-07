@@ -6,7 +6,9 @@ import { SiteHeader } from "@/components/shared/header/Header";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+// Geist is the redesigned homepage's grotesk system family (headlines + body + labels).
+// Cyrillic subset is required for the Russian copy in the hero/projects.
+const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans" });
 
 const manrope = Manrope({
   variable: "--font-body",
@@ -36,28 +38,127 @@ const hikasami = localFont({
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shtq.pro";
-const SITE_NAME = "Дмитрий — дизайн и фронтенд";
+const SITE_NAME = "Дмитрий — создание и редизайн сайтов";
 const SITE_DESCRIPTION =
-  "Портфолио дизайнера и фронтенд-разработчика: промо-сайты, интернет-магазины и лендинги с акцентом на структуру, ритм и чистый UI.";
+  "Создаю и редизайню сайты под заявки: лендинги, промо-сайты, сайты услуг и интернет-магазины. Продумываю структуру, дизайн, адаптивную верстку и разработку.";
+const SITE_TITLE = "Создание и редизайн сайтов — веб-дизайнер и веб-разработчик Дмитрий";
+const OG_IMAGE = "/og.jpg";
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      inLanguage: "ru-RU",
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Дмитрий",
+      url: SITE_URL,
+      image: `${SITE_URL}/about/portraitnobg.png`,
+      jobTitle: "Веб-дизайнер и веб-разработчик",
+      sameAs: ["https://kwork.ru/user/dmitrydezign", "https://dribbble.com/Shtutik"],
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#service`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      image: `${SITE_URL}${OG_IMAGE}`,
+      description: SITE_DESCRIPTION,
+      founder: { "@id": `${SITE_URL}/#person` },
+      areaServed: {
+        "@type": "Country",
+        name: "Россия",
+      },
+      availableLanguage: ["ru"],
+      serviceType: [
+        "Создание сайтов",
+        "Редизайн сайтов",
+        "Дизайн лендингов",
+        "Разработка сайтов",
+        "Проектирование интерфейсов",
+        "Адаптивная верстка",
+      ],
+      makesOffer: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Создание сайта под ключ",
+            description: "Структура, веб-дизайн, адаптивная верстка и разработка лендинга, промо-сайта или сайта услуг.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Редизайн сайта",
+            description: "Обновление визуала, структуры, интерфейса и пользовательского пути существующего сайта.",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Верстка и разработка сайта",
+            description: "Сборка адаптивного сайта с понятной структурой, быстрыми страницами и аккуратной работой на мобильных устройствах.",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      name: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#service` },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}${OG_IMAGE}`,
+      },
+      inLanguage: "ru-RU",
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Портфолио — дизайн и фронтенд",
-    template: "%s — Портфолио",
+    default: SITE_TITLE,
+    template: "%s — создание сайтов",
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "портфолио",
-    "веб-дизайн",
-    "фронтенд",
-    "разработка сайтов",
-    "лендинг",
+    "создание сайта",
+    "заказать сайт",
+    "редизайн сайта",
+    "веб-дизайнер",
+    "веб-разработчик",
+    "разработчик сайтов",
+    "дизайн сайта",
+    "лендинг под ключ",
+    "сайт услуг",
+    "сайт для бизнеса",
+    "промо-сайт",
     "интернет-магазин",
-    "Next.js",
-    "UI",
+    "проектирование интерфейса",
+    "адаптивная верстка",
+    "дизайнер сайтов",
+    "исполнитель для сайта",
   ],
   authors: [{ name: "Дмитрий" }],
+  creator: "Дмитрий",
+  publisher: "Дмитрий",
+  applicationName: SITE_NAME,
+  category: "создание сайтов, веб-дизайн, редизайн сайтов",
   alternates: {
     canonical: "/",
   },
@@ -71,22 +172,22 @@ export const metadata: Metadata = {
     locale: "ru_RU",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: "Портфолио — дизайн и фронтенд",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/og.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Портфолио — дизайн и фронтенд",
+        alt: SITE_TITLE,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Портфолио — дизайн и фронтенд",
+    title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    images: ["/og.jpg"],
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -115,6 +216,10 @@ export default function RootLayout({
   return (
     <html lang="ru" data-theme="dark" className={cn(manrope.variable, hikasami.variable, "font-sans", geist.variable)}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        />
         <GsapSmoothScroll />
         <SiteHeader />
         <div id="smooth-wrapper">

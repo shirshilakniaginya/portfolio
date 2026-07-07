@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
 // warn ("rewrites will not work with export"), so we keep prod builds clean.
 if (isDev) {
   nextConfig.rewrites = async () => {
-    const cases = ["coffeeshop", "horseschool/live", "noxa"];
+    const cases = ["citydog", "coffeeshop", "formwork", "horseschool/live", "motion-club", "voidheir"];
     return cases.flatMap((c) => [
       { source: `/cases/${c}`, destination: `/cases/${c}/index.html` },
       { source: `/cases/${c}/`, destination: `/cases/${c}/index.html` },

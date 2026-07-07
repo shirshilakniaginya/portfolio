@@ -1,8 +1,11 @@
 "use client";
 
+import { socials } from "@/lib/home-content";
 import styles from "./footer.module.css";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   const scrollToTop = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -10,11 +13,30 @@ export function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <span className={styles.meta}>Made by shttq</span>
-      <span className={styles.rights}>All rights reserved</span>
-      <a className={styles.link} href="#top" onClick={scrollToTop}>
-        Наверх ↑
-      </a>
+      <div className={styles.inner}>
+        <div className={styles.left}>
+          <span className={styles.brand}>© {year} — shtq.pro</span>
+          <span className={styles.note}>Работаю удалённо по всему миру</span>
+        </div>
+
+        <ul className={styles.socials}>
+          {socials.map((s) => (
+            <li key={s.label}>
+              <a
+                className={styles.social}
+                href={s.href}
+                {...(s.external ? { target: "_blank", rel: "noreferrer" } : {})}
+              >
+                {s.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <a className={styles.top} href="#top" onClick={scrollToTop}>
+          Наверх ↑
+        </a>
+      </div>
     </footer>
   );
 }

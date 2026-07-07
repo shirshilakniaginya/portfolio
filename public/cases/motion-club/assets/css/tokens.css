@@ -1,0 +1,175 @@
+/* ============================================================================
+   MINGLEE FITNESS COACH — Design tokens (single source of truth)
+   ----------------------------------------------------------------------------
+   Every color, font, size, space, radius and shadow lives here as a custom
+   property. No other stylesheet hardcodes a design value; they only reference
+   these tokens. The --wp--preset--* names mirror exactly what the WordPress
+   block theme's theme.json will generate, so this layer ports with no changes.
+
+   theme.json mapping:
+     settings.color.palette       -> --wp--preset--color--{slug}
+     settings.typography.fontFamilies -> --wp--preset--font-family--{slug}
+     settings.typography.fontSizes    -> --wp--preset--font-size--{slug}
+     settings.spacing.spacingSizes    -> --wp--preset--spacing--{slug}
+   ============================================================================ */
+
+:root {
+  /* ---- Brand palette (from BRANDBOOK) ---------------------------------- */
+  --wp--preset--color--ink: #001a16;        /* Ink Green  — deepest text, footer */
+  --wp--preset--color--graphite: #131c1d;   /* Graphite   — headings, dark cards */
+  --wp--preset--color--sky: #3fa0e4;        /* Sky Blue   — secondary accent      */
+  --wp--preset--color--aqua: #23c1b4;       /* Aqua       — primary brand         */
+  --wp--preset--color--turquoise: #66e0d1;  /* Turquoise  — highlight surface     */
+  --wp--preset--color--lime: #c0d72b;       /* Lime       — CTA / energy          */
+  --wp--preset--color--off-white: #f1f3f2;  /* Off White  — page background       */
+  --wp--preset--color--stone: #d2d6d3;      /* Stone      — muted surface         */
+  --wp--preset--color--white: #ffffff;
+
+  /* ---- Derived support tints (still theme.json palette entries) -------- */
+  --wp--preset--color--ink-soft: #1d2a27;   /* body text on light (12:1)          */
+  --wp--preset--color--ink-muted: #46524f;  /* secondary body text on light (7:1) */
+  --wp--preset--color--surface-alt: #e7edea;/* faint panel on the off-white bg    */
+  --wp--preset--color--line: #dfe5e2;       /* hairline divider                   */
+  --wp--preset--color--aqua-deep: #0d6f66;  /* aqua dark enough to read on light  */
+  --wp--preset--color--graphite-90: #0c1314;/* footer / deepest panel             */
+
+  /* ---- Semantic colour roles (what the rest of the CSS actually uses) -- */
+  --color-bg:            var(--wp--preset--color--off-white);
+  --color-surface:       var(--wp--preset--color--white);
+  --color-surface-alt:   var(--wp--preset--color--surface-alt);
+  --color-ink:           var(--wp--preset--color--ink);
+  --color-heading:       var(--wp--preset--color--graphite);
+  --color-text:          var(--wp--preset--color--ink-soft);
+  --color-text-soft:     var(--wp--preset--color--ink-muted);
+  --color-primary:       var(--wp--preset--color--aqua);
+  --color-primary-deep:  var(--wp--preset--color--aqua-deep);
+  --color-accent:        var(--wp--preset--color--lime);
+  --color-aqua:          var(--wp--preset--color--aqua);
+  --color-turquoise:     var(--wp--preset--color--turquoise);
+  --color-lime:          var(--wp--preset--color--lime);
+  --color-sky:           var(--wp--preset--color--sky);
+  --color-stone:         var(--wp--preset--color--stone);
+  --color-danger:        #d8503c;
+  --color-line:          var(--wp--preset--color--line);
+  --color-dark:          var(--wp--preset--color--graphite);
+  --color-dark-deep:     var(--wp--preset--color--graphite-90);
+  --color-on-dark:       #eef4f1;
+  --color-on-dark-soft:  #9fb2ad;
+  --color-on-dark-line:  rgba(255,255,255,.12);
+
+  /* ---- Type families -------------------------------------------------- */
+  --wp--preset--font-family--display: 'Bebas Neue', 'Arial Narrow', system-ui, sans-serif;
+  --wp--preset--font-family--accent:  'Anton', Impact, sans-serif;
+  --wp--preset--font-family--body:    'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --font-display: var(--wp--preset--font-family--display);
+  --font-accent:  var(--wp--preset--font-family--accent);
+  --font-body:    var(--wp--preset--font-family--body);
+
+  /* ---- Fluid type scale (>=1.25 ratio) -------------------------------- */
+  --wp--preset--font-size--2xs:       0.6875rem;   /* 11px tiny CTA / utility  */
+  --wp--preset--font-size--xs:        0.75rem;     /* 12px micro labels        */
+  --wp--preset--font-size--sm:        0.8125rem;   /* 13px eyebrows / labels   */
+  --wp--preset--font-size--small:     0.8375rem;   /* 15px small body          */
+  --wp--preset--font-size--medium:    1.0625rem;   /* 17px base body           */
+  --wp--preset--font-size--large:     1.1875rem;   /* 19px lead body           */
+  --wp--preset--font-size--x-large:   clamp(1.375rem, 1.15rem + 0.9vw, 1.75rem);
+  --wp--preset--font-size--xx-large:  clamp(1.6rem, 1.1rem + 2.1vw, 2.6rem);   /* card titles */
+  --wp--preset--font-size--huge:      clamp(2.1rem, 1.2rem + 3.6vw, 3.6rem);   /* section H2  */
+  --wp--preset--font-size--display:   clamp(2.7rem, 1.1rem + 6.2vw, 6.45rem);  /* hero H1     */
+
+  /* ---- Line-height & tracking ----------------------------------------- */
+  --lh-display: 0.94;
+  --lh-tight:   1.04;
+  --lh-snug:    1.18;
+  --lh-body:    1.62;
+  --track-display: -0.02em;
+  --track-label:   0.16em;
+
+  /* ---- Spacing scale (theme.json spacingSizes) ------------------------ */
+  --wp--preset--spacing--20: 0.5rem;
+  --wp--preset--spacing--30: 0.75rem;
+  --wp--preset--spacing--40: 1rem;
+  --wp--preset--spacing--50: 1.5rem;
+  --wp--preset--spacing--60: 2rem;
+  --wp--preset--spacing--70: 3rem;
+  --wp--preset--spacing--80: clamp(4rem, 2rem + 6vw, 6.5rem);
+
+  /* ---- Layout --------------------------------------------------------- */
+  --container: 1280px;
+  --container-wide: 1440px;
+  --container-pad: clamp(1.25rem, 4vw, 3rem);
+  --section-py: clamp(3.5rem, 2rem + 6vw, 6.75rem);
+  --gutter: clamp(1rem, 2.2vw, 2rem);
+
+  /* ---- Radius --------------------------------------------------------- */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius:    16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+
+  /* ---- Elevation ------------------------------------------------------ */
+  --shadow-sm:   0 1px 2px rgba(12,19,20,.06), 0 2px 6px rgba(12,19,20,.05);
+  --shadow-md:   0 12px 30px -16px rgba(12,19,20,.22);
+  --shadow-card: 0 20px 50px -26px rgba(12,19,20,.30);
+  --shadow-lift: 0 30px 64px -28px rgba(12,19,20,.38);
+
+  /* ---- Hero component tokens ----------------------------------------- */
+  --hero-scrim:
+    linear-gradient(98deg, rgba(241,243,242,.94) 4%, rgba(241,243,242,.66) 30%, rgba(241,243,242,.06) 52%, rgba(241,243,242,0) 66%),
+    linear-gradient(to top, rgba(20,28,29,.20), rgba(20,28,29,0) 28%);
+  --hero-scrim-mobile:
+    linear-gradient(180deg, rgba(241,243,242,.92) 0%, rgba(241,243,242,.5) 40%, rgba(241,243,242,.18) 100%);
+  --hero-man-shadow:
+    drop-shadow(-14px 20px 28px rgba(12,19,20,.24))
+    drop-shadow(10px 0 20px rgba(18,152,176,.08));
+  --hero-ghost-btn-bg: rgba(241, 243, 242, 0.94);
+  --hero-ghost-btn-bg-hover: rgba(255, 255, 255, 0.98);
+  --hero-ghost-btn-border: rgba(8, 28, 31, 0.12);
+  --hero-ghost-btn-border-hover: rgba(8, 28, 31, 0.18);
+  --hero-ghost-btn-shadow: 0 14px 30px rgba(12, 19, 20, 0.08);
+  --hero-ghost-btn-shadow-hover: 0 18px 34px rgba(12, 19, 20, 0.12);
+  --hero-badge-bg: rgba(241, 243, 242, 0.96);
+  --hero-badge-border: rgba(8, 28, 31, 0.12);
+  --hero-badge-shadow: 0 18px 42px rgba(12, 19, 20, 0.18);
+  --hero-badge-ring-size: 12.5px;
+  --hero-badge-logo-shadow: drop-shadow(0 1px 0 rgba(255,255,255,.45));
+
+  /* ---- Pricing component tokens -------------------------------------- */
+  --price-card-shadow: 0 10px 24px rgba(12, 19, 20, 0.04);
+  --price-card-featured-shadow: 0 18px 38px rgba(12, 19, 20, 0.10);
+  --price-card-hover-shadow:
+    0 18px 38px rgba(12, 19, 20, 0.08),
+    0 0 0 1px color-mix(in srgb, var(--color-aqua) 24%, transparent) inset;
+  --price-card-featured-hover-shadow:
+    0 18px 38px rgba(12, 19, 20, 0.08);
+  --price-card-hover-border: color-mix(in srgb, var(--color-primary-deep) 24%, var(--color-line));
+  --price-card-featured-border: color-mix(in srgb, var(--color-primary-deep) 14%, transparent);
+  --price-card-featured-hover-border: var(--color-ink);
+  --price-card-hover-shift: -6px;
+  --price-card-badge-padding: 0.4rem 1.05rem;
+  --price-card-badge-font-size: 0.7rem;
+  --price-card-badge-hover-bg: color-mix(in srgb, var(--color-lime) 82%, white);
+  --price-card-meta-font-size: 0.85rem;
+  --price-card-currency-font-size: 1.4rem;
+  --price-card-list-font-size: 0.95rem;
+
+  /* ---- Z-index scale -------------------------------------------------- */
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-nav: 200;
+  --z-backdrop: 900;
+  --z-modal: 1000;
+  --z-toast: 1100;
+
+  /* ---- Motion --------------------------------------------------------- */
+  --ease-out-quart: cubic-bezier(.25, 1, .5, 1);
+  --ease-out-expo:  cubic-bezier(.16, 1, .3, 1);
+  --dur-1: .15s;
+  --dur-2: .25s;
+  --dur-3: .4s;
+  --dur-4: .6s;
+}

@@ -62,21 +62,25 @@
 }
 
 [data-theme="dark"] {
-  --bg: #0d0d10;
-  --surface: #15151a;
-  --surface-soft: #1b1b22;
-  --surface-strong: #20202a;
-  --text: #f1eee8;
-  --muted: #aaa39a;
-  --muted-soft: #888279;
-  --line: rgba(255, 255, 255, 0.12);
+  /* Redesign 2026 — deeper, cooler near-black to match the reference grid */
+  --bg: #0a0b0d;
+  --surface: #101116;
+  --surface-soft: #14151b;
+  --surface-strong: #191a21;
+  /* Neutral near-white headline ink (was warm #f1eee8) + readable AA body grays */
+  --text: #f4f5f7;
+  --muted: #a8aab1;
+  --muted-soft: #82858d;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  /* Accent kept (user: colours stay) */
   --accent: #9b87e5;
   --accent-strong: #af9af2;
-  --accent-soft: rgba(155, 135, 229, 0.16);
+  --accent-soft: rgba(155, 135, 229, 0.14);
   --error: #e05a5a;
-  --line-color: rgba(255, 255, 255, 0.12);
+  --line-color: rgba(255, 255, 255, 0.1);
   --section-border: 1px solid var(--line-color);
-  --card-hover: rgba(255, 255, 255, 0.04);
+  --card-hover: rgba(255, 255, 255, 0.03);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
 }
 
@@ -179,8 +183,9 @@ ul {
 h1,
 h2,
 h3 {
-  font-family: var(--font-display), var(--font-body), sans-serif;
-  font-weight: 500;
+  /* Redesign: neutral grotesk (Geist) carries the headlines, matching the reference */
+  font-family: var(--font-sans), var(--font-body), sans-serif;
+  font-weight: 600;
 }
 
 h1 {

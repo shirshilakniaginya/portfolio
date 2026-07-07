@@ -138,6 +138,7 @@ export function SiteHeader() {
         </nav>
 
         <a className={styles.ctaLink} href="#contact">
+          <span className={styles.ctaDot} aria-hidden="true" />
           Обсудить проект
           <HeaderArrowIcon />
         </a>

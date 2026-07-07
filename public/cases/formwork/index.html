@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/cases/formwork/" />
+  <title>Formwork Studio — московская архитектурная студия.</title>
+  <meta name="description" content="Formwork Studio — архитектурная студия в Москве. Проектируем и реализуем монументальные пространства, где материал работает на форму и характер объекта." />
+  <link rel="preload" href="assets/fonts/archivo-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/sections.css" />
+</head>
+<body>
+  <a class="skip-link" href="#hero">Перейти к содержимому</a>
+
+  <svg class="visually-hidden" aria-hidden="true" focusable="false"><defs>
+    <symbol id="i-arrow-ur" viewBox="0 0 16 16"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 16 16"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="i-chev-down" viewBox="0 0 16 16"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  </defs></svg>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__mark" href="#hero">FORMWORK STUDIO.</a>
+      <div class="nav__hq">
+        <span class="label">Москва</span>
+        <span class="mono">[55.7558° N, 37.6176° E]</span>
+      </div>
+      <nav class="nav__links" id="nav-menu" aria-label="Основная навигация">
+        <a href="#spec">О студии</a>
+        <a href="#works">Проекты</a>
+        <a href="#spec">Подход</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero is-dark" data-section>
+      <div class="hero__media" data-parallax>
+        <img class="media-img" src="assets/img/hero-building-raw-concrete-2400x1600.webp" alt="Монументальная бетонная архитектура в Москве." />
+      </div>
+      <div class="hero__inner container">
+        <h1 class="hero__title mega">
+          <span class="line"><span class="line__in">Москва</span></span>
+          <span class="line line--tight"><span class="line__in hero__exposed">В бетоне</span></span>
+        </h1>
+        <div class="hero__stats">
+          <div class="stat">
+            <div class="stat__rule hairline"></div>
+            <div class="stat__head">
+              <span class="stat__num" data-count="32">32</span>
+              <span class="stat__unit label">Реализованных объектов</span>
+            </div>
+            <p class="stat__desc">Жилые, общественные и частные пространства, построенные в Москве и рядом с ней.</p>
+          </div>
+          <div class="stat">
+            <div class="stat__rule hairline"></div>
+            <div class="stat__head">
+              <span class="stat__num" data-count="14">14</span>
+              <span class="stat__unit label">Материальных систем</span>
+            </div>
+            <p class="stat__desc">От литого бетона и камня до металла и стекла, собранных в одну конструктивную логику.</p>
+          </div>
+        </div>
+        <a class="explore hero__explore" href="#works">
+          Проекты
+          <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-down"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section id="works" class="works is-light" data-section>
+      <div class="container">
+        <div class="works__bar hairline">
+          <span class="label">Выбранные проекты</span>
+          <span class="mono works__counter">[ 001 — 003 / 032 ]</span>
+          <a class="works__viewall label" href="#works">
+            Смотреть все
+            <svg width="14" height="14" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+          </a>
+        </div>
+        <h2 class="works__title mega">Проекты</h2>
+        <ul class="works__list">
+          <li class="work hairline">
+            <div class="work__meta">
+              <span class="work__index mono">001</span>
+              <h3 class="work__name">Дом на Яузе</h3>
+              <div class="work__tags">
+                <span class="label">Жилье</span>
+                <span class="mono">2026</span>
+                <span class="label">Москва</span>
+              </div>
+            </div>
+            <div class="work__media"><img class="media-img" src="assets/img/works-01-premium-civic-2000x750.webp" alt="Жилой бетонный дом в Москве." /></div>
+          </li>
+          <li class="work hairline">
+            <div class="work__meta">
+              <span class="work__index mono">002</span>
+              <h3 class="work__name">Павильон Таганка</h3>
+              <div class="work__tags">
+                <span class="label">Культура</span>
+                <span class="mono">2025</span>
+                <span class="label">Москва</span>
+              </div>
+            </div>
+            <div class="work__media"><img class="media-img" src="assets/img/works-02-premium-pavilion-2000x750.webp" alt="Городской павильон из бетона и стекла в Москве." /></div>
+          </li>
+          <li class="work hairline">
+            <div class="work__meta">
+              <span class="work__index mono">003</span>
+              <h3 class="work__name">Двор Пресня</h3>
+              <div class="work__tags">
+                <span class="label">Mixed-use</span>
+                <span class="mono">2024</span>
+                <span class="label">Москва</span>
+              </div>
+            </div>
+            <div class="work__media"><img class="media-img" src="assets/img/works-03-premium-colonnade-2000x750.webp" alt="Многофункциональный городской двор в районе Пресня." /></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="spec" class="spec is-light" data-section>
+      <div class="container spec__grid">
+        <div class="spec__left">
+          <span class="label spec__eyebrow">Подход студии</span>
+          <div class="stat stat--lg">
+            <span class="stat__num"><span data-count="32">32</span><sup>+</sup></span>
+            <span class="stat__unit label">Построено</span>
+            <p class="stat__desc">Объекты, где конструкция не скрывается отделкой, а становится главным языком пространства.</p>
+          </div>
+          <div class="stat stat--lg">
+            <span class="stat__num"><span data-count="14">14</span><sup></sup></span>
+            <span class="stat__unit label">Систем материалов</span>
+            <p class="stat__desc">Проверенные узлы, поверхности и ритмы, которые выдерживают масштаб, климат и эксплуатацию.</p>
+          </div>
+          <dl class="spec__coords">
+            <div class="spec__coord"><dt class="label">Офис</dt><dd class="mono">[Москва, ЦАО]</dd></div>
+            <div class="spec__coord"><dt class="label">Типология</dt><dd class="mono">Жилье • Культура • Public realm</dd></div>
+          </dl>
+        </div>
+
+        <div class="spec__center">
+          <h2 class="display spec__headline">Делаем архитектуру, которая держит форму.</h2>
+          <ol class="spec__legend">
+            <li class="spec__item"><span class="mono">01</span><span class="label">Контекст</span></li>
+            <li class="spec__item"><span class="mono">02</span><span class="label">Структура</span></li>
+            <li class="spec__item"><span class="mono">03</span><span class="label">Материал</span></li>
+            <li class="spec__item"><span class="mono">04</span><span class="label">Свет</span></li>
+            <li class="spec__item"><span class="mono">05</span><span class="label">Масштаб</span></li>
+            <li class="spec__item"><span class="mono">06</span><span class="label">Ритм</span></li>
+            <li class="spec__item"><span class="mono">07</span><span class="label">Сборка</span></li>
+            <li class="spec__item"><span class="mono">08</span><span class="label">Долговечность</span></li>
+          </ol>
+        </div>
+
+        <figure class="spec__drawing">
+          <img class="media-img" src="assets/img/material-spec-wall-section-cut-1600x2400.png" alt="Схема конструктивного и материального подхода архитектурной студии." />
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact" class="contact is-dark" data-section>
+      <div class="container contact__grid">
+        <figure class="contact__diagram">
+          <img class="media-img" src="assets/img/contact-monument-photo-1600x2000.webp" alt="Монументальный архитектурный объект Formwork Studio." />
+        </figure>
+        <div class="contact__body">
+          <h2 class="display contact__headline">Если нужен сильный объект, поговорим.</h2>
+          <div class="contact__lede">
+            <p class="body-copy">Formwork Studio работает с частными домами, общественными пространствами и культурными объектами в Москве.</p>
+            <p class="body-copy">Мы подключаемся от концепции и рабочей документации до авторского надзора и реализации на площадке.</p>
+            <p class="body-copy">Если вам нужна архитектура с ясной формой, честным материалом и нормальной строительной логикой, начинаем разговор.</p>
+          </div>
+
+          <form class="form" novalidate>
+            <span class="label form__legend">Начать разговор</span>
+            <div class="form__row">
+              <label class="field">
+                <span class="field__label label">Имя</span>
+                <input class="field__input" type="text" name="name" placeholder="Анна Иванова" autocomplete="name" />
+              </label>
+              <label class="field">
+                <span class="field__label label">Email</span>
+                <input class="field__input" type="email" name="email" placeholder="anna@domain.ru" autocomplete="email" />
+              </label>
+              <label class="field">
+                <span class="field__label label">Компания</span>
+                <input class="field__input" type="text" name="company" placeholder="Девелопер / частный клиент" autocomplete="organization" />
+              </label>
+            </div>
+            <div class="form__row">
+              <label class="field field--select">
+                <span class="field__label label">Тип проекта</span>
+                <span class="field__control">
+                  <select class="field__input" name="project_type">
+                    <option value="" disabled selected>Выберите</option>
+                    <option>Частный дом</option>
+                    <option>Жилой комплекс</option>
+                    <option>Культурный объект</option>
+                    <option>Общественное пространство</option>
+                  </select>
+                  <svg class="field__chev" width="14" height="14" aria-hidden="true"><use href="#i-chev-down"/></svg>
+                </span>
+              </label>
+              <label class="field field--select">
+                <span class="field__label label">Бюджет</span>
+                <span class="field__control">
+                  <select class="field__input" name="budget">
+                    <option value="" disabled selected>Выберите</option>
+                    <option>До 50 млн ₽</option>
+                    <option>50–150 млн ₽</option>
+                    <option>150 млн ₽+</option>
+                  </select>
+                  <svg class="field__chev" width="14" height="14" aria-hidden="true"><use href="#i-chev-down"/></svg>
+                </span>
+              </label>
+              <label class="field field--select">
+                <span class="field__label label">Стадия</span>
+                <span class="field__control">
+                  <select class="field__input" name="timeline">
+                    <option value="" disabled selected>Выберите</option>
+                    <option>Идея</option>
+                    <option>Концепция</option>
+                    <option>Реализация</option>
+                  </select>
+                  <svg class="field__chev" width="14" height="14" aria-hidden="true"><use href="#i-chev-down"/></svg>
+                </span>
+              </label>
+            </div>
+            <label class="field field--full">
+              <span class="field__label label">Что за объект</span>
+              <input class="field__input" type="text" name="brief" placeholder="Типология, площадь, адрес, стадия, задачи проекта" />
+            </label>
+            <div class="form__actions">
+              <button class="btn" type="submit">
+                Отправить запрос
+                <svg width="16" height="16" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+              </button>
+              <p class="form__success" role="status" hidden>Запрос получен. Свяжемся с вами.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container footer__grid">
+          <span class="label">© Formwork Studio. Все права защищены.</span>
+          <span class="mono footer__city">[ Москва ]</span>
+          <nav class="footer__social" aria-label="Контакты">
+            <a class="label" href="#">Telegram</a>
+            <a class="label" href="#">WhatsApp</a>
+            <a class="label" href="#">Email</a>
+          </nav>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,420 +1,112 @@
 "use client";
 
-import { flushSync } from "react-dom";
-import type { Ref } from "react";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap-setup";
-import { heroPanels } from "@/lib/portfolio-content";
-import { AboutDemo } from "./AboutDemo";
-import { BuildDemo } from "./BuildDemo";
-import { DesignSystemPanel } from "./DesignSystemPanel";
-import { UserFlowDemo } from "./UserFlowDemo";
+import { heroTags } from "@/lib/home-content";
+import { PortfolioOrbit } from "./PortfolioOrbit";
 import styles from "./hero.module.css";
 
-type HeroPanel = (typeof heroPanels)[number];
+const TITLE_LINES = ["Создаю сайты", "и редизайню", "под заявки"] as const;
 
-function clampHeroIndex(index: number) {
-  return (index + heroPanels.length) % heroPanels.length;
-}
+const PARAGRAPH =
+  "Делаю лендинги, промо-сайты и сайты услуг для бизнеса: продумываю структуру, дизайн, адаптив и фронтенд так, чтобы страница выглядела цельно и вела человека к заявке.";
 
-function getPanelSecondaryLabel(panel: HeroPanel) {
-  return "skills" in panel && panel.skills
-    ? ("skillsLabel" in panel ? panel.skillsLabel : "Навыки")
-    : "Фокус";
-}
-
-function getRevealItems(node: HTMLDivElement | null) {
-  return node
-    ? Array.from(node.querySelectorAll<HTMLElement>("[data-hero-reveal]"))
-    : [];
-}
-
-function getTitleLines(node: HTMLHeadingElement | null) {
-  return node
-    ? Array.from(node.querySelectorAll<HTMLElement>("[data-hero-title-line]"))
-    : [];
-}
-
-function PanelDemo({ panel, playing }: { panel: HeroPanel; playing: boolean }) {
-  switch (panel.id) {
-    case "about":
-      return <AboutDemo playing={playing} />;
-    case "structure":
-      return <DesignSystemPanel playing={playing} />;
-    case "visual":
-      return <UserFlowDemo playing={playing} />;
-    case "handoff":
-      return <BuildDemo playing={playing} />;
-    default:
-      return null;
-  }
-}
-
-type HeroPanelContentProps = {
-  panel: HeroPanel;
-  contentRef?: Ref<HTMLDivElement>;
-  overlay?: boolean;
-  titleRef?: Ref<HTMLHeadingElement>;
-};
-
-function HeroPanelContent({ panel, contentRef, overlay = false, titleRef }: HeroPanelContentProps) {
-  const contentClassName = overlay
-    ? `${styles.heroContentInner} ${styles.heroContentOverlay}`
-    : styles.heroContentInner;
-  const secondaryText = panel.paragraphs[1] ?? "";
-
+function ArrowIcon() {
   return (
-    <div ref={contentRef} className={contentClassName}>
-      <div className={styles.centerPanelMeta}>
-        <span className={styles.centerPanelLabel} data-hero-reveal>
-          {panel.label}
-        </span>
-      </div>
-      <h2 ref={titleRef} className={styles.centerTitle}>
-        {panel.activeTitleLines.map((line) => (
-          <span className={styles.titleLineMask} key={line}>
-            <span className={styles.titleLine} data-hero-title-line>
-              {line}
-            </span>
-          </span>
-        ))}
-      </h2>
-
-      <div className={styles.centerTextBlock}>
-        {panel.paragraphs.map((paragraph, index) => (
-          <p
-            key={`${panel.id}-${index}`}
-            className={styles.centerText}
-            data-hero-reveal
-          >
-            {paragraph}
-          </p>
-        ))}
-      </div>
-
-      <div className={styles.centerSkillsGroup} data-hero-reveal>
-        <span className={styles.metaLabel}>{getPanelSecondaryLabel(panel)}</span>
-        {"skills" in panel && panel.skills ? (
-          <p className={styles.skillsText}>
-            {panel.skills.map((skill, index) => (
-              <span className={styles.skillItem} key={skill}>
-                {index > 0 && <span className={styles.skillDivider} aria-hidden="true" />}
-                <span>{skill}</span>
-              </span>
-            ))}
-          </p>
-        ) : (
-          <p className={styles.skillsText}>{secondaryText}</p>
-        )}
-      </div>
-    </div>
+    <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" width="22" height="22" className={styles.ctaArrow}>
+      <path d="M4 11h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
+      <path
+        d="M11.5 5.5 17 11l-5.5 5.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="square"
+      />
+    </svg>
   );
 }
 
 export function Hero() {
-  const heroRef = useRef<HTMLElement | null>(null);
-  const visualFrameRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const activeContentRef = useRef<HTMLDivElement | null>(null);
-  const activeTitleRef = useRef<HTMLHeadingElement | null>(null);
-  const incomingContentRef = useRef<HTMLDivElement | null>(null);
-  const incomingTitleRef = useRef<HTMLHeadingElement | null>(null);
-  const isAnimatingRef = useRef(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [incomingIndex, setIncomingIndex] = useState<number | null>(null);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  const activePanel = heroPanels[activeIndex] ?? heroPanels[0];
-  const incomingPanel = incomingIndex === null ? null : (heroPanels[incomingIndex] ?? null);
-  const displayIndex = incomingIndex ?? activeIndex;
-  const displayPanel = heroPanels[displayIndex] ?? activePanel;
+  const rootRef = useRef<HTMLElement | null>(null);
 
   useLayoutEffect(() => {
-    if (!activeContentRef.current) {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const lines = gsap.utils.toArray<HTMLElement>("[data-hero-line]", root);
+    const reveals = gsap.utils.toArray<HTMLElement>("[data-hero-reveal]", root);
+    const demo = root.querySelector<HTMLElement>("[data-hero-demo]");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduce) {
+      gsap.set([...lines, ...reveals], { opacity: 1, yPercent: 0, y: 0 });
+      if (demo) gsap.set(demo, { opacity: 1, y: 0, scale: 1 });
       return;
     }
 
-    gsap.set(activeContentRef.current, { opacity: 1, y: 0 });
-    gsap.set(getTitleLines(activeTitleRef.current), { opacity: 1, yPercent: 0 });
-    gsap.set(getRevealItems(activeContentRef.current), { opacity: 1, y: 0 });
+    const ctx = gsap.context(() => {
+      gsap.set(lines, { yPercent: 115 });
+      gsap.set(reveals, { opacity: 0, y: 18 });
+      if (demo) gsap.set(demo, { opacity: 0, y: 24, scale: 0.985 });
+
+      const tl = gsap.timeline({ defaults: { ease: "editorialOut" } });
+      if (demo) {
+        tl.to(demo, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "editorialSoft" }, 0.32);
+      }
+      tl.to(lines, { yPercent: 0, duration: 0.9, stagger: 0.09 }, 0.1).to(
+        reveals,
+        { opacity: 1, y: 0, duration: 0.6, stagger: 0.08 },
+        0.5,
+      );
+    }, root);
+
+    return () => ctx.revert();
   }, []);
 
-  const handleSelect = (nextIndex: number) => {
-    if (nextIndex === activeIndex || isAnimating || isAnimatingRef.current) {
-      return;
-    }
-
-    isAnimatingRef.current = true;
-    setIsAnimating(true);
-
-    const currentFrame = visualFrameRefs.current[activeIndex];
-    const currentContent = activeContentRef.current;
-
-    if (!currentFrame || !currentContent) {
-      isAnimatingRef.current = false;
-      setIsAnimating(false);
-      setActiveIndex(nextIndex);
-      setSelectedIndex(nextIndex);
-      return;
-    }
-
-    setSelectedIndex(nextIndex);
-
-    flushSync(() => {
-      setIncomingIndex(nextIndex);
-    });
-
-    const nextFrame = visualFrameRefs.current[nextIndex];
-    const nextContent = incomingContentRef.current;
-    const nextTitleLines = getTitleLines(incomingTitleRef.current);
-    const nextRevealItems = getRevealItems(incomingContentRef.current);
-
-    if (!nextFrame || !nextContent || nextTitleLines.length === 0) {
-      flushSync(() => {
-        setActiveIndex(nextIndex);
-        setIncomingIndex(null);
-      });
-      isAnimatingRef.current = false;
-      setIsAnimating(false);
-      return;
-    }
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    gsap.killTweensOf([
-      currentFrame,
-      currentContent,
-      nextFrame,
-      nextContent,
-      ...nextTitleLines,
-      ...nextRevealItems,
-    ]);
-
-    const timeline = gsap.timeline({
-      defaults: { ease: reduceMotion ? "none" : "editorialOut" },
-      onComplete: () => {
-        flushSync(() => {
-          setActiveIndex(nextIndex);
-          setIncomingIndex(null);
-        });
-
-        gsap.set([currentFrame, nextFrame], { clearProps: "opacity,transform,zIndex" });
-
-        isAnimatingRef.current = false;
-        setIsAnimating(false);
-      },
-    });
-
-    if (reduceMotion) {
-      gsap.set(nextFrame, { opacity: 0, zIndex: 2 });
-      gsap.set(nextContent, { opacity: 1, y: 0 });
-      gsap.set(nextTitleLines, { opacity: 0, yPercent: 0 });
-      gsap.set(nextRevealItems, { opacity: 0, y: 0 });
-
-      timeline
-        .to(currentFrame, { opacity: 0, duration: 0.18 })
-        .to(currentContent, { opacity: 0, duration: 0.18 }, "<")
-        .to(nextFrame, { opacity: 1, duration: 0.22 }, "<")
-        .to(
-          nextTitleLines,
-          {
-            opacity: 1,
-            duration: 0.18,
-            stagger: 0.04,
-          },
-          "<0.08",
-        )
-        .to(
-          nextRevealItems,
-          {
-            opacity: 1,
-            duration: 0.18,
-          },
-          "<",
-        );
-
-      return;
-    }
-
-    gsap.set(nextFrame, { opacity: 0, scale: 1.025, zIndex: 2, transformOrigin: "50% 50%" });
-    gsap.set(nextContent, { opacity: 1, y: 0 });
-    gsap.set(nextTitleLines, { opacity: 0, yPercent: 110 });
-    gsap.set(nextRevealItems, { opacity: 0, y: 18 });
-
-    timeline
-      .to(currentFrame, {
-        opacity: 0,
-        duration: 0.22,
-        scale: 0.99,
-        ease: "editorialSoft",
-      })
-      .to(
-        currentContent,
-        {
-          opacity: 0,
-          y: 8,
-          duration: 0.22,
-          ease: "editorialSoft",
-        },
-        "<",
-      )
-      .to(
-        nextFrame,
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-        },
-        "<0.08",
-      )
-      .to(
-        nextTitleLines,
-        {
-          opacity: 1,
-          yPercent: 0,
-          stagger: 0.08,
-          duration: 0.72,
-        },
-        "<0.16",
-      )
-      .to(
-        nextRevealItems,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.48,
-          stagger: 0.06,
-        },
-        "<0.08",
-      );
-  };
-
-  const handleMobileStep = (direction: -1 | 1) => {
-    handleSelect(clampHeroIndex(activeIndex + direction));
-  };
-
   return (
-    <section ref={heroRef} data-ui="hero-section" className={styles.heroSection} id="about">
-      <div className={styles.heroInner}>
-        <div className={styles.heroFrame}>
-          <div className={styles.bottomBand}>
-            <div className={styles.selectorRow}>
-              {heroPanels.map((panel, index) => (
-                <button
-                  key={panel.id}
-                  type="button"
-                  className={`${styles.switchCard} ${selectedIndex === index ? styles.switchCardActive : ""}`}
-                  disabled={isAnimating}
-                  onClick={() => handleSelect(index)}
-                >
-                  <span className={styles.switchMeta}>
-                    <span className={styles.switchIndex}>{panel.index}</span>
-                    <span className={styles.switchLabel}>{panel.label}</span>
-                  </span>
-                  <strong className={styles.switchTitle}>{panel.shortTitle}</strong>
-                  <p className={styles.switchDescription}>{panel.shortText}</p>
-                  <span className={styles.selectorDot} aria-hidden="true" />
-                </button>
-              ))}
-            </div>
+    <section ref={rootRef} className={styles.hero} id="about" data-ui="hero-section">
+      <span className={styles.railLabel} aria-hidden="true">
+        Сайты под заявки — 2026
+      </span>
 
-            <div className={styles.activeHero}>
-              <article className={styles.heroContentColumn}>
-                <div className={styles.heroContentStage}>
-                  {/* Hidden copies of every panel reserve the max content height,
-                      so the band never jumps when switching panels */}
-                  {heroPanels.map((panel) => (
-                    <div
-                      key={`sizer-${panel.id}`}
-                      className={styles.heroContentSizer}
-                      aria-hidden="true"
-                    >
-                      <HeroPanelContent panel={panel} />
-                    </div>
-                  ))}
-                  <HeroPanelContent
-                    key={activePanel.id}
-                    panel={activePanel}
-                    contentRef={activeContentRef}
-                    titleRef={activeTitleRef}
-                  />
-                  {incomingPanel && (
-                    <HeroPanelContent
-                      key={`incoming-${incomingPanel.id}`}
-                      overlay
-                      panel={incomingPanel}
-                      contentRef={incomingContentRef}
-                      titleRef={incomingTitleRef}
-                    />
-                  )}
-                </div>
-              </article>
+      <div className={styles.inner}>
+        <div className={styles.content}>
+          <span className={styles.eyebrow} data-hero-reveal>
+            <span className={styles.eyebrowDot} aria-hidden="true" />
+            Веб-дизайн и разработка сайтов
+          </span>
 
-              <div className={styles.mobileHeroNavigator}>
-                <div className={styles.mobileHeroNavTop}>
-                  <span className={styles.mobileHeroCount}>
-                    {displayPanel.index} / {heroPanels[heroPanels.length - 1]?.index ?? "04"}
-                  </span>
-                  <strong className={styles.mobileHeroNavTitle}>{displayPanel.shortTitle}</strong>
-                </div>
+          <h1 className={styles.title}>
+            {TITLE_LINES.map((line) => (
+              <span className={styles.lineMask} key={line}>
+                <span className={styles.line} data-hero-line>
+                  {line}
+                </span>
+              </span>
+            ))}
+          </h1>
 
-                <div className={styles.mobileHeroNavBottom}>
-                  <button
-                    type="button"
-                    className={styles.mobileHeroArrow}
-                    onClick={() => handleMobileStep(-1)}
-                    disabled={isAnimating}
-                    aria-label="Previous hero card"
-                  >
-                    <span aria-hidden="true">{"<"}</span>
-                  </button>
+          <p className={styles.lead} data-hero-reveal>
+            {PARAGRAPH}
+          </p>
 
-                  <div className={styles.mobileHeroSteps}>
-                    {heroPanels.map((panel, index) => (
-                      <button
-                        key={`mobile-${panel.id}`}
-                        type="button"
-                        className={`${styles.mobileHeroStep} ${
-                          selectedIndex === index ? styles.mobileHeroStepActive : ""
-                        }`}
-                        onClick={() => handleSelect(index)}
-                        disabled={isAnimating}
-                        aria-label={`Go to ${panel.shortTitle}`}
-                      />
-                    ))}
-                  </div>
+          <a className={styles.cta} href="#contact" data-hero-reveal>
+            Обсудить сайт
+            <ArrowIcon />
+          </a>
+        </div>
 
-                  <button
-                    type="button"
-                    className={styles.mobileHeroArrow}
-                    onClick={() => handleMobileStep(1)}
-                    disabled={isAnimating}
-                    aria-label="Next hero card"
-                  >
-                    <span aria-hidden="true">{">"}</span>
-                  </button>
-                </div>
-              </div>
-
-              <div className={styles.heroVisualStage}>
-                {heroPanels.map((panel, index) => (
-                  <div
-                    key={panel.id}
-                    ref={(node) => {
-                      visualFrameRefs.current[index] = node;
-                    }}
-                    className={`${styles.heroVisualFrame} ${
-                      index === activeIndex ? styles.heroVisualFrameActive : ""
-                    }`}
-                  >
-                    <PanelDemo panel={panel} playing={index === displayIndex} />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className={styles.demoVisual} data-hero-demo aria-label="Portfolio tools orbit">
+          <PortfolioOrbit />
         </div>
       </div>
+
+      <ul className={styles.tags} data-hero-reveal>
+        {heroTags.map((tag) => (
+          <li className={styles.tag} key={tag}>
+            {tag}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/cases/citydog/">
+  <title>Citydog — кинологический центр в Нижнем Новгороде</title>
+  <meta
+    name="description"
+    content="Кинологический центр Citydog в Нижнем Новгороде: дрессировка, груминг, уход за собаками и занятия по предварительной записи."
+  >
+  <link rel="stylesheet" href="./assets/css/fonts.css?v=20260705-1">
+  <link rel="stylesheet" href="./assets/css/tokens.css?v=20260705-8">
+  <link rel="stylesheet" href="./assets/css/base.css?v=20260705-2">
+  <link rel="stylesheet" href="./assets/css/sections.css?v=20260705-8">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <svg class="icon-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.1 11.1 0 0 0 3.48.56 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.3 21 3 13.7 3 4.99a1 1 0 0 1 1-1h3.1a1 1 0 0 1 1 1 11.1 11.1 0 0 0 .56 3.48 1 1 0 0 1-.25 1.02Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-pin" viewBox="0 0 24 24">
+      <path d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11Zm0-8.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <path d="M12 2.75a9.25 9.25 0 1 0 0 18.5 9.25 9.25 0 0 0 0-18.5Zm.75 4.5h-1.5v5.06l3.94 2.37.77-1.28-3.2-1.93Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <path d="M6 12h10.2l-3.6-3.6 1.06-1.06L19.06 12l-5.4 5.66-1.06-1.06 3.6-3.6H6Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24">
+      <path d="M4 7.25h16v1.5H4Zm0 8h16v1.5H4Zm0-4h16v1.5H4Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="m6.53 5.47 5.47 5.47 5.47-5.47 1.06 1.06L13.06 12l5.47 5.47-1.06 1.06L12 13.06l-5.47 5.47-1.06-1.06L10.94 12 5.47 6.53Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="M9.55 16.2 5.8 12.46l1.06-1.06 2.69 2.68 7.58-7.58 1.07 1.06Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-telegram" viewBox="0 0 24 24">
+      <path d="m20.33 4.37-2.74 12.94c-.2.92-.74 1.14-1.5.71l-4.16-3.07-2 1.93c-.22.22-.4.4-.83.4l.3-4.25 7.74-7c.33-.3-.08-.46-.52-.16L7.04 12.1l-4.12-1.29c-.9-.28-.91-.9.2-1.34l16.1-6.2c.74-.28 1.4.16 1.11 1.1Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+      <path d="M12.03 3.25a8.75 8.75 0 0 0-7.57 13.16L3 21l4.74-1.4a8.75 8.75 0 1 0 4.29-16.35Zm0 15.9a7.08 7.08 0 0 1-3.59-.98l-.26-.15-2.82.83.84-2.74-.17-.28a7.07 7.07 0 1 1 6 3.32Zm3.88-5.24c-.21-.1-1.24-.61-1.43-.68-.19-.07-.33-.1-.47.1-.14.2-.54.68-.67.82-.12.14-.25.16-.46.06-.21-.1-.88-.32-1.67-1.01-.62-.55-1.03-1.22-1.15-1.43-.12-.2-.01-.3.09-.4.09-.09.21-.24.31-.35.1-.12.14-.2.21-.34.07-.14.03-.26-.02-.36-.06-.1-.47-1.14-.64-1.56-.17-.41-.35-.36-.47-.37H8.3c-.14 0-.36.05-.54.25-.19.2-.72.7-.72 1.71s.74 1.99.84 2.12c.1.14 1.44 2.2 3.5 3.09.49.21.88.34 1.18.44.5.16.95.14 1.31.08.4-.06 1.24-.5 1.42-.99.18-.49.18-.9.13-.99-.05-.08-.19-.13-.4-.23Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-vk" viewBox="0 0 24 24">
+      <path d="M13.2 17.25h1.45s.44-.05.67-.27c.2-.2.2-.57.2-.57s-.03-1.75.78-2.01c.8-.25 1.82 1.69 2.9 2.44.82.57 1.45.45 1.45.45l2.9-.04s1.51-.1.8-1.3c-.06-.1-.44-.93-2.27-2.63-1.91-1.77-1.65-1.48.64-4.53 1.39-1.86 1.95-3 .1-3h-2.9s-.54.08-.94.5c-.39.42-.76 1.4-.76 1.4s-.46 1.13-1.1 2.08c-1.36 2-1.91 2.1-2.13 1.95-.52-.34-.39-1.37-.39-2.1 0-2.28.35-3.23-.68-3.48-.34-.08-.58-.14-1.44-.15-1.1-.01-2.03 0-2.56.26-.35.18-.61.57-.45.6.2.03.66.12.9.45.3.43.29 1.4.29 1.4s.17 2.69-.41 3.03c-.4.24-.94-.25-2.12-1.99-.61-.9-1.07-1.9-1.07-1.9s-.09-.2-.25-.31a1.46 1.46 0 0 0-.71-.17H1.94s-.46 0-.63.21c-.15.2-.01.6-.01.6s2.27 5.31 4.84 7.98c2.36 2.45 5.04 2.29 5.04 2.29Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-bone" viewBox="0 0 24 24">
+      <path d="M6.2 7.2a2.8 2.8 0 1 1 3.96-3.96l1.3 1.3 1.38-1.38a2.8 2.8 0 1 1 3.96 3.96l-1.38 1.38 1.3 1.3a2.8 2.8 0 1 1-3.96 3.96l-1.3-1.3-1.38 1.38a2.8 2.8 0 1 1-3.96-3.96l1.38-1.38Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-treadmill" viewBox="0 0 24 24">
+      <path d="M5 18h12l2-6H7l-2 6Zm1.5-8h10.3a2 2 0 0 0 1.8-1.13l.9-1.87H9.2a2 2 0 0 0-1.78 1.1L6.5 10ZM4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-pool" viewBox="0 0 24 24">
+      <path d="M4 15c1.3 0 1.3 1 2.6 1s1.3-1 2.6-1 1.3 1 2.6 1 1.3-1 2.6-1 1.3 1 2.6 1S18.7 15 20 15M4 19c1.3 0 1.3 1 2.6 1s1.3-1 2.6-1 1.3 1 2.6 1 1.3-1 2.6-1 1.3 1 2.6 1S18.7 19 20 19M8 12V6a2 2 0 1 1 4 0v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-groom" viewBox="0 0 24 24">
+      <path d="M5 6.5 8.5 10m0 0L12 6.5M8.5 10 5 13.5m3.5-3.5L12 13.5M15 6l3.5 12M19 6l-3.5 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-wait" viewBox="0 0 24 24">
+      <path d="M7.5 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Zm9 0a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5ZM3.5 18a4.5 4.5 0 0 1 8 0m1-1a4.5 4.5 0 0 1 8 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-fitness" viewBox="0 0 24 24">
+      <path d="M4 10v4m16-4v4M7 8v8m10-8v8M9 12h6M2 12h2m16 0h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" data-header>
+    <div class="container site-header__bar">
+      <a class="brand" href="#top" aria-label="CITY DOG">
+        <img src="./assets/img/citydog-logo-transparent.webp" alt="CITY DOG">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <svg width="24" height="24" aria-hidden="true"><use href="#icon-menu"></use></svg>
+        <span class="sr-only">Открыть меню</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация" data-nav>
+        <a href="#services">Услуги</a>
+        <a href="#prices">Акции</a>
+        <a href="#about">О компании</a>
+        <a href="#specialist">Специалисты</a>
+        <a href="#spaces">Фото</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#footer">Контакты</a>
+      </nav>
+
+      <a class="header-phone" href="tel:+79300708887">
+        <svg width="18" height="18" aria-hidden="true"><use href="#icon-phone"></use></svg>
+        <span>8 (930) 070-88-87</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- pattern: hero -->
+    <section class="section hero-section" id="top">
+      <div class="container hero-shell">
+        <div class="hero-grid">
+          <div class="hero-media hero-media--image">
+            <img src="./assets/img/border-collie-1920x2000-upscale.webp" alt="Бордер-колли в кинологическом центре CITY DOG">
+          </div>
+
+          <div class="hero-copy">
+            <h1>Кинологический центр Citydog</h1>
+            <p>
+              Просторный центр для занятий, ухода и развития собак.
+              Работаем по предварительной записи и подбираем услугу под задачу каждого питомца.
+            </p>
+
+            <ul class="hero-meta" aria-label="Ключевая информация">
+              <li>
+                <svg width="18" height="18" aria-hidden="true"><use href="#icon-pin"></use></svg>
+                <span>г. Нижний Новгород, ул. Кащенко, 25</span>
+              </li>
+              <li>
+                <svg width="18" height="18" aria-hidden="true"><use href="#icon-clock"></use></svg>
+                <span>Пн–вс: 10:00–22:00, по предварительной записи</span>
+              </li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="button button--primary" href="#cta">
+                <span>Записаться в центр</span>
+                <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+              </a>
+              <a class="button button--secondary" href="#services">Выбрать услугу</a>
+            </div>
+          </div>
+
+          <aside class="hero-rail" aria-label="Подбор направления">
+            <div class="hero-rail__intro">
+              <span>Поможем определиться</span>
+              <h2>Какая услуга вам нужна?</h2>
+              <p>Выберите направление или свяжитесь с администратором.</p>
+            </div>
+            <nav class="hero-rail__links" aria-label="Направления занятий">
+              <a href="#services"><span>Дрессировка</span><svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+              <a href="#services"><span>Груминг и уход</span><svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+              <a href="#specialist"><span>Специалисты</span><svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+              <a href="#prices"><span>Акции</span><svg width="18" height="18" aria-hidden="true"><use href="#icon-arrow"></use></svg></a>
+            </nav>
+            <div class="hero-rail__contact">
+              <span>Остались вопросы?</span>
+              <a href="tel:+79300708887">8 (930) 070-88-87</a>
+              <a class="hero-rail__cta" href="#cta">Связаться с нами</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- pattern: feature-facts -->
+    <section class="section facts-section" id="services" aria-labelledby="facts-title">
+      <div class="container">
+        <div class="section-heading section-heading--centered">
+          <h2 id="facts-title">Популярные услуги</h2>
+        </div>
+
+        <div class="facts-grid">
+          <article class="fact-card">
+            <div class="fact-card__media media-placeholder">
+              <img src="./assets/img/дрессировка.webp" alt="Дрессировка собаки на площадке" loading="lazy">
+            </div>
+            <div class="fact-card__body">
+              <span class="fact-card__icon"><svg width="26" height="26" aria-hidden="true"><use href="#icon-check"></use></svg></span>
+              <h3>Дрессировка собак</h3>
+              <p>Базовые команды, коррекция поведения и уверенное общение с питомцем.</p>
+              <div class="fact-card__price"><strong>от 2 000 ₽</strong><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow"></use></svg></div>
+            </div>
+          </article>
+          <article class="fact-card">
+            <div class="fact-card__media media-placeholder">
+              <img src="./assets/img/уход шерсть стрижка.webp" alt="Груминг и уход за шерстью собаки" loading="lazy">
+            </div>
+            <div class="fact-card__body">
+              <span class="fact-card__icon"><svg width="26" height="26" aria-hidden="true"><use href="#icon-bone"></use></svg></span>
+              <h3>Груминг собак</h3>
+              <p>Комплексный уход за шерстью, когтями и гигиеной вашего питомца.</p>
+              <div class="fact-card__price"><strong>от 3 000 ₽</strong><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow"></use></svg></div>
+            </div>
+          </article>
+          <article class="fact-card">
+            <div class="fact-card__media media-placeholder">
+              <img src="./assets/img/стрижка.webp" alt="Стрижка собаки в груминг-салоне" loading="lazy">
+            </div>
+            <div class="fact-card__body">
+              <span class="fact-card__icon"><svg width="26" height="26" aria-hidden="true"><use href="#icon-fitness"></use></svg></span>
+              <h3>Стрижка собак</h3>
+              <p>Модельные и гигиенические стрижки с учетом породы и типа шерсти.</p>
+              <div class="fact-card__price"><strong>от 2 500 ₽</strong><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow"></use></svg></div>
+            </div>
+          </article>
+          <article class="fact-card">
+            <div class="fact-card__media media-placeholder">
+              <img src="./assets/img/мытье.webp" alt="Собака после мытья" loading="lazy">
+            </div>
+            <div class="fact-card__body">
+              <span class="fact-card__icon"><svg width="26" height="26" aria-hidden="true"><use href="#icon-pool"></use></svg></span>
+              <h3>Мытье собак</h3>
+              <p>Бережное мытье, профессиональная косметика, сушка и расчесывание.</p>
+              <div class="fact-card__price"><strong>от 1 800 ₽</strong><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow"></use></svg></div>
+            </div>
+          </article>
+          <article class="fact-card">
+            <div class="fact-card__media media-placeholder">
+              <img src="./assets/img/выставка.webp" alt="Собака с ухоженной длинной шерстью" loading="lazy">
+            </div>
+            <div class="fact-card__body">
+              <span class="fact-card__icon"><svg width="26" height="26" aria-hidden="true"><use href="#icon-wait"></use></svg></span>
+              <h3>Уход за шерстью</h3>
+              <p>Вычесывание, удаление колтунов и сезонный уход для собак разных пород.</p>
+              <div class="fact-card__price"><strong>от 2 200 ₽</strong><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow"></use></svg></div>
+            </div>
+          </article>
+          <article class="fact-card">
+            <div class="fact-card__media media-placeholder">
+              <img src="./assets/img/выставка 2.webp" alt="Подготовка собаки к выставке" loading="lazy">
+            </div>
+            <div class="fact-card__body">
+              <span class="fact-card__icon"><svg width="26" height="26" aria-hidden="true"><use href="#icon-fitness"></use></svg></span>
+              <h3>Подготовка к выставке</h3>
+              <p>Работа со стойкой, движением и спокойным поведением собаки на ринге.</p>
+              <div class="fact-card__price"><strong>от 2 800 ₽</strong><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow"></use></svg></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="facts-cta">
+          <a class="button button--outline" href="#cta">Уточнить стоимость</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- pattern: programs -->
+    <section class="section programs-section" id="about" aria-labelledby="programs-title">
+      <div class="container programs-grid">
+        <div class="programs-copy">
+          <h2 id="programs-title">Подробнее о компании Citydog</h2>
+          <p>
+            Citydog — кинологический центр в Нижнем Новгороде, где собраны услуги
+            для обучения, ухода и подготовки собак. Мы бережно относимся к животным,
+            учитываем особенности каждой породы и подбираем понятный план занятий.
+          </p>
+          <a class="button button--ghost" href="#services">
+            <span>Подобрать услугу</span>
+            <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </a>
+        </div>
+
+        <ul class="programs-list">
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#icon-check"></use></svg><span>Бережное отношение</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#icon-check"></use></svg><span>Опытные специалисты</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#icon-check"></use></svg><span>Индивидуальный подход</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#icon-check"></use></svg><span>Просторные залы</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#icon-check"></use></svg><span>Современное оборудование</span></li>
+          <li><svg width="18" height="18" aria-hidden="true"><use href="#icon-check"></use></svg><span>Предварительная запись</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- pattern: doctor -->
+    <section class="section doctor-section" id="specialist">
+      <div class="container">
+        <article class="doctor-card">
+          <div class="doctor-card__media media-placeholder media-placeholder--doctor" aria-label="Фото специалиста Citydog">
+            <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+            <img src="./assets/img/trainerspecialist.webp" alt="Специалист Citydog" loading="lazy">
+            <span>Фото специалиста</span>
+          </div>
+          <div class="doctor-card__content">
+            <span class="section-kicker">Команда Citydog</span>
+            <h2>Специалисты, которым можно доверить собаку</h2>
+            <p>В центре работают кинологи, грумеры и инструкторы. Специалист знакомится с питомцем, уточняет задачу и предлагает подходящий формат занятий или ухода.</p>
+            <ul class="doctor-benefits">
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#icon-check"></use></svg><span>Бережный<br>подход</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#icon-fitness"></use></svg><span>Понятный<br>план</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#icon-clock"></use></svg><span>Только по<br>записи</span></li>
+            </ul>
+            <a class="button button--primary" href="#cta">
+              <span>Выбрать специалиста</span>
+              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+            </a>
+            <div class="doctor-card__arrows" aria-hidden="true">
+              <button type="button"><svg width="18" height="18"><use href="#icon-arrow"></use></svg></button>
+              <button type="button"><svg width="18" height="18"><use href="#icon-arrow"></use></svg></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- pattern: gallery -->
+    <section class="section spaces-section" id="spaces" aria-labelledby="spaces-title">
+      <div class="container spaces-layout">
+        <div class="spaces-copy">
+          <h2 id="spaces-title">Фотогалерея центра</h2>
+          <p>
+            Показываем реальные залы, оборудование и рабочую атмосферу Citydog,
+            чтобы вы заранее понимали, куда придете вместе с питомцем.
+          </p>
+        </div>
+
+        <div class="spaces-gallery">
+          <div class="media-placeholder media-placeholder--gallery media-placeholder--wide">
+            <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+            <img src="./assets/img/ChatGPT Image 5 июл. 2026 г., 20_19_25.webp" alt="Тренировочный зал Citydog" loading="lazy">
+            <span>Тренировочный зал</span>
+          </div>
+          <div class="media-placeholder media-placeholder--gallery media-placeholder--wide">
+            <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+            <img src="./assets/img/ChatGPT Image 5 июл. 2026 г., 20_22_02.webp" alt="Зона груминга Citydog" loading="lazy">
+            <span>Зона груминга</span>
+          </div>
+          <div class="media-placeholder media-placeholder--gallery">
+            <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+            <img src="./assets/img/ChatGPT Image 5 июл. 2026 г., 20_24_27.webp" alt="Оборудование центра Citydog" loading="lazy">
+            <span>Оборудование</span>
+          </div>
+          <div class="media-placeholder media-placeholder--gallery">
+            <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+            <img src="./assets/img/ChatGPT Image 5 июл. 2026 г., 20_27_21.webp" alt="Зона ожидания Citydog" loading="lazy">
+            <span>Зона ожидания</span>
+          </div>
+          <div class="media-placeholder media-placeholder--gallery">
+            <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+            <img src="./assets/img/ChatGPT Image 5 июл. 2026 г., 20_30_11.webp" alt="Занятия в центре Citydog" loading="lazy">
+            <span>Занятия в центре</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- pattern: pricing -->
+    <section class="section pricing-section" id="prices" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-heading section-heading--split">
+          <h2 id="pricing-title">Акции и специальные предложения</h2>
+          <a class="button button--ghost" href="#cta">
+            <span>Уточнить условия</span>
+            <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </a>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="price-card__kicker">Для занятий</span>
+            <h3>Самый большой зал в городе</h3>
+            <strong>Просторно</strong>
+            <div class="price-card__meta">
+              <span>По предварительной записи</span>
+              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+            </div>
+          </article>
+          <article class="price-card">
+            <span class="price-card__kicker">Уход за питомцем</span>
+            <h3>Комплексный груминг</h3>
+            <strong>Все сразу</strong>
+            <div class="price-card__meta">
+              <span>Условия у администратора</span>
+              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+            </div>
+          </article>
+          <article class="price-card">
+            <span class="price-card__kicker">Для новых клиентов</span>
+            <h3>Первое знакомство с центром</h3>
+            <strong>Подберем услугу</strong>
+            <div class="price-card__meta">
+              <span>Без лишних процедур</span>
+              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+            </div>
+          </article>
+          <article class="price-card">
+            <span class="price-card__kicker">После визита</span>
+            <h3>Скидка за честный отзыв</h3>
+            <strong>12%</strong>
+            <div class="price-card__meta">
+              <span>Подробности у администратора</span>
+              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+            </div>
+          </article>
+        </div>
+
+        <p class="section-note">Стоимость услуг зависит от породы, состояния шерсти и выбранного формата. Точную цену уточняйте по телефону.</p>
+      </div>
+    </section>
+
+    <!-- pattern: reviews -->
+    <section class="section reviews-section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Отзывы клиентов</span>
+            <h2 id="reviews-title">Что говорят о Citydog</h2>
+          </div>
+        </div>
+
+        <div class="reviews-shell">
+          <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Предыдущий отзыв" data-reviews-prev>
+            <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </button>
+
+          <div class="reviews-track" data-reviews-track tabindex="0">
+            <article class="review-card">
+              <div class="review-card__head">
+                <div class="review-author">
+                  <span class="review-avatar media-placeholder" aria-label="Фото клиента">
+                    <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+                    <img src="./assets/img/user2-720.webp" alt="Екатерина" loading="lazy">
+                    <span>Фото</span>
+                  </span>
+                  <strong>Екатерина</strong>
+                </div>
+                <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              </div>
+              <p>Самый чистый и просторный зал для занятий с собаками во всем городе. Удобно, спокойно и очень доброжелательно.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-card__head">
+                <div class="review-author">
+                  <span class="review-avatar media-placeholder" aria-label="Фото клиента">
+                    <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+                    <img src="./assets/img/user3-720.webp" alt="Анна и Ричи" loading="lazy">
+                    <span>Фото</span>
+                  </span>
+                  <strong>Анна и Ричи</strong>
+                </div>
+                <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              </div>
+              <p>Пришли на стрижку впервые. Мастер спокойно познакомился с собакой, все объяснил и аккуратно сделал работу.</p>
+            </article>
+            <article class="review-card">
+              <div class="review-card__head">
+                <div class="review-author">
+                  <span class="review-avatar media-placeholder" aria-label="Фото клиента">
+                    <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+                    <img src="./assets/img/user1-720.webp" alt="Сергей и Марс" loading="lazy">
+                    <span>Фото</span>
+                  </span>
+                  <strong>Сергей и Марс</strong>
+                </div>
+                <div class="review-stars" aria-label="Оценка 5 из 5">★★★★★</div>
+              </div>
+              <p>Занимаемся дрессировкой и уже видим результат. Нравится понятный подход инструктора и просторный зал.</p>
+            </article>
+          </div>
+
+          <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Следующий отзыв" data-reviews-next>
+            <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- pattern: cta -->
+    <section class="section cta-section" id="cta">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-card__media media-placeholder media-placeholder--cta" aria-label="Фото кинологического центра Citydog">
+            <!-- Add src="./assets/img/your-image.jpg" to the img below. -->
+            <img src="./assets/img/CTADOG.webp" alt="Ctadog" loading="lazy">
+            <img alt="Кинологический центр Citydog" loading="lazy">
+          </div>
+          <div class="cta-card__copy">
+            <span class="section-kicker">Связаться с нами</span>
+            <h2>Остались вопросы?</h2>
+            <p>Позвоните или оставьте заявку. Администратор уточнит задачу, расскажет об услугах и поможет выбрать удобное время.</p>
+            <ul class="cta-contacts">
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#icon-pin"></use></svg><span>Нижний Новгород,<br>ул. Кащенко, 25</span></li>
+              <li><svg width="24" height="24" aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+79300708887">8 (930) 070-88-87<br>ежедневно 10:00–22:00</a></li>
+            </ul>
+          </div>
+          <form class="lead-form" data-lead-form>
+            <h3>Записаться в Citydog</h3>
+            <div class="lead-form__row">
+              <label><span>Ваше имя</span><input type="text" name="name" placeholder="Ваше имя" autocomplete="name" required></label>
+              <label><span>Телефон</span><input type="tel" name="phone" placeholder="Телефон" autocomplete="tel" required></label>
+            </div>
+            <label><span>Услуга</span><select name="service" required><option value="">Выберите услугу</option><option>Дрессировка собак</option><option>Груминг собак</option><option>Стрижка собак</option><option>Мытье собак</option><option>Уход за шерстью</option><option>Подготовка к выставке</option></select></label>
+            <label><span>Комментарий</span><textarea name="comment" rows="3" placeholder="Порода и ваш вопрос (необязательно)"></textarea></label>
+            <button class="button button--primary" type="submit">Отправить</button>
+            <p class="lead-form__status" role="status" aria-live="polite" data-lead-status></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- pattern: footer -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="./assets/img/citydog-logo-transparent.webp" alt="CITY DOG">
+        <p>© Кинологический центр Citydog, 2026</p>
+      </div>
+
+      <nav class="footer-column" aria-label="О компании">
+        <h2>О компании</h2>
+        <a href="#about">О Citydog</a>
+        <a href="#specialist">Специалисты</a>
+        <a href="#spaces">Фотогалерея</a>
+        <a href="#reviews">Отзывы клиентов</a>
+        <a href="#footer">Контакты</a>
+      </nav>
+
+      <nav class="footer-column" aria-label="Услуги">
+        <h2>Услуги</h2>
+        <a href="#services">Дрессировка собак</a>
+        <a href="#services">Груминг собак</a>
+        <a href="#services">Стрижка собак</a>
+        <a href="#services">Мытье собак</a>
+        <a href="#services">Уход за шерстью</a>
+        <a href="#services">Подготовка к выставке</a>
+      </nav>
+
+      <div class="footer-column">
+        <h2>Контакты</h2>
+        <p><svg width="16" height="16" aria-hidden="true"><use href="#icon-pin"></use></svg><span>г. Нижний Новгород, ул. Кащенко, 25</span></p>
+        <p><svg width="16" height="16" aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+79300708887">8 (930) 070-88-87</a></p>
+        <div class="socials">
+          <a href="#" aria-label="Telegram"><svg width="18" height="18" aria-hidden="true"><use href="#icon-telegram"></use></svg></a>
+          <a href="#" aria-label="WhatsApp"><svg width="18" height="18" aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+          <a href="#" aria-label="VK"><svg width="18" height="18" aria-hidden="true"><use href="#icon-vk"></use></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-column footer-column--cta">
+        <p>Пн–вс<br>с 10:00 до 22:00<br>по предварительной записи</p>
+        <a class="button button--primary" href="#cta">
+          <span>Записаться в центр</span>
+          <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>Политика обработки персональных данных</span>
+    </div>
+  </footer>
+
+  <script src="./assets/js/vendor/gsap.min.js"></script>
+  <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="./assets/js/app.js?v=20260705-8"></script>
+</body>
+</html>

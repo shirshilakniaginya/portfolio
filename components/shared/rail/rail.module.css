@@ -1,0 +1,251 @@
+.rail {
+  position: relative;
+  /* Columns are separated by a subtle background shift, not a divider line. */
+  background: var(--surface);
+  font-family: var(--font-sans), var(--font-body), sans-serif;
+}
+
+.sticky {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 1.9vw, 34px);
+  padding: 0 clamp(24px, 1.8vw, 44px) clamp(28px, 3vw, 44px) clamp(28px, 2.4vw, 60px);
+}
+
+/* Reduced-motion users have no ScrollSmoother, so native sticky works. */
+@media (prefers-reduced-motion: reduce) and (min-width: 1001px) {
+  .sticky {
+    position: sticky;
+    top: clamp(36px, 5.5vh, 88px);
+  }
+}
+
+/* ---- Identity ---- */
+.identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: clamp(2rem, 2.4vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  color: var(--text);
+}
+
+.role {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.about {
+  margin: 18px 0 0;
+  font-size: clamp(0.92rem, 0.95vw, 1.02rem);
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ---- Action buttons (replace the removed header CTA) ---- */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(20px, 2vw, 28px);
+}
+
+.actionPrimary,
+.actionGhost {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.actionPrimary {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.actionPrimary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--bg);
+}
+
+.actionGhost {
+  color: var(--text);
+}
+
+.actionGhost:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+.actionPrimary:focus-visible,
+.actionGhost:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+/* ---- Section label ---- */
+.label {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+  margin-bottom: 14px;
+}
+
+/* ---- Skills ---- */
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.skill {
+  font-size: clamp(0.9rem, 0.95vw, 1rem);
+  color: var(--muted);
+}
+
+/* ---- Project indicator ---- */
+.index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.indexLink {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  column-gap: 12px;
+  align-items: baseline;
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+  transition: padding-left 0.25s ease;
+}
+
+.index li:last-child .indexLink {
+  border-bottom: 1px solid var(--line);
+}
+
+.indexLink:hover {
+  padding-left: 6px;
+}
+
+.indexNum {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--muted-soft);
+  transition: color 0.2s ease;
+}
+
+.indexName {
+  font-size: clamp(0.98rem, 1.05vw, 1.12rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.indexLink:hover .indexName {
+  color: var(--text);
+}
+
+.indexLinkActive .indexNum {
+  color: var(--accent-strong);
+}
+
+.indexLinkActive .indexName {
+  color: var(--text);
+}
+
+/* ---- Availability ---- */
+.availability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: clamp(8px, 1vw, 16px);
+  padding: 16px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.availDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px 1px color-mix(in oklab, var(--accent) 65%, transparent);
+  flex: 0 0 auto;
+}
+
+.availText {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.availDate {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+
+/* ---- Mobile: rail reflows to a normal stacked block, index hidden ---- */
+@media (max-width: 1000px) {
+  .rail {
+    background: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .sticky {
+    gap: clamp(22px, 5vw, 34px);
+    padding: clamp(20px, 5vw, 32px) 0 clamp(28px, 6vw, 40px);
+  }
+
+  .indexBlock {
+    display: none; /* project numbers live in the rows on mobile */
+  }
+
+  .skills {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+  }
+
+  .availability {
+    margin-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indexLink,
+  .indexName,
+  .indexNum,
+  .actionPrimary,
+  .actionGhost {
+    transition: none;
+  }
+}

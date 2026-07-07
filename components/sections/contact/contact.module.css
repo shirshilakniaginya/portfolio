@@ -1,139 +1,113 @@
 .section {
   width: 100%;
-  margin: 0;
-  padding: 0;
   background: var(--bg);
-}
-
-.grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  min-height: clamp(520px, 58vh, 680px);
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  gap: 0;
   border-top: var(--section-border);
-  border-bottom: var(--section-border);
+  font-family: var(--font-sans), var(--font-body), sans-serif;
 }
 
-.grid::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 3;
-  background:
-    linear-gradient(
-      90deg,
-      transparent calc(50% - 0.5px),
-      var(--line-color) calc(50% - 0.5px),
-      var(--line-color) calc(50% + 0.5px),
-      transparent calc(50% + 0.5px),
-      transparent calc(75% - 0.5px),
-      var(--line-color) calc(75% - 0.5px),
-      var(--line-color) calc(75% + 0.5px),
-      transparent calc(75% + 0.5px)
-    );
+.inner {
+  width: min(1840px, calc(100vw - 80px));
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 100px) clamp(16px, 3vw, 48px);
 }
 
-.intro {
-  position: relative;
-  z-index: 1;
-  grid-column: 1 / 3;
-  padding: clamp(72px, 7vw, 112px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.actions {
-  position: relative;
-  z-index: 1;
-  grid-column: 3 / 4;
+/* ---- Band head: statement + intro ---- */
+.head {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.note {
-  position: relative;
-  z-index: 1;
-  grid-column: 4 / 5;
-  padding: clamp(40px, 4vw, 56px) clamp(28px, 3vw, 40px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 72px);
+  align-items: end;
+  padding-bottom: clamp(32px, 4vw, 52px);
+  border-bottom: 1px solid var(--line);
 }
 
 .title {
-  max-width: 25ch;
-  margin: 0 0 32px;
-  font-size: clamp(1.9rem, 3vw, 3rem);
-  line-height: 1.05;
-  letter-spacing: 0em;
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .description {
-  max-width: 48ch;
   margin: 0;
-  font-size: 18px;
-  line-height: 1.65;
+  max-width: 46ch;
+  font-size: clamp(1rem, 1.1vw, 1.15rem);
+  line-height: 1.6;
   color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ---- Band body: channels + form ---- */
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 5vw, 96px);
+  padding-top: clamp(36px, 4vw, 56px);
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+}
+
+.channelsLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  margin-bottom: clamp(18px, 2vw, 28px);
 }
 
 .contactAction {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 34px 40px;
-  border-bottom: 1px solid var(--line-color);
+  gap: 8px;
+  padding: clamp(20px, 2vw, 26px) 4px;
+  border-top: 1px solid var(--line);
   color: var(--text);
-  text-decoration: none;
-  background: transparent;
-  transition:
-    background-color 180ms ease,
-    color 180ms ease;
+  transition: padding-left 0.22s ease;
 }
 
-.contactAction:last-child {
-  border-bottom: 0;
+.channels .contactAction:last-of-type {
+  border-bottom: 1px solid var(--line);
 }
 
 .contactAction:hover {
-  background: var(--card-hover);
+  padding-left: 8px;
 }
 
 .contactAction:focus-visible {
-  background: var(--card-hover);
   outline: 2px solid var(--accent-soft);
-  outline-offset: -2px;
+  outline-offset: 2px;
 }
 
 .contactActionMeta {
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--muted-soft);
 }
 
 .contactActionTitle {
-  max-width: 21ch;
-  font-family: var(--font-display), var(--font-body), sans-serif;
-  font-size: clamp(22px, 1.45vw, 30px);
+  font-size: clamp(20px, 1.7vw, 28px);
   line-height: 1;
-  letter-spacing: -0.04em;
-  font-weight: 500;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .contactActionIcon {
   position: absolute;
-  right: 40px;
-  bottom: 34px;
-  width: 28px;
-  height: 28px;
+  right: 4px;
+  top: clamp(20px, 2vw, 26px);
+  width: 24px;
+  height: 24px;
   color: var(--accent);
 }
 
@@ -143,18 +117,21 @@
   height: 100%;
 }
 
+.formWrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .noteTitle {
   margin: 0 0 20px;
-  font-family: var(--font-display), var(--font-body), sans-serif;
   font-size: clamp(18px, 1.4vw, 22px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
-/* Form */
-
+/* ============ Form (logic-bound classes — keep names stable) ============ */
 .form {
   display: flex;
   flex-direction: column;
@@ -202,7 +179,7 @@
   border: none;
   border-radius: 0;
   color: var(--text);
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-sans), var(--font-body), sans-serif;
   font-size: 14px;
   line-height: 1.5;
   outline: none;
@@ -254,7 +231,7 @@
   color: var(--text);
   border: none;
   border-radius: 0;
-  font-family: var(--font-body), sans-serif;
+  font-family: var(--font-sans), var(--font-body), sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -274,8 +251,12 @@
   transition: transform 150ms ease;
 }
 
-.formSubmit:hover { background: var(--card-hover); }
-.formSubmit:hover::after { transform: translateX(4px); }
+.formSubmit:hover {
+  background: var(--card-hover);
+}
+.formSubmit:hover::after {
+  transform: translateX(4px);
+}
 
 .formSubmit:disabled {
   opacity: 0.4;
@@ -327,10 +308,10 @@
 }
 
 .formSuccessTitle {
-  font-family: var(--font-display), var(--font-body), sans-serif;
+  font-family: var(--font-sans), var(--font-body), sans-serif;
   font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -341,233 +322,32 @@
   color: var(--muted);
 }
 
-@media (max-width: 1120px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    min-height: auto;
-  }
-
-  .grid::before {
-    display: none;
-  }
-
-  .intro {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* ---- Responsive ---- */
+@media (max-width: 1000px) {
+  .head {
+    grid-template-columns: 1fr;
+    gap: 20px;
     align-items: start;
-    gap: 32px;
-    padding-bottom: 48px;
-    border-bottom: var(--section-border);
   }
 
-  .title,
-  .description {
-    max-width: none;
-  }
-
-  .title {
-    margin-bottom: 0;
-  }
-
-  .description {
-    align-self: center;
-    justify-self: start;
-    padding-left: clamp(20px, 3vw, 40px);
-  }
-
-  .actions {
-    grid-column: 1 / 2;
-  }
-
-  .note {
-    grid-column: 2 / 3;
-    border-left: var(--section-border);
+  .body {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 6vw, 48px);
   }
 }
 
-@media (max-width: 820px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grid::before {
-    display: none;
-  }
-
-  .intro,
-  .actions,
-  .note {
-    grid-column: 1;
-    padding: clamp(28px, 7vw, 40px) 24px;
-  }
-
-  .intro {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
+@media (max-width: 560px) {
   .title {
-    margin-bottom: 0;
-    font-size: clamp(22px, 7vw, 32px);
-    line-height: 1.04;
-  }
-
-  .description {
-    padding-left: 0;
-    font-size: clamp(14px, 4vw, 16px);
-    line-height: 1.5;
-  }
-
-  .actions,
-  .note {
-    border-top: var(--section-border);
-  }
-
-  .actions {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .contactAction {
-    min-height: 58px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 18px 24px;
-  }
-
-  .contactActionMeta {
-    display: none;
-  }
-
-  .contactActionTitle {
-    font-size: clamp(18px, 5vw, 22px);
-  }
-
-  .contactActionIcon {
-    position: static;
-    width: 22px;
-    height: 22px;
-    flex: 0 0 auto;
-  }
-
-  .title,
-  .description {
     max-width: none;
-  }
-
-  .note {
-    padding: clamp(28px, 7vw, 40px) 24px;
-  }
-
-  .noteTitle {
-    margin-bottom: 18px;
   }
 
   .field {
     gap: 8px;
-    padding: 18px 18px;
-  }
-
-  .fieldLabel {
-    font-size: 9px;
-  }
-
-  .fieldInput,
-  .fieldTextarea {
-    font-size: 13px;
-    line-height: 1.35;
+    padding: 16px 16px;
   }
 
   .formSubmit {
-    padding: 18px 18px;
+    padding: 16px 16px;
     font-size: 10px;
-  }
-
-  .formFeedback {
-    min-height: 40px;
-    padding-top: 10px;
-  }
-
-  .formSuccessCard {
-    min-height: 220px;
-    padding: 22px 18px;
-  }
-
-}
-
-@media (min-width: 2200px) {
-  .grid {
-    min-height: clamp(700px, 60vh, 860px);
-  }
-
-  .intro {
-    padding: clamp(112px, 7vw, 160px);
-  }
-
-  .title {
-    max-width: 24ch;
-    margin-bottom: 32px;
-    font-size: 4.8rem;
-    line-height: 1;
-  }
-
-  .description {
-    max-width: 46ch;
-    font-size: 22px;
-    line-height: 1.65;
-  }
-
-  .contactAction {
-    padding: 48px 56px;
-  }
-
-  .contactActionMeta {
-    font-size: 13px;
-  }
-
-  .contactActionTitle {
-    max-width: none;
-    font-size: 3rem;
-  }
-
-  .contactActionIcon {
-    right: 56px;
-    bottom: 48px;
-    width: 36px;
-    height: 36px;
-  }
-
-  .note {
-    padding: clamp(64px, 4.5vw, 88px) clamp(48px, 3.5vw, 72px);
-  }
-
-  .noteTitle {
-    font-size: 2rem;
-  }
-
-  .fieldInput,
-  .fieldTextarea,
-  .formSuccessText {
-    font-size: 16px;
-  }
-
-  .field {
-    gap: 14px;
-    padding: 24px 28px;
-  }
-
-  .formSubmit {
-    padding: 24px 28px;
-    font-size: 13px;
-  }
-
-  .formSuccessCard {
-    min-height: clamp(320px, 24vw, 380px);
-    padding: 28px;
   }
 }

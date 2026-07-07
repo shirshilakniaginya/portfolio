@@ -1,0 +1,213 @@
+.frame {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  overflow: hidden;
+  font-family: var(--font-sans), var(--font-body), sans-serif;
+}
+
+.chrome {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in oklab, var(--surface-strong) 70%, transparent);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line-strong);
+}
+
+.url {
+  flex: 1;
+  min-width: 0;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  color: var(--muted-soft);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------- Real project preview ---------- */
+.preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--surface-strong);
+}
+
+.previewImage {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.frame:hover .previewImage {
+  transform: scale(1.035);
+}
+
+.previewShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 56%, rgba(0, 0, 0, 0.74));
+}
+
+.previewCaption {
+  position: absolute;
+  inset: auto 18px 16px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Dashboard mock (light, contrast surface) ---------- */
+.dash {
+  display: grid;
+  grid-template-columns: clamp(96px, 14%, 150px) 1fr;
+  background: #f3f2ef;
+  color: #14151b;
+  min-height: clamp(240px, 26vw, 340px);
+}
+
+.dashSide {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 14px;
+  border-right: 1px solid rgba(20, 21, 27, 0.1);
+}
+
+.dashSideBrand {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+
+.dashSideItem {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(20, 21, 27, 0.55);
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.dashSideItemActive {
+  color: #14151b;
+  background: rgba(20, 21, 27, 0.06);
+}
+
+.dashMain {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(16px, 2vw, 26px);
+}
+
+.dashHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.dashTitle {
+  margin: 0;
+  font-size: clamp(1.05rem, 1.9vw, 1.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  max-width: 18ch;
+}
+
+.dashChip {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(20, 21, 27, 0.6);
+  border: 1px solid rgba(20, 21, 27, 0.16);
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+
+.dashStats {
+  display: flex;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.dashStatValue {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.dashStatLabel {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(20, 21, 27, 0.5);
+  margin-top: 2px;
+}
+
+.dashChart {
+  position: relative;
+  margin-top: auto;
+  width: 100%;
+}
+
+.dashChart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dashCallout {
+  position: absolute;
+  top: 6%;
+  right: 4%;
+  background: #14151b;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 9px;
+  border-radius: 6px;
+}
+
+@media (max-width: 560px) {
+  .dash {
+    grid-template-columns: 1fr;
+  }
+
+  .dashSide {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+    border-right: none;
+    border-bottom: 1px solid rgba(20, 21, 27, 0.1);
+  }
+
+  .dashSideBrand {
+    margin-bottom: 0;
+    width: 100%;
+  }
+}

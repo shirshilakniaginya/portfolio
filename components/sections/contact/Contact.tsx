@@ -161,8 +161,8 @@ function BriefForm({ onSent }: { onSent: () => void }) {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
-          subject: "Новая заявка с портфолио",
-          from_name: "Портфолио - форма брифа",
+          subject: "Новая заявка на сайт",
+          from_name: "SHTQ - форма заявки на сайт",
           botcheck: fields.botcheck,
           "h-captcha-response": token,
           Ниша: fields.niche.trim(),
@@ -355,58 +355,62 @@ export function Contact() {
 
   return (
     <section className={styles.section} id="contact">
-      <div className={styles.grid}>
-        <div className={styles.intro}>
+      <div className={styles.inner}>
+        <div className={styles.head}>
           <h2 className={styles.title}>
-            Расскажи о проекте
+            Давай обсудим
             <br />
-            Обсудим структуру
+            ваш сайт
           </h2>
           <p className={styles.description}>
-            Пришли нишу, задачу и референсы - мы обсудим структуру и найдём подход под
-            конкретную страницу.
+            Напиши, нужен ли сайт с нуля, редизайн или правки. Разберём задачу,
+            структуру и найдём формат под вашу цель.
           </p>
         </div>
 
-        <div className={styles.actions}>
-          <a
-            className={styles.contactAction}
-            href="https://kwork.ru/user/dmitrydezign"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <span className={styles.contactActionMeta}>Заказы и отзывы</span>
-            <strong className={styles.contactActionTitle}>Kwork</strong>
-            <span aria-hidden="true" className={styles.contactActionIcon}>
-              <KworkIcon />
-            </span>
-          </a>
+        <div className={styles.body}>
+          <div className={styles.channels}>
+            <span className={styles.channelsLabel}>Контакты</span>
 
-          <a className={styles.contactAction} href={TG_HANDLE_URL} rel="noreferrer" target="_blank">
-            <span className={styles.contactActionMeta}>Быстрый чат</span>
-            <strong className={styles.contactActionTitle}>Telegram</strong>
-            <span aria-hidden="true" className={styles.contactActionIcon}>
-              <TelegramIcon />
-            </span>
-          </a>
+            <a
+              className={styles.contactAction}
+              href="https://kwork.ru/user/dmitrydezign"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <span className={styles.contactActionMeta}>Заказы и отзывы</span>
+              <strong className={styles.contactActionTitle}>Kwork</strong>
+              <span aria-hidden="true" className={styles.contactActionIcon}>
+                <KworkIcon />
+              </span>
+            </a>
 
-          <a
-            className={styles.contactAction}
-            href="https://dribbble.com/Shtutik"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <span className={styles.contactActionMeta}>Портфолио</span>
-            <strong className={styles.contactActionTitle}>Dribbble</strong>
-            <span aria-hidden="true" className={styles.contactActionIcon}>
-              <DribbbleIcon />
-            </span>
-          </a>
-        </div>
+            <a className={styles.contactAction} href={TG_HANDLE_URL} rel="noreferrer" target="_blank">
+              <span className={styles.contactActionMeta}>Быстрый чат</span>
+              <strong className={styles.contactActionTitle}>Telegram</strong>
+              <span aria-hidden="true" className={styles.contactActionIcon}>
+                <TelegramIcon />
+              </span>
+            </a>
 
-        <div className={styles.note}>
-          {!sent && <h3 className={styles.noteTitle}>Пришлите задачу</h3>}
-          <BriefForm onSent={() => setSent(true)} />
+            <a
+              className={styles.contactAction}
+              href="https://dribbble.com/Shtutik"
+              rel="noreferrer"
+              target="_blank"
+            >
+              <span className={styles.contactActionMeta}>Портфолио</span>
+              <strong className={styles.contactActionTitle}>Dribbble</strong>
+              <span aria-hidden="true" className={styles.contactActionIcon}>
+                <DribbbleIcon />
+              </span>
+            </a>
+          </div>
+
+          <div className={styles.formWrap}>
+            {!sent && <h3 className={styles.noteTitle}>Пришлите задачу</h3>}
+            <BriefForm onSent={() => setSent(true)} />
+          </div>
         </div>
       </div>
     </section>
