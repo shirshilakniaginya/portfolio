@@ -1,7 +1,7 @@
 .section {
   position: relative;
   font-family: var(--font-sans), var(--font-body), sans-serif;
-  padding: clamp(28px, 3vw, 48px) 0 clamp(40px, 6vw, 80px);
+  padding: clamp(56px, 7vw, 130px) 0 clamp(56px, 7vw, 110px);
 }
 
 .inner {
@@ -10,32 +10,41 @@
   padding: 0 clamp(16px, 3vw, 48px);
 }
 
-/* ---- Section head: heading + reference-style index ---- */
+/* ---- Section head: display title + count ---- */
 .head {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: clamp(24px, 4vw, 72px);
-  align-items: end;
-  padding-bottom: clamp(28px, 4vw, 56px);
-}
-
-.headLabel {
-  display: block;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
-  margin-bottom: 16px;
+  padding-bottom: clamp(32px, 4.6vw, 68px);
 }
 
 .headTitle {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 600;
+  font-size: clamp(3.2rem, 8vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  font-weight: 700;
   color: var(--text);
+}
+
+.headCount {
+  font-size: clamp(1rem, 1.8vw, 1.7rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--accent-strong);
+  margin-left: 0.25em;
+  vertical-align: super;
+}
+
+.headNote {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+  padding-bottom: clamp(8px, 1vw, 16px);
+  white-space: nowrap;
 }
 
 .index {
@@ -184,10 +193,10 @@
 
 .rowName {
   margin: 0;
-  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
   line-height: 1;
-  letter-spacing: -0.035em;
-  font-weight: 600;
+  letter-spacing: -0.04em;
+  font-weight: 700;
   color: var(--text);
 }
 
@@ -336,9 +345,9 @@
 /* ---- Responsive ---- */
 @media (max-width: 1000px) {
   .head {
-    grid-template-columns: 1fr;
-    gap: clamp(28px, 5vw, 44px);
-    align-items: start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
   }
 
   .row {

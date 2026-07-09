@@ -137,6 +137,14 @@ export function Projects() {
   return (
     <section ref={rootRef} className={styles.section} id="work">
       <div className={styles.inner}>
+        <header className={styles.head} data-reveal>
+          <h2 className={styles.headTitle}>
+            Работы
+            <sup className={styles.headCount}>({String(projects.length).padStart(2, "0")})</sup>
+          </h2>
+          <span className={styles.headNote}>Избранные проекты</span>
+        </header>
+
         <ol className={styles.rows}>
           {projects.map((p) => (
             <ProjectRow key={p.index} project={p} />

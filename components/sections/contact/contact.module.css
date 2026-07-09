@@ -8,7 +8,7 @@
 .inner {
   width: min(1840px, calc(100vw - 80px));
   margin: 0 auto;
-  padding: clamp(48px, 6vw, 100px) clamp(16px, 3vw, 48px);
+  padding: clamp(64px, 8vw, 150px) clamp(16px, 3vw, 48px);
 }
 
 /* ---- Band head: statement + intro ---- */
@@ -24,10 +24,10 @@
 .title {
   margin: 0;
   max-width: 16ch;
-  font-size: clamp(2.2rem, 4.6vw, 4rem);
-  line-height: 1;
-  letter-spacing: -0.035em;
-  font-weight: 600;
+  font-size: clamp(2.6rem, 6.4vw, 6.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 700;
   color: var(--text);
 }
 
@@ -95,9 +95,9 @@
 }
 
 .contactActionTitle {
-  font-size: clamp(20px, 1.7vw, 28px);
+  font-size: clamp(24px, 2.3vw, 38px);
   line-height: 1;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   font-weight: 600;
   color: var(--text);
 }
@@ -135,7 +135,6 @@
 .form {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--line-color);
 }
 
 .formState {
@@ -158,9 +157,13 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 18px 20px;
-  border-bottom: 1px solid var(--line-color);
+  gap: 12px;
+  padding: clamp(20px, 2vw, 28px) 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.field:first-of-type {
+  border-top: 1px solid var(--line-strong);
 }
 
 .fieldLabel {
@@ -180,7 +183,7 @@
   border-radius: 0;
   color: var(--text);
   font-family: var(--font-sans), var(--font-body), sans-serif;
-  font-size: 14px;
+  font-size: clamp(15px, 1.15vw, 18px);
   line-height: 1.5;
   outline: none;
   resize: none;
@@ -225,19 +228,20 @@
   justify-content: space-between;
   gap: 16px;
   width: 100%;
-  min-height: 56px;
-  padding: 18px 20px;
+  min-height: 64px;
+  padding: clamp(20px, 2vw, 26px) 0;
   background: transparent;
   color: var(--text);
   border: none;
+  border-bottom: 1px solid var(--line-strong);
   border-radius: 0;
   font-family: var(--font-sans), var(--font-body), sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 150ms ease;
+  transition: color 150ms ease, border-color 150ms ease;
   text-align: left;
   white-space: nowrap;
 }
@@ -252,10 +256,11 @@
 }
 
 .formSubmit:hover {
-  background: var(--card-hover);
+  color: var(--accent-strong);
+  border-color: var(--accent);
 }
 .formSubmit:hover::after {
-  transform: translateX(4px);
+  transform: translateX(6px);
 }
 
 .formSubmit:disabled {
@@ -349,11 +354,11 @@
 
   .field {
     gap: 8px;
-    padding: 16px 16px;
+    padding: 16px 0;
   }
 
   .formSubmit {
-    padding: 16px 16px;
-    font-size: 10px;
+    padding: 16px 0;
+    font-size: 11px;
   }
 }

@@ -4,8 +4,7 @@ import type { MouseEvent } from "react";
 import { useLayoutEffect, useRef } from "react";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "@/lib/gsap-setup";
-import { heroTags } from "@/lib/home-content";
-import { PortfolioOrbit } from "./PortfolioOrbit";
+import { ToolPlayground } from "./ToolPlayground";
 import styles from "./hero.module.css";
 
 const TITLE_LINES = ["Создам сайт", "Сделаю редизайн" ] as const;
@@ -82,45 +81,48 @@ export function Hero() {
         Сайты под заявки — 2026
       </span>
 
-      <div className={styles.inner}>
-        <div className={styles.content}>
-          <span className={styles.eyebrow} data-hero-reveal>
+      <div className={styles.top}>
+        <div className={styles.metaRow} data-hero-reveal>
+          <span className={styles.eyebrow}>
             <span className={styles.eyebrowDot} aria-hidden="true" />
             Веб-дизайн и разработка сайтов
           </span>
+          <span className={styles.status}>
+            <span className={styles.statusDot} aria-hidden="true" />
+            Открыт к проектам
+          </span>
+        </div>
 
-          <h1 className={styles.title}>
-            {TITLE_LINES.map((line) => (
-              <span className={styles.lineMask} key={line}>
-                <span className={styles.line} data-hero-line>
-                  {line}
-                </span>
-              </span>
-            ))}
-          </h1>
+        <h1 className={styles.title}>
+          <span className={styles.lineMask}>
+            <span className={styles.line} data-hero-line>
+              {TITLE_LINES[0]}
+            </span>
+          </span>
+          <span className={`${styles.lineMask} ${styles.lineMaskShift}`}>
+            <span className={`${styles.line} ${styles.lineOutline}`} data-hero-line>
+              {TITLE_LINES[1]}
+            </span>
+          </span>
+        </h1>
 
+        <div className={styles.subRow}>
           <p className={styles.lead} data-hero-reveal>
             {PARAGRAPH}
           </p>
 
           <a className={styles.cta} href="#contact" onClick={handleContactClick} data-hero-reveal>
-            Обсудить сайт
-            <ArrowIcon />
+            <span className={styles.ctaText}>Обсудить сайт</span>
+            <span className={styles.ctaCircle} aria-hidden="true">
+              <ArrowIcon />
+            </span>
           </a>
-        </div>
-
-        <div className={styles.demoVisual} data-hero-demo aria-label="Portfolio tools orbit">
-          <PortfolioOrbit />
         </div>
       </div>
 
-      <ul className={styles.tags} data-hero-reveal>
-        {heroTags.map((tag) => (
-          <li className={styles.tag} key={tag}>
-            {tag}
-          </li>
-        ))}
-      </ul>
+      <div className={styles.stageBand} data-hero-demo>
+        <ToolPlayground />
+      </div>
     </section>
   );
 }
