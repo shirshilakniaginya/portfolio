@@ -125,10 +125,21 @@ export function Hero() {
           <div className={styles.centerStage}>
             {/* Portrait as a backdrop, anchored to the hero bottom */}
             <div className={styles.portraitWrap} data-d-portrait aria-hidden="true">
+              <video
+                className={styles.portrait}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                poster="/about/hero-portrait-v2.png"
+              >
+                <source src="/about/hero-portrait-loop.mp4" type="video/mp4" />
+              </video>
               <Image
                 src="/about/hero-portrait-v2.png"
                 alt=""
-                className={styles.portrait}
+                className={`${styles.portrait} ${styles.portraitFallback}`}
                 width={1107}
                 height={922}
                 priority

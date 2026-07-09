@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Manrope, Geist, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { GsapSmoothScroll } from "@/components/utils/GsapSmoothScroll";
-import { AmbientShader } from "@/components/shared/ambient/AmbientShader";
 import { SiteHeader } from "@/components/shared/header/Header";
 import "./globals.css";
 import styles from "./layout.module.css";
@@ -235,7 +234,6 @@ export default function RootLayout({
         />
         <GsapSmoothScroll />
         <SiteHeader />
-        <AmbientShader />
         <div id="smooth-wrapper">
           <div id="smooth-content">
             {children}
