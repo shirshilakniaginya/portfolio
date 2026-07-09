@@ -3,28 +3,17 @@ import styles from "./mock.module.css";
 
 type BrowserMockProps = {
   brand?: string;
-  url?: string;
   imageSrc: string;
   imageAlt: string;
 };
 
 export function BrowserMock({
   brand = "Project",
-  url = "preview.local",
   imageSrc,
   imageAlt,
 }: BrowserMockProps) {
   return (
     <div className={styles.frame}>
-      <div className={styles.chrome}>
-        <span className={styles.dots}>
-          <span className={styles.dot} />
-          <span className={styles.dot} />
-          <span className={styles.dot} />
-        </span>
-        <span className={styles.url}>{url}</span>
-      </div>
-
       <div className={styles.preview}>
         <Image
           className={styles.previewImage}

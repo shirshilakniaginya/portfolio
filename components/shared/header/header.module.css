@@ -82,9 +82,10 @@
   display: inline-flex;
   align-items: center;
   padding: 8px 0;
-  font-size: 11px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
   line-height: 1;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
   transition: color 160ms ease;
@@ -128,10 +129,11 @@
   gap: 8px;
   flex-shrink: 0;
   padding: 8px 0;
-  font-size: 11px;
-  font-weight: 600;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text);
   transition: color 160ms ease;
@@ -326,6 +328,14 @@
 
   .burger {
     display: inline-flex;
+  }
+}
+
+/* The hero rail is the desktop navigation. Keep this header for the
+   rail-less tablet and mobile layouts only. */
+@media (min-width: 981px) {
+  .header {
+    display: none;
   }
 }
 

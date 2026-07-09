@@ -7,39 +7,6 @@
   font-family: var(--font-sans), var(--font-body), sans-serif;
 }
 
-.chrome {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--line);
-  background: color-mix(in oklab, var(--surface-strong) 70%, transparent);
-}
-
-.dots {
-  display: inline-flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--line-strong);
-}
-
-.url {
-  flex: 1;
-  min-width: 0;
-  font-size: 11px;
-  letter-spacing: 0.02em;
-  color: var(--muted-soft);
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 /* ---------- Real project preview ---------- */
 .preview {
   position: relative;

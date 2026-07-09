@@ -1,133 +1,194 @@
 .section {
-  width: 100%;
+  width: var(--d-inner);
+  margin: 0 auto;
   background: var(--bg);
-  border-top: var(--section-border);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
   font-family: var(--font-sans), var(--font-body), sans-serif;
 }
 
 .inner {
-  width: min(1840px, calc(100vw - 80px));
-  margin: 0 auto;
-  padding: clamp(64px, 8vw, 150px) clamp(16px, 3vw, 48px);
+  width: 100%;
+  padding: clamp(56px, 7vw, 120px) var(--d-pad);
 }
 
-/* ---- Band head: statement + intro ---- */
-.head {
+/* ---- Top grid: label | statement | direct | connect ---- */
+.topGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 72px);
-  align-items: end;
-  padding-bottom: clamp(32px, 4vw, 52px);
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: minmax(140px, 0.55fr) minmax(0, 1.15fr) minmax(220px, 0.8fr) minmax(200px, 0.7fr);
+  gap: clamp(24px, 2.6vw, 48px);
+  align-items: stretch;
+  padding-bottom: clamp(36px, 5vw, 72px);
 }
 
-.title {
-  margin: 0;
-  max-width: 16ch;
-  font-size: clamp(2.6rem, 6.4vw, 6.4rem);
-  line-height: 0.96;
-  letter-spacing: -0.045em;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.description {
-  margin: 0;
-  max-width: 46ch;
-  font-size: clamp(1rem, 1.1vw, 1.15rem);
-  line-height: 1.6;
-  color: var(--muted);
-  text-wrap: pretty;
-}
-
-/* ---- Band body: channels + form ---- */
-.body {
-  display: grid;
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(28px, 5vw, 96px);
-  padding-top: clamp(36px, 4vw, 56px);
-}
-
-.channels {
-  display: flex;
-  flex-direction: column;
-}
-
-.channelsLabel {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
-  margin-bottom: clamp(18px, 2vw, 28px);
-}
-
-.contactAction {
-  position: relative;
+.label {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: clamp(20px, 2vw, 26px) 4px;
-  border-top: 1px solid var(--line);
+}
+
+.kicker {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(15px, 1.1vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--text);
-  transition: padding-left 0.22s ease;
 }
 
-.channels .contactAction:last-of-type {
-  border-bottom: 1px solid var(--line);
-}
-
-.contactAction:hover {
-  padding-left: 8px;
-}
-
-.contactAction:focus-visible {
-  outline: 2px solid var(--accent-soft);
-  outline-offset: 2px;
-}
-
-.contactActionMeta {
-  font-size: 10px;
-  line-height: 1;
-  letter-spacing: 0.16em;
+.kickerSub {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted-soft);
 }
 
-.contactActionTitle {
-  font-size: clamp(24px, 2.3vw, 38px);
-  line-height: 1;
-  letter-spacing: -0.03em;
-  font-weight: 600;
+.statement {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 40ch;
+}
+
+.statement p {
+  margin: 0;
+  font-size: clamp(14.5px, 1.1vw, 16.5px);
+  line-height: 1.75;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* Vertical divider before direct contacts */
+.direct {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vh, 30px);
+  border-left: 1px solid var(--line);
+  padding-left: clamp(24px, 2.6vw, 48px);
+}
+
+.directItem {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.directLink {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(15px, 1.15vw, 17px);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.directLink:hover {
+  color: var(--accent-strong);
+}
+
+.response {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(13.5px, 1.05vw, 15px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--text);
 }
 
-.contactActionIcon {
-  position: absolute;
-  right: 4px;
-  top: clamp(20px, 2vw, 26px);
-  width: 24px;
-  height: 24px;
-  color: var(--accent);
+.responseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: responsePulse 2.4s ease-in-out infinite;
 }
 
-.contactActionIcon svg {
-  display: block;
-  width: 100%;
-  height: 100%;
+@keyframes responsePulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
-.formWrap {
+/* Second vertical divider before the connect list */
+.connect {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border-left: 1px solid var(--line);
+  padding-left: clamp(24px, 2.6vw, 48px);
+}
+
+.connectList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
 
+.connectLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: color 0.2s ease, padding-left 0.25s ease;
+}
+
+.connectList li:first-child .connectLink {
+  border-top: 1px solid var(--line);
+}
+
+.connectLink:hover {
+  color: var(--accent-strong);
+  padding-left: 6px;
+}
+
+.connectArrow {
+  color: var(--muted-soft);
+  font-family: var(--font-mono), monospace;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.connectLink:hover .connectArrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* ---- Form block ---- */
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  padding-top: clamp(28px, 3.6vw, 48px);
+  border-top: 1px solid var(--line);
+}
+
 .noteTitle {
   margin: 0 0 20px;
-  font-size: clamp(18px, 1.4vw, 22px);
-  font-weight: 600;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-weight: 500;
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
   color: var(--text);
 }
 
@@ -167,9 +228,10 @@
 }
 
 .fieldLabel {
-  font-size: 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
   line-height: 1;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--muted-soft);
 }
@@ -182,9 +244,10 @@
   border: none;
   border-radius: 0;
   color: var(--text);
-  font-family: var(--font-sans), var(--font-body), sans-serif;
-  font-size: clamp(15px, 1.15vw, 18px);
-  line-height: 1.5;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(13px, 1vw, 15px);
+  letter-spacing: 0.04em;
+  line-height: 1.6;
   outline: none;
   resize: none;
   overflow-y: auto;
@@ -235,10 +298,10 @@
   border: none;
   border-bottom: 1px solid var(--line-strong);
   border-radius: 0;
-  font-family: var(--font-sans), var(--font-body), sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   cursor: pointer;
   transition: color 150ms ease, border-color 150ms ease;
@@ -329,27 +392,34 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 1000px) {
-  .head {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    align-items: start;
+  .topGrid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: clamp(28px, 5vw, 40px);
   }
 
-  .body {
-    grid-template-columns: 1fr;
-    gap: clamp(32px, 6vw, 48px);
+  .label {
+    grid-column: 1 / -1;
+  }
+
+  .statement {
+    grid-column: 1 / -1;
+    max-width: none;
+  }
+
+  .direct {
+    border-left: none;
+    padding-left: 0;
   }
 }
 
 @media (max-width: 560px) {
-  .inner {
-    width: min(1840px, calc(100vw - 32px));
-    padding-right: 0;
-    padding-left: 0;
+  .topGrid {
+    grid-template-columns: 1fr;
   }
 
-  .title {
-    max-width: none;
+  .connect {
+    border-left: none;
+    padding-left: 0;
   }
 
   .field {

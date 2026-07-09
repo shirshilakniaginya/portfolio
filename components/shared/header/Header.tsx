@@ -6,8 +6,8 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import styles from "./header.module.css";
 
 const NAV = [
-  { id: "about", label: "Обо мне" },
   { id: "work", label: "Работы" },
+  { id: "about", label: "Обо мне" },
   { id: "contact", label: "Контакты" },
 ] as const;
 
@@ -44,7 +44,7 @@ export function SiteHeader() {
   // The header is always visible; it gains a solid background once the page
   // scrolls off the hero's decorative band so the labels stay legible.
   useEffect(() => {
-    const hero = document.getElementById("about");
+    const hero = document.getElementById("hero");
     if (!hero) {
       const raf = requestAnimationFrame(() => setScrolled(true));
       return () => cancelAnimationFrame(raf);
@@ -113,7 +113,7 @@ export function SiteHeader() {
       onClick={handleNavClick}
     >
       <div className={styles.inner}>
-        <a className={styles.brand} href="#about" aria-label="В начало">
+        <a className={styles.brand} href="#hero" aria-label="В начало">
           <Image
             alt="Логотип"
             className={styles.brandLogo}

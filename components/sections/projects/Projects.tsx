@@ -1,98 +1,70 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { projects, type Project } from "@/lib/home-content";
 import { BrowserMock } from "./BrowserMock";
 import { DashboardMock } from "./DashboardMock";
 import styles from "./projects.module.css";
 
-function ArrowIcon({ className }: { className?: string }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 18 18" fill="none" width="18" height="18" className={className}>
-      <path d="M3.5 14.5 14.5 3.5M14.5 3.5H6M14.5 3.5V12" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square" />
-    </svg>
-  );
-}
-
 function ProjectRow({ project }: { project: Project }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <li className={styles.row} id={`work-${project.index}`} data-reveal>
-      <div className={styles.rowIndex}>
-        <span className={styles.rowNum}>{project.index}</span>
-        <span className={styles.rowKicker}>Избранный проект</span>
-        <button
-          type="button"
-          className={`${styles.expand} ${open ? styles.expandOpen : ""}`}
-          aria-expanded={open}
-          aria-label={open ? `Скрыть детали проекта ${project.name}` : `Показать детали проекта ${project.name}`}
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span aria-hidden="true" />
-          <span aria-hidden="true" />
-        </button>
+      <span className={styles.rowGhost} aria-hidden="true">
+        {project.index}
+      </span>
+
+      <div className={styles.rowCard}>
+      <div className={styles.rowInfo}>
+        <span className={styles.rowKicker}>{project.kind}</span>
+        <h3 className={styles.rowName}>{project.name}</h3>
+        <p className={styles.rowSummary}>{project.summary}</p>
+        <span className={styles.rowYear}>{project.team}</span>
       </div>
 
-      <div className={styles.rowBody}>
-        <div className={styles.rowHeading}>
-          <h3 className={styles.rowName}>{project.name}</h3>
-          <span className={styles.rowKind}>{project.kind}</span>
-        </div>
+      <a
+        className={styles.rowMock}
+        href={project.href}
+        aria-label={`Смотреть проект ${project.name}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {project.mock === "dashboard" ? (
+          <DashboardMock brand={project.name.split(" ")[0]} />
+        ) : (
+          <BrowserMock
+            brand={project.name}
+            imageSrc={project.previewImage}
+            imageAlt={`Превью проекта ${project.name}`}
+          />
+        )}
+      </a>
 
-        <p className={styles.rowSummary}>{project.summary}</p>
-
-        <div className={`${styles.details} ${open ? styles.detailsOpen : ""}`}>
-          <div className={styles.detailsInner}>
-            <div className={styles.detailItem}>
-              <span className={styles.detailLabel}>Роль</span>
-              <span className={styles.detailValue}>{project.role}</span>
-            </div>
-            <div className={styles.detailItem}>
-              <span className={styles.detailLabel}>Команда</span>
-              <span className={styles.detailValue}>{project.team}</span>
-            </div>
+      <div className={styles.rowMeta}>
+        <div className={styles.rowMetaGroup}>
+          <div className={styles.rowField}>
+            <span className="d-label">Тип</span>
+            <span className="d-value">{project.kind}</span>
+          </div>
+          <div className={styles.rowField}>
+            <span className="d-label">Роль</span>
+            <span className="d-value">{project.role}</span>
+          </div>
+          <div className={styles.rowField}>
+            <span className="d-label">Теги</span>
+            <span className="d-value">{project.tags.join(", ")}</span>
           </div>
         </div>
 
-        <ul className={styles.tags}>
-          {project.tags.map((tag) => (
-            <li className={styles.tag} key={tag}>
-              {tag}
-            </li>
-          ))}
-        </ul>
-
         <a
-          className={styles.rowLink}
+          className={styles.rowOpen}
           href={project.href}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Открыть проект ${project.name}`}
         >
-          Посмотреть работу
-          <ArrowIcon className={styles.rowLinkArrow} />
+          +
         </a>
       </div>
-
-      <div className={styles.rowMock}>
-        <a
-          className={styles.mockLink}
-          href={project.href}
-          aria-label={`Смотреть проект ${project.name}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {project.mock === "dashboard" ? (
-            <DashboardMock brand={project.name.split(" ")[0]} />
-          ) : (
-            <BrowserMock
-              brand={project.name}
-              url={project.previewUrl}
-              imageSrc={project.previewImage}
-              imageAlt={`Превью проекта ${project.name}`}
-            />
-          )}
-        </a>
       </div>
     </li>
   );
@@ -138,11 +110,22 @@ export function Projects() {
     <section ref={rootRef} className={styles.section} id="work">
       <div className={styles.inner}>
         <header className={styles.head} data-reveal>
-          <h2 className={styles.headTitle}>
-            Работы
-            <sup className={styles.headCount}>({String(projects.length).padStart(2, "0")})</sup>
-          </h2>
-          <span className={styles.headNote}>Избранные проекты</span>
+          <div className={styles.headLeft}>
+            <span className={styles.kicker}>{"// 01 Работы"}</span>
+            <span className={styles.kickerSub}>Избранные проекты</span>
+          </div>
+
+          <a
+            className={styles.allLink}
+            href="https://kwork.ru/user/dmitrydezign"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Все проекты
+            <span className={styles.allPlus} aria-hidden="true">
+              +
+            </span>
+          </a>
         </header>
 
         <ol className={styles.rows}>

@@ -1,0 +1,5 @@
+.body {
+  --page-bg: #0f1115;
+  --bg: #0b0e11;
+  background-color: var(--page-bg);
+}

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Manrope, Geist } from "next/font/google";
+import { Manrope, Geist, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { GsapSmoothScroll } from "@/components/utils/GsapSmoothScroll";
+import { AmbientShader } from "@/components/shared/ambient/AmbientShader";
 import { SiteHeader } from "@/components/shared/header/Header";
 import "./globals.css";
+import styles from "./layout.module.css";
 import { cn } from "@/lib/utils";
 
 // Geist is the redesigned homepage's grotesk system family (headlines + body + labels).
@@ -13,6 +15,13 @@ const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans" })
 const manrope = Manrope({
   variable: "--font-body",
   subsets: ["latin", "cyrillic"],
+});
+
+// Dossier system: mono face for archive labels, codes and data pairs.
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "700"],
 });
 
 const hikasami = localFont({
@@ -163,9 +172,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/shtq-favicon.svg",
+    shortcut: "/shtq-favicon.svg",
+    apple: "/shtq-favicon.svg",
   },
   openGraph: {
     type: "website",
@@ -214,14 +223,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" data-theme="dark" className={cn(manrope.variable, hikasami.variable, "font-sans", geist.variable)}>
-      <body>
+    <html
+      lang="ru"
+      data-theme="dark"
+      className={cn(manrope.variable, hikasami.variable, "font-sans", geist.variable, jetbrainsMono.variable)}
+    >
+      <body className={styles.body}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
         />
         <GsapSmoothScroll />
         <SiteHeader />
+        <AmbientShader />
         <div id="smooth-wrapper">
           <div id="smooth-content">
             {children}

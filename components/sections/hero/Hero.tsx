@@ -1,127 +1,218 @@
 "use client";
 
 import type { MouseEvent } from "react";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import Image from "next/image";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "@/lib/gsap-setup";
-import { ToolPlayground } from "./ToolPlayground";
+import { profile } from "@/lib/home-content";
 import styles from "./hero.module.css";
 
-const TITLE_LINES = ["Создам сайт", "Сделаю редизайн" ] as const;
+const TITLE_LINES = ["Создам сайт", "Сделаю редизайн."] as const;
 
 const PARAGRAPH =
   "Делаю лендинги, промо-сайты и сайты услуг для бизнеса: продумываю структуру, дизайн, адаптив и фронтенд так, чтобы страница выглядела цельно и вела человека к заявке.";
 
-function ArrowIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 22 22" fill="none" width="22" height="22" className={styles.ctaArrow}>
-      <path d="M4 11h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
-      <path
-        d="M11.5 5.5 17 11l-5.5 5.5"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="square"
-      />
-    </svg>
-  );
+const RAIL_NAV = [
+  { href: "#work", num: "01", label: "Работы" },
+  { href: "#about", num: "02", label: "Обо мне" },
+  { href: "#contact", num: "03", label: "Контакты" },
+] as const;
+
+const FIELDS = [
+  { label: "Роль", value: "Веб-дизайн / Фронтенд" },
+  { label: "Класс", value: "Лендинги · Промо" },
+] as const;
+
+function scrollToHash(event: MouseEvent<HTMLElement>) {
+  const anchor = (event.target as HTMLElement).closest("a");
+  const href = anchor?.getAttribute("href");
+  if (!href || !href.startsWith("#")) return;
+  const target = document.getElementById(href.slice(1));
+  if (!target) return;
+  event.preventDefault();
+  const smoother = ScrollSmoother.get();
+  if (smoother) smoother.scrollTo(target, true, "top 72px");
+  else target.scrollIntoView({ behavior: "smooth" });
 }
 
 export function Hero() {
   const rootRef = useRef<HTMLElement | null>(null);
+  const clockRef = useRef<HTMLSpanElement | null>(null);
 
-  const handleContactClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    const target = document.getElementById("contact");
-    if (!target) return;
-
-    event.preventDefault();
-
-    const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - 72);
-    const smoother = ScrollSmoother.get();
-    if (smoother) smoother.scrollTo(top, true);
-    else window.scrollTo({ top, behavior: "smooth" });
-  };
+  // Live local time — DOM-direct so the component never re-renders.
+  useEffect(() => {
+    const node = clockRef.current;
+    if (!node) return;
+    const tick = () => {
+      node.textContent = new Date().toLocaleTimeString("ru-RU", { hour12: false });
+    };
+    tick();
+    const id = window.setInterval(tick, 1000);
+    return () => window.clearInterval(id);
+  }, []);
 
   useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return;
 
-    const lines = gsap.utils.toArray<HTMLElement>("[data-hero-line]", root);
-    const reveals = gsap.utils.toArray<HTMLElement>("[data-hero-reveal]", root);
-    const demo = root.querySelector<HTMLElement>("[data-hero-demo]");
+    const masks = gsap.utils.toArray<HTMLElement>("[data-d-title]", root);
+    const reveals = gsap.utils.toArray<HTMLElement>("[data-d-reveal]", root);
+    const portrait = root.querySelector<HTMLElement>("[data-d-portrait]");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (reduce) {
-      gsap.set([...lines, ...reveals], { opacity: 1, yPercent: 0, y: 0 });
-      if (demo) gsap.set(demo, { opacity: 1, y: 0, scale: 1 });
+      gsap.set([...masks, ...reveals], { opacity: 1, y: 0, yPercent: 0 });
+      if (portrait) gsap.set(portrait, { opacity: 1, y: 0 });
       return;
     }
 
     const ctx = gsap.context(() => {
-      gsap.set(lines, { yPercent: 115 });
-      gsap.set(reveals, { opacity: 0, y: 18 });
-      if (demo) gsap.set(demo, { opacity: 0, y: 24, scale: 0.985 });
+      gsap.set(masks, { yPercent: 110 });
+      gsap.set(reveals, { opacity: 0, y: 14 });
+      if (portrait) gsap.set(portrait, { opacity: 0, y: 26 });
 
       const tl = gsap.timeline({ defaults: { ease: "editorialOut" } });
-      if (demo) {
-        tl.to(demo, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "editorialSoft" }, 0.32);
+      tl.to(masks, { yPercent: 0, duration: 0.9, stagger: 0.1 }, 0.15)
+        .to(reveals, { opacity: 1, y: 0, duration: 0.7, stagger: 0.05 }, 0.35);
+      if (portrait) {
+        tl.to(portrait, { opacity: 1, y: 0, duration: 1.1, ease: "editorialSoft" }, 0.3);
       }
-      tl.to(lines, { yPercent: 0, duration: 0.9, stagger: 0.09 }, 0.1).to(
-        reveals,
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.08 },
-        0.5,
-      );
     }, root);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={rootRef} className={styles.hero} id="about" data-ui="hero-section">
-      <span className={styles.railLabel} aria-hidden="true">
-        Сайты под заявки — 2026
-      </span>
-
-      <div className={styles.top}>
-        <div className={styles.metaRow} data-hero-reveal>
-          <span className={styles.eyebrow}>
-            <span className={styles.eyebrowDot} aria-hidden="true" />
-            Веб-дизайн и разработка сайтов
-          </span>
-          <span className={styles.status}>
-            <span className={styles.statusDot} aria-hidden="true" />
-            Открыт к проектам
-          </span>
-        </div>
-
-        <h1 className={styles.title}>
-          <span className={styles.lineMask}>
-            <span className={styles.line} data-hero-line>
-              {TITLE_LINES[0]}
-            </span>
-          </span>
-          <span className={`${styles.lineMask} ${styles.lineMaskShift}`}>
-            <span className={`${styles.line} ${styles.lineOutline}`} data-hero-line>
-              {TITLE_LINES[1]}
-            </span>
-          </span>
-        </h1>
-
-        <div className={styles.subRow}>
-          <p className={styles.lead} data-hero-reveal>
-            {PARAGRAPH}
-          </p>
-
-          <a className={styles.cta} href="#contact" onClick={handleContactClick} data-hero-reveal>
-            <span className={styles.ctaText}>Обсудить сайт</span>
-            <span className={styles.ctaCircle} aria-hidden="true">
-              <ArrowIcon />
-            </span>
+    <section ref={rootRef} className={styles.hero} id="hero" data-ui="hero-section">
+      <div className={styles.inner}>
+        {/* Col 1 — system rail (~120px) */}
+        <aside className={styles.rail}>
+          <a className={styles.railBox} href="#hero" onClick={scrollToHash} aria-label="В начало">
+            SHTQ
           </a>
-        </div>
-      </div>
 
-      <div className={styles.stageBand} data-hero-demo>
-        <ToolPlayground />
+          <nav className={styles.railNav} aria-label="Разделы" onClick={scrollToHash}>
+            {RAIL_NAV.map((item) => (
+              <a className={styles.railLink} href={item.href} key={item.href}>
+                <em>{item.num}</em>
+                <span className={styles.railLinkLabel}>{item.label}</span>
+              </a>
+            ))}
+          </nav>
+
+          <span className={styles.railStatus}>
+            <em>Система</em>
+            Онлайн
+            <i className={styles.railStatusDot} aria-hidden="true" />
+          </span>
+        </aside>
+
+        {/* Col 2 — empty spacer (~220px) */}
+        <div className={styles.spacer} aria-hidden="true" />
+
+        {/* Col 3 — central hero (~1400px) */}
+        <div className={styles.center}>
+          <div className={styles.codes}>
+            <span className={styles.code} data-d-reveal>
+              <em>Сессия</em>SHTQ-2026
+            </span>
+            <span className={styles.code} data-d-reveal>
+              <em>Формат</em>Сайты под заявки
+            </span>
+          </div>
+
+          <div className={styles.centerStage}>
+            {/* Portrait as a backdrop, anchored to the hero bottom */}
+            <div className={styles.portraitWrap} data-d-portrait aria-hidden="true">
+              <Image
+                src="/about/hero-portrait-v2.png"
+                alt=""
+                className={styles.portrait}
+                width={1107}
+                height={922}
+                priority
+              />
+            </div>
+
+            <div className={styles.left}>
+              <span className={styles.kicker} data-d-reveal>
+                Веб-дизайн и разработка сайтов
+              </span>
+
+              <h1 className={styles.title}>
+                {TITLE_LINES.map((line) => (
+                  <span className={styles.lineMask} key={line}>
+                    <span className={styles.titleLine} data-d-title>
+                      {line}
+                    </span>
+                  </span>
+                ))}
+              </h1>
+
+              <p className={styles.sub} data-d-reveal>
+                {PARAGRAPH}
+              </p>
+
+              <a className={styles.cta} href="#contact" onClick={scrollToHash} data-d-reveal>
+                Открыт к проектам
+                <span className={styles.ctaPlus} aria-hidden="true">
+                  +
+                </span>
+              </a>
+
+              <span className={styles.squares} data-d-reveal aria-hidden="true">
+                <i className={styles.squareOn} />
+                <i />
+                <i />
+                <i />
+              </span>
+            </div>
+
+            <div className={styles.right}>
+              <span className={styles.ghost} data-d-reveal aria-hidden="true">
+                <em>IX</em>01
+              </span>
+
+              <span className={styles.radar} data-d-reveal aria-hidden="true">
+                <i className={styles.radarDot} />
+                <i className={styles.radarTick} />
+              </span>
+
+              <p className={styles.caption} data-d-reveal>
+                {profile.about}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Col 4 — time + data pairs (~188px) */}
+        <div className={styles.colA}>
+          <span className={styles.code} data-d-reveal>
+            <em>Локальное время</em>
+            <span ref={clockRef} className={styles.clock}>
+              --:--:--
+            </span>
+          </span>
+
+          <dl className={styles.fields}>
+            {FIELDS.map((field) => (
+              <div className={styles.field} data-d-reveal key={field.label}>
+                <dt className="d-label">{field.label}</dt>
+                <dd className="d-value">{field.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        {/* Col 5 — decorative archive column (~188px) */}
+        <div className={styles.colB} aria-hidden="true">
+          <svg className={styles.crosshair} viewBox="0 0 16 16" width="14" height="14" fill="none">
+            <path d="M8 1v14M1 8h14" stroke="currentColor" strokeWidth="1" />
+          </svg>
+
+          <span className={styles.colBLabel}>Сайты под заявки — 2026</span>
+        </div>
       </div>
     </section>
   );
