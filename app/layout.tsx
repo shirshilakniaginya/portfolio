@@ -9,11 +9,12 @@ import { cn } from "@/lib/utils";
 
 // Geist is the redesigned homepage's grotesk system family (headlines + body + labels).
 // Cyrillic subset is required for the Russian copy in the hero/projects.
-const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans" });
+const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans", display: "block" });
 
 const manrope = Manrope({
   variable: "--font-body",
   subsets: ["latin", "cyrillic"],
+  display: "block",
 });
 
 // Dossier system: mono face for archive labels, codes and data pairs.
@@ -21,11 +22,12 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "700"],
+  display: "block",
 });
 
 const hikasami = localFont({
   variable: "--font-display",
-  display: "swap",
+  display: "block",
   src: [
     {
       path: "./fonts/Hikasami-Regular.woff2",

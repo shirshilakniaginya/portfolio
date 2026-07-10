@@ -50,7 +50,7 @@
       "source_file": "DESIGN.json",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "design",
+      "id": "design_json_design",
       "community": 8,
       "norm_label": "design.json"
     },
@@ -815,10 +815,40 @@
       "norm_label": "contact.tsx"
     },
     {
+      "label": "Status",
+      "file_type": "code",
+      "source_file": "components/sections/contact/Contact.tsx",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "contact_contact_status",
+      "community": 6,
+      "norm_label": "status"
+    },
+    {
+      "label": "Fields",
+      "file_type": "code",
+      "source_file": "components/sections/contact/Contact.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "contact_contact_fields",
+      "community": 6,
+      "norm_label": "fields"
+    },
+    {
+      "label": "countLinks()",
+      "file_type": "code",
+      "source_file": "components/sections/contact/Contact.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "contact_contact_countlinks",
+      "community": 6,
+      "norm_label": "countlinks()"
+    },
+    {
       "label": "KworkIcon()",
       "file_type": "code",
       "source_file": "components/sections/contact/Contact.tsx",
-      "source_location": "L10",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "contact_contact_kworkicon",
       "community": 6,
@@ -828,7 +858,7 @@
       "label": "TelegramIcon()",
       "file_type": "code",
       "source_file": "components/sections/contact/Contact.tsx",
-      "source_location": "L18",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "contact_contact_telegramicon",
       "community": 6,
@@ -838,7 +868,7 @@
       "label": "DribbbleIcon()",
       "file_type": "code",
       "source_file": "components/sections/contact/Contact.tsx",
-      "source_location": "L29",
+      "source_location": "L54",
       "_origin": "ast",
       "id": "contact_contact_dribbbleicon",
       "community": 6,
@@ -848,27 +878,17 @@
       "label": "CheckIcon()",
       "file_type": "code",
       "source_file": "components/sections/contact/Contact.tsx",
-      "source_location": "L37",
+      "source_location": "L62",
       "_origin": "ast",
       "id": "contact_contact_checkicon",
       "community": 6,
       "norm_label": "checkicon()"
     },
     {
-      "label": "Status",
-      "file_type": "code",
-      "source_file": "components/sections/contact/Contact.tsx",
-      "source_location": "L51",
-      "_origin": "ast",
-      "id": "contact_contact_status",
-      "community": 6,
-      "norm_label": "status"
-    },
-    {
       "label": "BriefForm()",
       "file_type": "code",
       "source_file": "components/sections/contact/Contact.tsx",
-      "source_location": "L53",
+      "source_location": "L76",
       "_origin": "ast",
       "id": "contact_contact_briefform",
       "community": 6,
@@ -878,7 +898,7 @@
       "label": "Contact()",
       "file_type": "code",
       "source_file": "components/sections/contact/Contact.tsx",
-      "source_location": "L182",
+      "source_location": "L353",
       "_origin": "ast",
       "id": "contact_contact_contact",
       "community": 6,
@@ -1485,10 +1505,20 @@
       "norm_label": "nav"
     },
     {
-      "label": "SiteHeader()",
+      "label": "HeaderArrowIcon()",
       "file_type": "code",
       "source_file": "components/shared/header/Header.tsx",
       "source_location": "L16",
+      "_origin": "ast",
+      "id": "header_header_headerarrowicon",
+      "community": 7,
+      "norm_label": "headerarrowicon()"
+    },
+    {
+      "label": "SiteHeader()",
+      "file_type": "code",
+      "source_file": "components/shared/header/Header.tsx",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "header_header_siteheader",
       "community": 7,
@@ -1563,6 +1593,46 @@
       "id": "eslint_config_eslintconfig",
       "community": 17,
       "norm_label": "eslintconfig"
+    },
+    {
+      "label": "fitness-ai-refactor.ps1",
+      "file_type": "code",
+      "source_file": "fitness-ai-refactor.ps1",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "fitness_ai_refactor",
+      "community": 25,
+      "norm_label": "fitness-ai-refactor.ps1"
+    },
+    {
+      "label": "shot.js",
+      "file_type": "code",
+      "source_file": "kwork/shot.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "kwork_shot",
+      "community": 24,
+      "norm_label": "shot.js"
+    },
+    {
+      "label": "{ chromium }",
+      "file_type": "code",
+      "source_file": "kwork/shot.js",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "kwork_shot_chromium",
+      "community": 24,
+      "norm_label": "{ chromium }"
+    },
+    {
+      "label": "prep()",
+      "file_type": "code",
+      "source_file": "kwork/shot.js",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "kwork_shot_prep",
+      "community": 24,
+      "norm_label": "prep()"
     },
     {
       "label": "design-system.ts",
@@ -1835,10 +1905,20 @@
       "norm_label": "@gsap/react"
     },
     {
-      "label": "class-variance-authority",
+      "label": "@hcaptcha/react-hcaptcha",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L14",
+      "_origin": "ast",
+      "id": "package_dependencies_hcaptcha_react_hcaptcha",
+      "community": 9,
+      "norm_label": "@hcaptcha/react-hcaptcha"
+    },
+    {
+      "label": "class-variance-authority",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "package_dependencies_class_variance_authority",
       "community": 9,
@@ -1848,7 +1928,7 @@
       "label": "clsx",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "package_dependencies_clsx",
       "community": 9,
@@ -1858,7 +1938,7 @@
       "label": "framer-motion",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "package_dependencies_framer_motion",
       "community": 9,
@@ -1868,7 +1948,7 @@
       "label": "gsap",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "package_dependencies_gsap",
       "community": 9,
@@ -1878,7 +1958,7 @@
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "package_dependencies_lucide_react",
       "community": 9,
@@ -1888,7 +1968,7 @@
       "label": "next",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "package_dependencies_next",
       "community": 9,
@@ -1898,7 +1978,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "package_dependencies_react",
       "community": 9,
@@ -1908,7 +1988,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "package_dependencies_react_dom",
       "community": 9,
@@ -1918,7 +1998,7 @@
       "label": "shadcn",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "package_dependencies_shadcn",
       "community": 9,
@@ -1928,7 +2008,7 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "package_dependencies_tailwind_merge",
       "community": 9,
@@ -1938,7 +2018,7 @@
       "label": "tw-animate-css",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "package_dependencies_tw_animate_css",
       "community": 9,
@@ -1948,7 +2028,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "package_devdependencies",
       "community": 4,
@@ -1958,7 +2038,7 @@
       "label": "@tailwindcss/postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss_postcss",
       "community": 4,
@@ -1968,7 +2048,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "package_devdependencies_types_node",
       "community": 4,
@@ -1978,7 +2058,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "package_devdependencies_types_react",
       "community": 4,
@@ -1988,7 +2068,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "package_devdependencies_types_react_dom",
       "community": 4,
@@ -1998,7 +2078,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "package_devdependencies_eslint",
       "community": 4,
@@ -2008,7 +2088,7 @@
       "label": "eslint-config-next",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_config_next",
       "community": 4,
@@ -2018,7 +2098,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "package_devdependencies_tailwindcss",
       "community": 4,
@@ -2028,7 +2108,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "package_devdependencies_typescript",
       "community": 4,
@@ -2038,7 +2118,7 @@
       "label": "overrides",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "package_overrides",
       "community": 4,
@@ -2048,7 +2128,7 @@
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "package_overrides_postcss",
       "community": 4,
@@ -2275,17 +2355,544 @@
       "norm_label": "exclude"
     },
     {
+      "label": "AGENTS.md",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "agents",
+      "community": 22,
+      "norm_label": "agents.md"
+    },
+    {
       "label": "Project Rules",
       "file_type": "document",
       "source_file": "AGENTS.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
+      "source_location": "L2",
+      "_origin": "ast",
       "id": "agents_project_rules",
-      "community": 1,
+      "community": 22,
       "norm_label": "project rules"
+    },
+    {
+      "label": "Project",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "agents_project",
+      "community": 22,
+      "norm_label": "project"
+    },
+    {
+      "label": "Expectations",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "agents_expectations",
+      "community": 22,
+      "norm_label": "expectations"
+    },
+    {
+      "label": "DESIGN.md",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "design_md_design",
+      "community": 1,
+      "norm_label": "design.md"
+    },
+    {
+      "label": "Design System: Portfolio Site",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "design_design_system_portfolio_site",
+      "community": 1,
+      "norm_label": "design system: portfolio site"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "design_overview",
+      "community": 1,
+      "norm_label": "overview"
+    },
+    {
+      "label": "Colors",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "design_colors",
+      "community": 1,
+      "norm_label": "colors"
+    },
+    {
+      "label": "Primary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "design_primary",
+      "community": 1,
+      "norm_label": "primary"
+    },
+    {
+      "label": "Secondary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "design_secondary",
+      "community": 1,
+      "norm_label": "secondary"
+    },
+    {
+      "label": "Tertiary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L102",
+      "_origin": "ast",
+      "id": "design_tertiary",
+      "community": 1,
+      "norm_label": "tertiary"
+    },
+    {
+      "label": "Neutral",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L106",
+      "_origin": "ast",
+      "id": "design_neutral",
+      "community": 1,
+      "norm_label": "neutral"
+    },
+    {
+      "label": "Named Rules",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L117",
+      "_origin": "ast",
+      "id": "design_named_rules",
+      "community": 1,
+      "norm_label": "named rules"
+    },
+    {
+      "label": "Typography",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "design_typography",
+      "community": 1,
+      "norm_label": "typography"
+    },
+    {
+      "label": "Hierarchy",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L131",
+      "_origin": "ast",
+      "id": "design_hierarchy",
+      "community": 1,
+      "norm_label": "hierarchy"
+    },
+    {
+      "label": "Named Rules",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "design_named_rules_139",
+      "community": 1,
+      "norm_label": "named rules"
+    },
+    {
+      "label": "Elevation",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L143",
+      "_origin": "ast",
+      "id": "design_elevation",
+      "community": 1,
+      "norm_label": "elevation"
+    },
+    {
+      "label": "Shadow Vocabulary",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L147",
+      "_origin": "ast",
+      "id": "design_shadow_vocabulary",
+      "community": 1,
+      "norm_label": "shadow vocabulary"
+    },
+    {
+      "label": "Named Rules",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L152",
+      "_origin": "ast",
+      "id": "design_named_rules_152",
+      "community": 1,
+      "norm_label": "named rules"
+    },
+    {
+      "label": "Components",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L156",
+      "_origin": "ast",
+      "id": "design_components",
+      "community": 1,
+      "norm_label": "components"
+    },
+    {
+      "label": "Buttons",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L158",
+      "_origin": "ast",
+      "id": "design_buttons",
+      "community": 1,
+      "norm_label": "buttons"
+    },
+    {
+      "label": "Chips",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L163",
+      "_origin": "ast",
+      "id": "design_chips",
+      "community": 1,
+      "norm_label": "chips"
+    },
+    {
+      "label": "Cards / Containers",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L168",
+      "_origin": "ast",
+      "id": "design_cards_containers",
+      "community": 1,
+      "norm_label": "cards / containers"
+    },
+    {
+      "label": "Inputs / Fields",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L176",
+      "_origin": "ast",
+      "id": "design_inputs_fields",
+      "community": 1,
+      "norm_label": "inputs / fields"
+    },
+    {
+      "label": "Navigation",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "design_navigation",
+      "community": 1,
+      "norm_label": "navigation"
+    },
+    {
+      "label": "Signature Component",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L186",
+      "_origin": "ast",
+      "id": "design_signature_component",
+      "community": 1,
+      "norm_label": "signature component"
+    },
+    {
+      "label": "Do's and Don'ts",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L195",
+      "_origin": "ast",
+      "id": "design_do_s_and_don_ts",
+      "community": 1,
+      "norm_label": "do's and don'ts"
+    },
+    {
+      "label": "Do:",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L197",
+      "_origin": "ast",
+      "id": "design_do",
+      "community": 1,
+      "norm_label": "do:"
+    },
+    {
+      "label": "Don't:",
+      "file_type": "document",
+      "source_file": "DESIGN.md",
+      "source_location": "L205",
+      "_origin": "ast",
+      "id": "design_don_t",
+      "community": 1,
+      "norm_label": "don't:"
+    },
+    {
+      "label": "PRODUCT.md",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "product",
+      "community": 22,
+      "norm_label": "product.md"
+    },
+    {
+      "label": "Product",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "product_product",
+      "community": 22,
+      "norm_label": "product"
+    },
+    {
+      "label": "Register",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "product_register",
+      "community": 22,
+      "norm_label": "register"
+    },
+    {
+      "label": "Users",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "product_users",
+      "community": 22,
+      "norm_label": "users"
+    },
+    {
+      "label": "Product Purpose",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "product_product_purpose",
+      "community": 22,
+      "norm_label": "product purpose"
+    },
+    {
+      "label": "Brand Personality",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "product_brand_personality",
+      "community": 22,
+      "norm_label": "brand personality"
+    },
+    {
+      "label": "Anti-references",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "product_anti_references",
+      "community": 22,
+      "norm_label": "anti-references"
+    },
+    {
+      "label": "Design Principles",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "product_design_principles",
+      "community": 22,
+      "norm_label": "design principles"
+    },
+    {
+      "label": "Accessibility & Inclusion",
+      "file_type": "document",
+      "source_file": "PRODUCT.md",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "product_accessibility_inclusion",
+      "community": 22,
+      "norm_label": "accessibility & inclusion"
+    },
+    {
+      "label": "kwork-gigs.md",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs",
+      "community": 23,
+      "norm_label": "kwork-gigs.md"
+    },
+    {
+      "label": "\u041a\u0432\u043e\u0440\u043a\u0438 SHTQ.PRO \u0434\u043b\u044f KWORK",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_\u043a\u0432\u043e\u0440\u043a\u0438_shtq_pro_\u0434\u043b\u044f_kwork",
+      "community": 23,
+      "norm_label": "\u043a\u0432\u043e\u0440\u043a\u0438 shtq.pro \u0434\u043b\u044f kwork"
+    },
+    {
+      "label": "\u0421\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f: \u043a\u0430\u043a\u0438\u0435 \u043a\u0432\u043e\u0440\u043a\u0438 \u0437\u0430\u0432\u043e\u0434\u0438\u0442\u044c",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_\u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f_\u043a\u0430\u043a\u0438\u0435_\u043a\u0432\u043e\u0440\u043a\u0438_\u0437\u0430\u0432\u043e\u0434\u0438\u0442\u044c",
+      "community": 23,
+      "norm_label": "\u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f: \u043a\u0430\u043a\u0438\u0435 \u043a\u0432\u043e\u0440\u043a\u0438 \u0437\u0430\u0432\u043e\u0434\u0438\u0442\u044c"
+    },
+    {
+      "label": "\u041f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442 \u0437\u0430\u043f\u0443\u0441\u043a\u0430",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_\u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442_\u0437\u0430\u043f\u0443\u0441\u043a\u0430",
+      "community": 23,
+      "norm_label": "\u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442 \u0437\u0430\u043f\u0443\u0441\u043a\u0430"
+    },
+    {
+      "label": "\u0422\u0435\u043a\u0441\u0442\u044b \u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "community": 23,
+      "norm_label": "\u0442\u0435\u043a\u0441\u0442\u044b \u043a\u0432\u043e\u0440\u043a\u043e\u0432"
+    },
+    {
+      "label": "1. \u041b\u0435\u043d\u0434\u0438\u043d\u0433 \u043d\u0430 Tilda (Zero Block)",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_1_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_\u043d\u0430_tilda_zero_block",
+      "community": 23,
+      "norm_label": "1. \u043b\u0435\u043d\u0434\u0438\u043d\u0433 \u043d\u0430 tilda (zero block)"
+    },
+    {
+      "label": "2. \u041c\u043d\u043e\u0433\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0439 \u0441\u0430\u0439\u0442 \u043d\u0430 Tilda",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_2_\u043c\u043d\u043e\u0433\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0439_\u0441\u0430\u0439\u0442_\u043d\u0430_tilda",
+      "community": 23,
+      "norm_label": "2. \u043c\u043d\u043e\u0433\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0438 \u0441\u0430\u0438\u0442 \u043d\u0430 tilda"
+    },
+    {
+      "label": "3. \u041b\u0435\u043d\u0434\u0438\u043d\u0433 \u043d\u0430 Next.js / React",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_3_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_\u043d\u0430_next_js_react",
+      "community": 23,
+      "norm_label": "3. \u043b\u0435\u043d\u0434\u0438\u043d\u0433 \u043d\u0430 next.js / react"
+    },
+    {
+      "label": "4. \u0421\u0430\u0439\u0442 \u043d\u0430 Next.js + CMS (Sanity)",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L128",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_4_\u0441\u0430\u0439\u0442_\u043d\u0430_next_js_cms_sanity",
+      "community": 23,
+      "norm_label": "4. \u0441\u0430\u0438\u0442 \u043d\u0430 next.js + cms (sanity)"
+    },
+    {
+      "label": "5. \u0421\u0430\u0439\u0442 \u043d\u0430 WordPress (ACF, Classic, \u0431\u0435\u0437 Gutenberg)",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L155",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_5_\u0441\u0430\u0439\u0442_\u043d\u0430_wordpress_acf_classic_\u0431\u0435\u0437_gutenberg",
+      "community": 23,
+      "norm_label": "5. \u0441\u0430\u0438\u0442 \u043d\u0430 wordpress (acf, classic, \u0431\u0435\u0437 gutenberg)"
+    },
+    {
+      "label": "6. \u0414\u0438\u0437\u0430\u0439\u043d \u0441\u0430\u0439\u0442\u0430 \u0432 Figma (UI/UX \u0441 \u043d\u0443\u043b\u044f)",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L182",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_6_\u0434\u0438\u0437\u0430\u0439\u043d_\u0441\u0430\u0439\u0442\u0430_\u0432_figma_ui_ux_\u0441_\u043d\u0443\u043b\u044f",
+      "community": 23,
+      "norm_label": "6. \u0434\u0438\u0437\u0430\u0438\u043d \u0441\u0430\u0438\u0442\u0430 \u0432 figma (ui/ux \u0441 \u043d\u0443\u043b\u044f)"
+    },
+    {
+      "label": "7. \u0412\u0451\u0440\u0441\u0442\u043a\u0430 \u043f\u043e \u043c\u0430\u043a\u0435\u0442\u0443 Figma",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L211",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_7_\u0432\u0451\u0440\u0441\u0442\u043a\u0430_\u043f\u043e_\u043c\u0430\u043a\u0435\u0442\u0443_figma",
+      "community": 23,
+      "norm_label": "7. \u0432\u0435\u0440\u0441\u0442\u043a\u0430 \u043f\u043e \u043c\u0430\u043a\u0435\u0442\u0443 figma"
+    },
+    {
+      "label": "8. \u0420\u0435\u0434\u0438\u0437\u0430\u0439\u043d \u0441\u0430\u0439\u0442\u0430",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L238",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_8_\u0440\u0435\u0434\u0438\u0437\u0430\u0439\u043d_\u0441\u0430\u0439\u0442\u0430",
+      "community": 23,
+      "norm_label": "8. \u0440\u0435\u0434\u0438\u0437\u0430\u0438\u043d \u0441\u0430\u0438\u0442\u0430"
+    },
+    {
+      "label": "9. \u0421\u0442\u0430\u0442\u0438\u0447\u043d\u044b\u0439 \u043b\u0435\u043d\u0434\u0438\u043d\u0433 HTML/CSS/JS",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L267",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_9_\u0441\u0442\u0430\u0442\u0438\u0447\u043d\u044b\u0439_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_html_css_js",
+      "community": 23,
+      "norm_label": "9. \u0441\u0442\u0430\u0442\u0438\u0447\u043d\u044b\u0438 \u043b\u0435\u043d\u0434\u0438\u043d\u0433 html/css/js"
+    },
+    {
+      "label": "10. \u0414\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0438 \u043f\u0440\u0430\u0432\u043a\u0438 \u0441\u0430\u0439\u0442\u0430",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L294",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_10_\u0434\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0430_\u0438_\u043f\u0440\u0430\u0432\u043a\u0438_\u0441\u0430\u0439\u0442\u0430",
+      "community": 23,
+      "norm_label": "10. \u0434\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0438 \u043f\u0440\u0430\u0432\u043a\u0438 \u0441\u0430\u0438\u0442\u0430"
+    },
+    {
+      "label": "\u0427\u0442\u043e \u0432\u044b\u043d\u0435\u0441\u0442\u0438 \u0432 \u043f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e \u043a\u0430\u0436\u0434\u043e\u0433\u043e \u043a\u0432\u043e\u0440\u043a\u0430",
+      "file_type": "document",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L321",
+      "_origin": "ast",
+      "id": "kwork_kwork_gigs_\u0447\u0442\u043e_\u0432\u044b\u043d\u0435\u0441\u0442\u0438_\u0432_\u043f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e_\u043a\u0430\u0436\u0434\u043e\u0433\u043e_\u043a\u0432\u043e\u0440\u043a\u0430",
+      "community": 23,
+      "norm_label": "\u0447\u0442\u043e \u0432\u044b\u043d\u0435\u0441\u0442\u0438 \u0432 \u043f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e \u043a\u0430\u0436\u0434\u043e\u0433\u043e \u043a\u0432\u043e\u0440\u043a\u0430"
     },
     {
       "label": "Preserve Author's Voice and Visual Identity",
@@ -2296,9 +2903,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_preserve_authors_voice",
-      "community": 1,
-      "norm_label": "preserve author's voice and visual identity"
+      "community": 22,
+      "norm_label": "preserve author's voice and visual identity",
+      "id": "agents_preserve_authors_voice"
     },
     {
       "label": "Clean Presentation Over Decorative Complexity",
@@ -2309,22 +2916,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "agents_clean_presentation_over_decoration",
-      "community": 1,
-      "norm_label": "clean presentation over decorative complexity"
-    },
-    {
-      "label": "Design System: Portfolio Site",
-      "file_type": "document",
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "design_portfolio_design_system",
-      "community": 1,
-      "norm_label": "design system: portfolio site"
+      "community": 22,
+      "norm_label": "clean presentation over decorative complexity",
+      "id": "agents_clean_presentation_over_decoration"
     },
     {
       "label": "Structured Editorial Grid (Creative North Star)",
@@ -2335,9 +2929,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_structured_editorial_grid",
       "community": 1,
-      "norm_label": "structured editorial grid (creative north star)"
+      "norm_label": "structured editorial grid (creative north star)",
+      "id": "design_structured_editorial_grid"
     },
     {
       "label": "Color Tokens / Palette",
@@ -2348,9 +2942,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_color_tokens",
       "community": 1,
-      "norm_label": "color tokens / palette"
+      "norm_label": "color tokens / palette",
+      "id": "design_color_tokens"
     },
     {
       "label": "Signal Violet Accent",
@@ -2361,9 +2955,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_signal_violet",
       "community": 1,
-      "norm_label": "signal violet accent"
+      "norm_label": "signal violet accent",
+      "id": "design_signal_violet"
     },
     {
       "label": "Utility Green",
@@ -2374,22 +2968,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_utility_green",
       "community": 1,
-      "norm_label": "utility green"
-    },
-    {
-      "label": "Typography System",
-      "file_type": "concept",
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "design_typography",
-      "community": 1,
-      "norm_label": "typography system"
+      "norm_label": "utility green",
+      "id": "design_utility_green"
     },
     {
       "label": "The Visible Structure Rule",
@@ -2400,9 +2981,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_visible_structure_rule",
-      "community": 1,
-      "norm_label": "the visible structure rule"
+      "community": 22,
+      "norm_label": "the visible structure rule",
+      "id": "design_visible_structure_rule"
     },
     {
       "label": "The Rare Accent Rule",
@@ -2413,9 +2994,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_rare_accent_rule",
       "community": 1,
-      "norm_label": "the rare accent rule"
+      "norm_label": "the rare accent rule",
+      "id": "design_rare_accent_rule"
     },
     {
       "label": "The Type Carries Authority Rule",
@@ -2426,9 +3007,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_type_carries_authority_rule",
       "community": 1,
-      "norm_label": "the type carries authority rule"
+      "norm_label": "the type carries authority rule",
+      "id": "design_type_carries_authority_rule"
     },
     {
       "label": "The Flat By Default Rule",
@@ -2439,22 +3020,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_flat_by_default_rule",
       "community": 1,
-      "norm_label": "the flat by default rule"
-    },
-    {
-      "label": "Elevation / Flat Planar System",
-      "file_type": "concept",
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "design_elevation",
-      "community": 1,
-      "norm_label": "elevation / flat planar system"
+      "norm_label": "the flat by default rule",
+      "id": "design_flat_by_default_rule"
     },
     {
       "label": "Split Editorial Hero (Signature Component)",
@@ -2465,9 +3033,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_split_editorial_hero",
       "community": 1,
-      "norm_label": "split editorial hero (signature component)"
+      "norm_label": "split editorial hero (signature component)",
+      "id": "design_split_editorial_hero"
     },
     {
       "label": "Hard Corners / Non-Cardified Surfaces",
@@ -2478,9 +3046,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_hard_corners",
       "community": 1,
-      "norm_label": "hard corners / non-cardified surfaces"
+      "norm_label": "hard corners / non-cardified surfaces",
+      "id": "design_hard_corners"
     },
     {
       "label": "Purposeful Motion (Clarify Not Perform)",
@@ -2491,22 +3059,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "design_purposeful_motion",
-      "community": 1,
-      "norm_label": "purposeful motion (clarify not perform)"
-    },
-    {
-      "label": "Product Purpose",
-      "file_type": "document",
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "product_product_purpose",
-      "community": 1,
-      "norm_label": "product purpose"
+      "community": 22,
+      "norm_label": "purposeful motion (clarify not perform)",
+      "id": "design_purposeful_motion"
     },
     {
       "label": "Target Users",
@@ -2517,9 +3072,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "product_target_users",
-      "community": 1,
-      "norm_label": "target users"
+      "community": 22,
+      "norm_label": "target users",
+      "id": "product_target_users"
     },
     {
       "label": "Designing Websites as Systems",
@@ -2530,61 +3085,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "product_websites_as_systems",
-      "community": 1,
-      "norm_label": "designing websites as systems"
-    },
-    {
-      "label": "Brand Personality (Adult, Precise, Editorial)",
-      "file_type": "concept",
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "product_brand_personality",
-      "community": 1,
-      "norm_label": "brand personality (adult, precise, editorial)"
-    },
-    {
-      "label": "Design Principles",
-      "file_type": "rationale",
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "product_design_principles",
-      "community": 1,
-      "norm_label": "design principles"
-    },
-    {
-      "label": "Anti-references",
-      "file_type": "concept",
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "product_anti_references",
-      "community": 1,
-      "norm_label": "anti-references"
-    },
-    {
-      "label": "Accessibility & Inclusion",
-      "file_type": "concept",
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "product_accessibility",
-      "community": 1,
-      "norm_label": "accessibility & inclusion"
+      "community": 22,
+      "norm_label": "designing websites as systems",
+      "id": "product_websites_as_systems"
     }
   ],
   "links": [
@@ -2594,7 +3097,7 @@
       "source_file": "DESIGN.json",
       "source_location": "L5",
       "weight": 1.0,
-      "source": "design",
+      "source": "design_json_design",
       "target": "design_extensions",
       "confidence_score": 1.0
     },
@@ -2604,7 +3107,7 @@
       "source_file": "DESIGN.json",
       "source_location": "L3",
       "weight": 1.0,
-      "source": "design",
+      "source": "design_json_design",
       "target": "design_generatedat",
       "confidence_score": 1.0
     },
@@ -2614,7 +3117,7 @@
       "source_file": "DESIGN.json",
       "source_location": "L2",
       "weight": 1.0,
-      "source": "design",
+      "source": "design_json_design",
       "target": "design_schemaversion",
       "confidence_score": 1.0
     },
@@ -2624,7 +3127,7 @@
       "source_file": "DESIGN.json",
       "source_location": "L4",
       "weight": 1.0,
-      "source": "design",
+      "source": "design_json_design",
       "target": "design_title",
       "confidence_score": 1.0
     },
@@ -2634,9 +3137,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions",
-      "target": "design_extensions_colormeta",
-      "confidence_score": 1.0
+      "target": "design_extensions_colormeta"
     },
     {
       "relation": "contains",
@@ -2644,9 +3147,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions",
-      "target": "design_extensions_dodont",
-      "confidence_score": 1.0
+      "target": "design_extensions_dodont"
     },
     {
       "relation": "contains",
@@ -2654,9 +3157,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions",
-      "target": "design_extensions_motion",
-      "confidence_score": 1.0
+      "target": "design_extensions_motion"
     },
     {
       "relation": "contains",
@@ -2664,9 +3167,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions",
-      "target": "design_extensions_northstar",
-      "confidence_score": 1.0
+      "target": "design_extensions_northstar"
     },
     {
       "relation": "contains",
@@ -2674,9 +3177,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_northstar",
-      "target": "design_northstar_name",
-      "confidence_score": 1.0
+      "target": "design_northstar_name"
     },
     {
       "relation": "contains",
@@ -2684,9 +3187,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_northstar",
-      "target": "design_northstar_summary",
-      "confidence_score": 1.0
+      "target": "design_northstar_summary"
     },
     {
       "relation": "contains",
@@ -2694,9 +3197,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_colormeta",
-      "target": "design_colormeta_accent_green",
-      "confidence_score": 1.0
+      "target": "design_colormeta_accent_green"
     },
     {
       "relation": "contains",
@@ -2704,9 +3207,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_colormeta",
-      "target": "design_colormeta_accent_violet",
-      "confidence_score": 1.0
+      "target": "design_colormeta_accent_violet"
     },
     {
       "relation": "contains",
@@ -2714,9 +3217,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_colormeta",
-      "target": "design_colormeta_background",
-      "confidence_score": 1.0
+      "target": "design_colormeta_background"
     },
     {
       "relation": "contains",
@@ -2724,9 +3227,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_colormeta",
-      "target": "design_colormeta_surface",
-      "confidence_score": 1.0
+      "target": "design_colormeta_surface"
     },
     {
       "relation": "contains",
@@ -2734,9 +3237,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_colormeta",
-      "target": "design_colormeta_surface_soft",
-      "confidence_score": 1.0
+      "target": "design_colormeta_surface_soft"
     },
     {
       "relation": "contains",
@@ -2744,9 +3247,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_background",
-      "target": "design_background_canonical",
-      "confidence_score": 1.0
+      "target": "design_background_canonical"
     },
     {
       "relation": "contains",
@@ -2754,9 +3257,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_background",
-      "target": "design_background_displayname",
-      "confidence_score": 1.0
+      "target": "design_background_displayname"
     },
     {
       "relation": "contains",
@@ -2764,9 +3267,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_background",
-      "target": "design_background_role",
-      "confidence_score": 1.0
+      "target": "design_background_role"
     },
     {
       "relation": "contains",
@@ -2774,9 +3277,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_surface",
-      "target": "design_surface_canonical",
-      "confidence_score": 1.0
+      "target": "design_surface_canonical"
     },
     {
       "relation": "contains",
@@ -2784,9 +3287,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_surface",
-      "target": "design_surface_displayname",
-      "confidence_score": 1.0
+      "target": "design_surface_displayname"
     },
     {
       "relation": "contains",
@@ -2794,9 +3297,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_surface",
-      "target": "design_surface_role",
-      "confidence_score": 1.0
+      "target": "design_surface_role"
     },
     {
       "relation": "contains",
@@ -2804,9 +3307,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_surface_soft",
-      "target": "design_surface_soft_canonical",
-      "confidence_score": 1.0
+      "target": "design_surface_soft_canonical"
     },
     {
       "relation": "contains",
@@ -2814,9 +3317,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_surface_soft",
-      "target": "design_surface_soft_displayname",
-      "confidence_score": 1.0
+      "target": "design_surface_soft_displayname"
     },
     {
       "relation": "contains",
@@ -2824,9 +3327,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_surface_soft",
-      "target": "design_surface_soft_role",
-      "confidence_score": 1.0
+      "target": "design_surface_soft_role"
     },
     {
       "relation": "contains",
@@ -2834,9 +3337,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_accent_violet",
-      "target": "design_accent_violet_canonical",
-      "confidence_score": 1.0
+      "target": "design_accent_violet_canonical"
     },
     {
       "relation": "contains",
@@ -2844,9 +3347,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_accent_violet",
-      "target": "design_accent_violet_displayname",
-      "confidence_score": 1.0
+      "target": "design_accent_violet_displayname"
     },
     {
       "relation": "contains",
@@ -2854,9 +3357,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_accent_violet",
-      "target": "design_accent_violet_role",
-      "confidence_score": 1.0
+      "target": "design_accent_violet_role"
     },
     {
       "relation": "contains",
@@ -2864,9 +3367,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_accent_green",
-      "target": "design_accent_green_canonical",
-      "confidence_score": 1.0
+      "target": "design_accent_green_canonical"
     },
     {
       "relation": "contains",
@@ -2874,9 +3377,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_accent_green",
-      "target": "design_accent_green_displayname",
-      "confidence_score": 1.0
+      "target": "design_accent_green_displayname"
     },
     {
       "relation": "contains",
@@ -2884,9 +3387,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_colormeta_accent_green",
-      "target": "design_accent_green_role",
-      "confidence_score": 1.0
+      "target": "design_accent_green_role"
     },
     {
       "relation": "contains",
@@ -2894,9 +3397,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_motion",
-      "target": "design_motion_defaultease",
-      "confidence_score": 1.0
+      "target": "design_motion_defaultease"
     },
     {
       "relation": "contains",
@@ -2904,9 +3407,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_motion",
-      "target": "design_motion_principle",
-      "confidence_score": 1.0
+      "target": "design_motion_principle"
     },
     {
       "relation": "contains",
@@ -2914,9 +3417,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_dodont",
-      "target": "design_dodont_do",
-      "confidence_score": 1.0
+      "target": "design_dodont_do"
     },
     {
       "relation": "contains",
@@ -2924,9 +3427,9 @@
       "source_file": "DESIGN.json",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "design_extensions_dodont",
-      "target": "design_dodont_dont",
-      "confidence_score": 1.0
+      "target": "design_dodont_dont"
     },
     {
       "relation": "contains",
@@ -2934,9 +3437,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "app_layout_geist",
-      "confidence_score": 1.0
+      "target": "app_layout_geist"
     },
     {
       "relation": "contains",
@@ -2944,9 +3447,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "app_layout_hikasami",
-      "confidence_score": 1.0
+      "target": "app_layout_hikasami"
     },
     {
       "relation": "contains",
@@ -2954,9 +3457,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "app_layout_manrope",
-      "confidence_score": 1.0
+      "target": "app_layout_manrope"
     },
     {
       "relation": "contains",
@@ -2964,9 +3467,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "app_layout_metadata",
-      "confidence_score": 1.0
+      "target": "app_layout_metadata"
     },
     {
       "relation": "contains",
@@ -2974,9 +3477,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "app_layout_rootlayout",
-      "confidence_score": 1.0
+      "target": "app_layout_rootlayout"
     },
     {
       "relation": "imports_from",
@@ -2985,9 +3488,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "header_header",
-      "confidence_score": 1.0
+      "target": "header_header"
     },
     {
       "relation": "imports",
@@ -2996,9 +3499,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "header_header_siteheader",
-      "confidence_score": 1.0
+      "target": "header_header_siteheader"
     },
     {
       "relation": "imports_from",
@@ -3007,9 +3510,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "lib_utils",
-      "confidence_score": 1.0
+      "target": "lib_utils"
     },
     {
       "relation": "imports",
@@ -3018,9 +3521,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "lib_utils_cn",
-      "confidence_score": 1.0
+      "target": "lib_utils_cn"
     },
     {
       "relation": "imports_from",
@@ -3029,9 +3532,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "utils_gsapsmoothscroll",
-      "confidence_score": 1.0
+      "target": "utils_gsapsmoothscroll"
     },
     {
       "relation": "imports",
@@ -3040,9 +3543,9 @@
       "source_file": "app/layout.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_layout",
-      "target": "utils_gsapsmoothscroll_gsapsmoothscroll",
-      "confidence_score": 1.0
+      "target": "utils_gsapsmoothscroll_gsapsmoothscroll"
     },
     {
       "relation": "calls",
@@ -3061,9 +3564,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "app_page_home",
-      "confidence_score": 1.0
+      "target": "app_page_home"
     },
     {
       "relation": "imports_from",
@@ -3072,9 +3575,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "contact_contact",
-      "confidence_score": 1.0
+      "target": "contact_contact"
     },
     {
       "relation": "imports",
@@ -3083,9 +3586,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "contact_contact_contact",
-      "confidence_score": 1.0
+      "target": "contact_contact_contact"
     },
     {
       "relation": "imports_from",
@@ -3094,9 +3597,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "footer_footer",
-      "confidence_score": 1.0
+      "target": "footer_footer"
     },
     {
       "relation": "imports",
@@ -3105,9 +3608,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "footer_footer_footer",
-      "confidence_score": 1.0
+      "target": "footer_footer_footer"
     },
     {
       "relation": "imports_from",
@@ -3116,9 +3619,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "hero_hero",
-      "confidence_score": 1.0
+      "target": "hero_hero"
     },
     {
       "relation": "imports",
@@ -3127,9 +3630,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "hero_hero_hero",
-      "confidence_score": 1.0
+      "target": "hero_hero_hero"
     },
     {
       "relation": "imports_from",
@@ -3138,9 +3641,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "work_gallery_workgallery",
-      "confidence_score": 1.0
+      "target": "work_gallery_workgallery"
     },
     {
       "relation": "imports",
@@ -3149,9 +3652,9 @@
       "source_file": "app/page.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_page",
-      "target": "work_gallery_workgallery_workgallery",
-      "confidence_score": 1.0
+      "target": "work_gallery_workgallery_workgallery"
     },
     {
       "relation": "contains",
@@ -3159,9 +3662,9 @@
       "source_file": "app/robots.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_robots",
-      "target": "app_robots_robots",
-      "confidence_score": 1.0
+      "target": "app_robots_robots"
     },
     {
       "relation": "contains",
@@ -3169,9 +3672,9 @@
       "source_file": "app/sitemap.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_sitemap",
-      "target": "app_sitemap_sitemap",
-      "confidence_score": 1.0
+      "target": "app_sitemap_sitemap"
     },
     {
       "relation": "contains",
@@ -3179,9 +3682,9 @@
       "source_file": "components.json",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_aliases",
-      "confidence_score": 1.0
+      "target": "components_aliases"
     },
     {
       "relation": "contains",
@@ -3189,9 +3692,9 @@
       "source_file": "components.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_iconlibrary",
-      "confidence_score": 1.0
+      "target": "components_iconlibrary"
     },
     {
       "relation": "contains",
@@ -3199,9 +3702,9 @@
       "source_file": "components.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_menuaccent",
-      "confidence_score": 1.0
+      "target": "components_menuaccent"
     },
     {
       "relation": "contains",
@@ -3209,9 +3712,9 @@
       "source_file": "components.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_menucolor",
-      "confidence_score": 1.0
+      "target": "components_menucolor"
     },
     {
       "relation": "contains",
@@ -3219,9 +3722,9 @@
       "source_file": "components.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_registries",
-      "confidence_score": 1.0
+      "target": "components_registries"
     },
     {
       "relation": "contains",
@@ -3229,9 +3732,9 @@
       "source_file": "components.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_rsc",
-      "confidence_score": 1.0
+      "target": "components_rsc"
     },
     {
       "relation": "contains",
@@ -3239,9 +3742,9 @@
       "source_file": "components.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_rtl",
-      "confidence_score": 1.0
+      "target": "components_rtl"
     },
     {
       "relation": "contains",
@@ -3249,9 +3752,9 @@
       "source_file": "components.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_schema",
-      "confidence_score": 1.0
+      "target": "components_schema"
     },
     {
       "relation": "contains",
@@ -3259,9 +3762,9 @@
       "source_file": "components.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_style",
-      "confidence_score": 1.0
+      "target": "components_style"
     },
     {
       "relation": "contains",
@@ -3269,9 +3772,9 @@
       "source_file": "components.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_tailwind",
-      "confidence_score": 1.0
+      "target": "components_tailwind"
     },
     {
       "relation": "contains",
@@ -3279,9 +3782,9 @@
       "source_file": "components.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components",
-      "target": "components_tsx",
-      "confidence_score": 1.0
+      "target": "components_tsx"
     },
     {
       "relation": "contains",
@@ -3289,9 +3792,9 @@
       "source_file": "components.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_tailwind",
-      "target": "components_tailwind_basecolor",
-      "confidence_score": 1.0
+      "target": "components_tailwind_basecolor"
     },
     {
       "relation": "contains",
@@ -3299,9 +3802,9 @@
       "source_file": "components.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_tailwind",
-      "target": "components_tailwind_config",
-      "confidence_score": 1.0
+      "target": "components_tailwind_config"
     },
     {
       "relation": "contains",
@@ -3309,9 +3812,9 @@
       "source_file": "components.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_tailwind",
-      "target": "components_tailwind_css",
-      "confidence_score": 1.0
+      "target": "components_tailwind_css"
     },
     {
       "relation": "contains",
@@ -3319,9 +3822,9 @@
       "source_file": "components.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_tailwind",
-      "target": "components_tailwind_cssvariables",
-      "confidence_score": 1.0
+      "target": "components_tailwind_cssvariables"
     },
     {
       "relation": "contains",
@@ -3329,9 +3832,9 @@
       "source_file": "components.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_tailwind",
-      "target": "components_tailwind_prefix",
-      "confidence_score": 1.0
+      "target": "components_tailwind_prefix"
     },
     {
       "relation": "contains",
@@ -3339,9 +3842,9 @@
       "source_file": "components.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_aliases",
-      "target": "components_aliases_components",
-      "confidence_score": 1.0
+      "target": "components_aliases_components"
     },
     {
       "relation": "contains",
@@ -3349,9 +3852,9 @@
       "source_file": "components.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_aliases",
-      "target": "components_aliases_hooks",
-      "confidence_score": 1.0
+      "target": "components_aliases_hooks"
     },
     {
       "relation": "contains",
@@ -3359,9 +3862,9 @@
       "source_file": "components.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_aliases",
-      "target": "components_aliases_lib",
-      "confidence_score": 1.0
+      "target": "components_aliases_lib"
     },
     {
       "relation": "contains",
@@ -3369,9 +3872,9 @@
       "source_file": "components.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_aliases",
-      "target": "components_aliases_ui",
-      "confidence_score": 1.0
+      "target": "components_aliases_ui"
     },
     {
       "relation": "contains",
@@ -3379,9 +3882,9 @@
       "source_file": "components.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_aliases",
-      "target": "components_aliases_utils",
-      "confidence_score": 1.0
+      "target": "components_aliases_utils"
     },
     {
       "relation": "contains",
@@ -3389,9 +3892,9 @@
       "source_file": "components.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_registries",
-      "target": "components_registries_react_bits",
-      "confidence_score": 1.0
+      "target": "components_registries_react_bits"
     },
     {
       "relation": "contains",
@@ -3399,9 +3902,9 @@
       "source_file": "components/Silk.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_silk",
-      "target": "components_silk_hextonormalizedrgb",
-      "confidence_score": 1.0
+      "target": "components_silk_hextonormalizedrgb"
     },
     {
       "relation": "contains",
@@ -3409,9 +3912,9 @@
       "source_file": "components/Silk.jsx",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_silk",
-      "target": "components_silk_silk",
-      "confidence_score": 1.0
+      "target": "components_silk_silk"
     },
     {
       "relation": "contains",
@@ -3419,9 +3922,9 @@
       "source_file": "components/Silk.jsx",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_silk",
-      "target": "components_silk_silkplane",
-      "confidence_score": 1.0
+      "target": "components_silk_silkplane"
     },
     {
       "relation": "contains",
@@ -3429,9 +3932,9 @@
       "source_file": "components/scroll-reveal.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_scroll_reveal",
-      "target": "components_scroll_reveal_scrollreveal",
-      "confidence_score": 1.0
+      "target": "components_scroll_reveal_scrollreveal"
     },
     {
       "relation": "contains",
@@ -3439,9 +3942,9 @@
       "source_file": "components/sections/contact/Contact.tsx",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contact_contact",
-      "target": "contact_contact_briefform",
-      "confidence_score": 1.0
+      "target": "contact_contact_briefform"
     },
     {
       "relation": "contains",
@@ -3449,9 +3952,9 @@
       "source_file": "components/sections/contact/Contact.tsx",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contact_contact",
-      "target": "contact_contact_checkicon",
-      "confidence_score": 1.0
+      "target": "contact_contact_checkicon"
     },
     {
       "relation": "contains",
@@ -3459,8 +3962,18 @@
       "source_file": "components/sections/contact/Contact.tsx",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contact_contact",
-      "target": "contact_contact_contact",
+      "target": "contact_contact_contact"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sections/contact/Contact.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "contact_contact",
+      "target": "contact_contact_countlinks",
       "confidence_score": 1.0
     },
     {
@@ -3469,8 +3982,18 @@
       "source_file": "components/sections/contact/Contact.tsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contact_contact",
-      "target": "contact_contact_dribbbleicon",
+      "target": "contact_contact_dribbbleicon"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/sections/contact/Contact.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "contact_contact",
+      "target": "contact_contact_fields",
       "confidence_score": 1.0
     },
     {
@@ -3479,9 +4002,9 @@
       "source_file": "components/sections/contact/Contact.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contact_contact",
-      "target": "contact_contact_kworkicon",
-      "confidence_score": 1.0
+      "target": "contact_contact_kworkicon"
     },
     {
       "relation": "contains",
@@ -3489,9 +4012,9 @@
       "source_file": "components/sections/contact/Contact.tsx",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contact_contact",
-      "target": "contact_contact_status",
-      "confidence_score": 1.0
+      "target": "contact_contact_status"
     },
     {
       "relation": "contains",
@@ -3499,9 +4022,9 @@
       "source_file": "components/sections/contact/Contact.tsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "contact_contact",
-      "target": "contact_contact_telegramicon",
-      "confidence_score": 1.0
+      "target": "contact_contact_telegramicon"
     },
     {
       "relation": "contains",
@@ -3509,9 +4032,9 @@
       "source_file": "components/sections/hero/AboutDemo.tsx",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_aboutdemo",
-      "target": "hero_aboutdemo_aboutdemo",
-      "confidence_score": 1.0
+      "target": "hero_aboutdemo_aboutdemo"
     },
     {
       "relation": "contains",
@@ -3519,9 +4042,9 @@
       "source_file": "components/sections/hero/AboutDemo.tsx",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_aboutdemo",
-      "target": "hero_aboutdemo_aboutdemoprops",
-      "confidence_score": 1.0
+      "target": "hero_aboutdemo_aboutdemoprops"
     },
     {
       "relation": "contains",
@@ -3529,9 +4052,9 @@
       "source_file": "components/sections/hero/AboutDemo.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_aboutdemo",
-      "target": "hero_aboutdemo_line",
-      "confidence_score": 1.0
+      "target": "hero_aboutdemo_line"
     },
     {
       "relation": "contains",
@@ -3539,9 +4062,9 @@
       "source_file": "components/sections/hero/AboutDemo.tsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_aboutdemo",
-      "target": "hero_aboutdemo_stagerow",
-      "confidence_score": 1.0
+      "target": "hero_aboutdemo_stagerow"
     },
     {
       "relation": "contains",
@@ -3549,9 +4072,9 @@
       "source_file": "components/sections/hero/AboutDemo.tsx",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_aboutdemo",
-      "target": "hero_aboutdemo_stagerows",
-      "confidence_score": 1.0
+      "target": "hero_aboutdemo_stagerows"
     },
     {
       "relation": "imports_from",
@@ -3560,9 +4083,9 @@
       "source_file": "components/sections/hero/AboutDemo.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_aboutdemo",
-      "target": "lib_gsap_setup",
-      "confidence_score": 1.0
+      "target": "lib_gsap_setup"
     },
     {
       "relation": "imports_from",
@@ -3571,9 +4094,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_aboutdemo",
-      "confidence_score": 1.0
+      "target": "hero_aboutdemo"
     },
     {
       "relation": "imports",
@@ -3582,9 +4105,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_aboutdemo_aboutdemo",
-      "confidence_score": 1.0
+      "target": "hero_aboutdemo_aboutdemo"
     },
     {
       "relation": "contains",
@@ -3592,9 +4115,9 @@
       "source_file": "components/sections/hero/BuildDemo.tsx",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_builddemo",
-      "target": "hero_builddemo_builddemo",
-      "confidence_score": 1.0
+      "target": "hero_builddemo_builddemo"
     },
     {
       "relation": "contains",
@@ -3602,9 +4125,9 @@
       "source_file": "components/sections/hero/BuildDemo.tsx",
       "source_location": "L86",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_builddemo",
-      "target": "hero_builddemo_builddemoprops",
-      "confidence_score": 1.0
+      "target": "hero_builddemo_builddemoprops"
     },
     {
       "relation": "contains",
@@ -3612,9 +4135,9 @@
       "source_file": "components/sections/hero/BuildDemo.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_builddemo",
-      "target": "hero_builddemo_codefragments",
-      "confidence_score": 1.0
+      "target": "hero_builddemo_codefragments"
     },
     {
       "relation": "contains",
@@ -3622,9 +4145,9 @@
       "source_file": "components/sections/hero/BuildDemo.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_builddemo",
-      "target": "hero_builddemo_codeline",
-      "confidence_score": 1.0
+      "target": "hero_builddemo_codeline"
     },
     {
       "relation": "contains",
@@ -3632,9 +4155,9 @@
       "source_file": "components/sections/hero/BuildDemo.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_builddemo",
-      "target": "hero_builddemo_codetoken",
-      "confidence_score": 1.0
+      "target": "hero_builddemo_codetoken"
     },
     {
       "relation": "contains",
@@ -3642,9 +4165,9 @@
       "source_file": "components/sections/hero/BuildDemo.tsx",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_builddemo",
-      "target": "hero_builddemo_tokenclass",
-      "confidence_score": 1.0
+      "target": "hero_builddemo_tokenclass"
     },
     {
       "relation": "imports_from",
@@ -3653,9 +4176,9 @@
       "source_file": "components/sections/hero/BuildDemo.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_builddemo",
-      "target": "lib_gsap_setup",
-      "confidence_score": 1.0
+      "target": "lib_gsap_setup"
     },
     {
       "relation": "imports_from",
@@ -3664,9 +4187,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_builddemo",
-      "confidence_score": 1.0
+      "target": "hero_builddemo"
     },
     {
       "relation": "imports",
@@ -3675,9 +4198,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_builddemo_builddemo",
-      "confidence_score": 1.0
+      "target": "hero_builddemo_builddemo"
     },
     {
       "relation": "contains",
@@ -3685,9 +4208,9 @@
       "source_file": "components/sections/hero/DesignSystemPanel.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystempanel",
-      "target": "hero_designsystempanel_colortokens",
-      "confidence_score": 1.0
+      "target": "hero_designsystempanel_colortokens"
     },
     {
       "relation": "contains",
@@ -3695,9 +4218,9 @@
       "source_file": "components/sections/hero/DesignSystemPanel.tsx",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystempanel",
-      "target": "hero_designsystempanel_designsystempanel",
-      "confidence_score": 1.0
+      "target": "hero_designsystempanel_designsystempanel"
     },
     {
       "relation": "contains",
@@ -3705,9 +4228,9 @@
       "source_file": "components/sections/hero/DesignSystemPanel.tsx",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystempanel",
-      "target": "hero_designsystempanel_designsystempanelprops",
-      "confidence_score": 1.0
+      "target": "hero_designsystempanel_designsystempanelprops"
     },
     {
       "relation": "contains",
@@ -3715,9 +4238,9 @@
       "source_file": "components/sections/hero/DesignSystemPanel.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystempanel",
-      "target": "hero_designsystempanel_spacingscale",
-      "confidence_score": 1.0
+      "target": "hero_designsystempanel_spacingscale"
     },
     {
       "relation": "contains",
@@ -3725,9 +4248,9 @@
       "source_file": "components/sections/hero/DesignSystemPanel.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystempanel",
-      "target": "hero_designsystempanel_typescale",
-      "confidence_score": 1.0
+      "target": "hero_designsystempanel_typescale"
     },
     {
       "relation": "imports_from",
@@ -3736,9 +4259,9 @@
       "source_file": "components/sections/hero/DesignSystemPanel.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystempanel",
-      "target": "lib_gsap_setup",
-      "confidence_score": 1.0
+      "target": "lib_gsap_setup"
     },
     {
       "relation": "imports_from",
@@ -3747,9 +4270,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_designsystempanel",
-      "confidence_score": 1.0
+      "target": "hero_designsystempanel"
     },
     {
       "relation": "imports",
@@ -3758,9 +4281,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_designsystempanel_designsystempanel",
-      "confidence_score": 1.0
+      "target": "hero_designsystempanel_designsystempanel"
     },
     {
       "relation": "contains",
@@ -3768,9 +4291,9 @@
       "source_file": "components/sections/hero/DesignSystemVisual.tsx",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystemvisual",
-      "target": "hero_designsystemvisual_designsystemvisual",
-      "confidence_score": 1.0
+      "target": "hero_designsystemvisual_designsystemvisual"
     },
     {
       "relation": "contains",
@@ -3778,9 +4301,9 @@
       "source_file": "components/sections/hero/DesignSystemVisual.tsx",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystemvisual",
-      "target": "hero_designsystemvisual_spacingrows",
-      "confidence_score": 1.0
+      "target": "hero_designsystemvisual_spacingrows"
     },
     {
       "relation": "contains",
@@ -3788,9 +4311,9 @@
       "source_file": "components/sections/hero/DesignSystemVisual.tsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystemvisual",
-      "target": "hero_designsystemvisual_tokenrows",
-      "confidence_score": 1.0
+      "target": "hero_designsystemvisual_tokenrows"
     },
     {
       "relation": "contains",
@@ -3798,9 +4321,9 @@
       "source_file": "components/sections/hero/DesignSystemVisual.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystemvisual",
-      "target": "hero_designsystemvisual_typerows",
-      "confidence_score": 1.0
+      "target": "hero_designsystemvisual_typerows"
     },
     {
       "relation": "imports_from",
@@ -3809,9 +4332,9 @@
       "source_file": "components/sections/hero/DesignSystemVisual.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_designsystemvisual",
-      "target": "lib_gsap_setup",
-      "confidence_score": 1.0
+      "target": "lib_gsap_setup"
     },
     {
       "relation": "contains",
@@ -3819,9 +4342,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_clampheroindex",
-      "confidence_score": 1.0
+      "target": "hero_hero_clampheroindex"
     },
     {
       "relation": "contains",
@@ -3829,9 +4352,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_getpanelsecondarylabel",
-      "confidence_score": 1.0
+      "target": "hero_hero_getpanelsecondarylabel"
     },
     {
       "relation": "contains",
@@ -3839,9 +4362,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_getrevealitems",
-      "confidence_score": 1.0
+      "target": "hero_hero_getrevealitems"
     },
     {
       "relation": "contains",
@@ -3849,9 +4372,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_gettitlelines",
-      "confidence_score": 1.0
+      "target": "hero_hero_gettitlelines"
     },
     {
       "relation": "contains",
@@ -3859,9 +4382,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_hero",
-      "confidence_score": 1.0
+      "target": "hero_hero_hero"
     },
     {
       "relation": "contains",
@@ -3869,9 +4392,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_heropanel",
-      "confidence_score": 1.0
+      "target": "hero_hero_heropanel"
     },
     {
       "relation": "contains",
@@ -3879,9 +4402,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_heropanelcontent",
-      "confidence_score": 1.0
+      "target": "hero_hero_heropanelcontent"
     },
     {
       "relation": "contains",
@@ -3889,9 +4412,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_heropanelcontentprops",
-      "confidence_score": 1.0
+      "target": "hero_hero_heropanelcontentprops"
     },
     {
       "relation": "contains",
@@ -3899,9 +4422,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_hero_paneldemo",
-      "confidence_score": 1.0
+      "target": "hero_hero_paneldemo"
     },
     {
       "relation": "imports_from",
@@ -3910,9 +4433,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_userflowdemo",
-      "confidence_score": 1.0
+      "target": "hero_userflowdemo"
     },
     {
       "relation": "imports",
@@ -3921,9 +4444,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "hero_userflowdemo_userflowdemo",
-      "confidence_score": 1.0
+      "target": "hero_userflowdemo_userflowdemo"
     },
     {
       "relation": "imports_from",
@@ -3932,9 +4455,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "lib_gsap_setup",
-      "confidence_score": 1.0
+      "target": "lib_gsap_setup"
     },
     {
       "relation": "imports_from",
@@ -3943,9 +4466,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "lib_portfolio_content",
-      "confidence_score": 1.0
+      "target": "lib_portfolio_content"
     },
     {
       "relation": "imports",
@@ -3954,9 +4477,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero",
-      "target": "lib_portfolio_content_heropanels",
-      "confidence_score": 1.0
+      "target": "lib_portfolio_content_heropanels"
     },
     {
       "relation": "calls",
@@ -3965,9 +4488,9 @@
       "source_file": "components/sections/hero/Hero.tsx",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_hero_heropanelcontent",
-      "target": "hero_hero_getpanelsecondarylabel",
-      "confidence_score": 1.0
+      "target": "hero_hero_getpanelsecondarylabel"
     },
     {
       "relation": "contains",
@@ -3975,9 +4498,9 @@
       "source_file": "components/sections/hero/SilkBackground.tsx",
       "source_location": "L116",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_silkbackground",
-      "target": "hero_silkbackground_createprogram",
-      "confidence_score": 1.0
+      "target": "hero_silkbackground_createprogram"
     },
     {
       "relation": "contains",
@@ -3985,9 +4508,9 @@
       "source_file": "components/sections/hero/SilkBackground.tsx",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_silkbackground",
-      "target": "hero_silkbackground_createshader",
-      "confidence_score": 1.0
+      "target": "hero_silkbackground_createshader"
     },
     {
       "relation": "contains",
@@ -3995,9 +4518,9 @@
       "source_file": "components/sections/hero/SilkBackground.tsx",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_silkbackground",
-      "target": "hero_silkbackground_hextorgb",
-      "confidence_score": 1.0
+      "target": "hero_silkbackground_hextorgb"
     },
     {
       "relation": "contains",
@@ -4005,9 +4528,9 @@
       "source_file": "components/sections/hero/SilkBackground.tsx",
       "source_location": "L154",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_silkbackground",
-      "target": "hero_silkbackground_silkbackground",
-      "confidence_score": 1.0
+      "target": "hero_silkbackground_silkbackground"
     },
     {
       "relation": "contains",
@@ -4015,9 +4538,9 @@
       "source_file": "components/sections/hero/SilkBackground.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_silkbackground",
-      "target": "hero_silkbackground_silkbackgroundprops",
-      "confidence_score": 1.0
+      "target": "hero_silkbackground_silkbackgroundprops"
     },
     {
       "relation": "calls",
@@ -4026,9 +4549,9 @@
       "source_file": "components/sections/hero/SilkBackground.tsx",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_silkbackground_createprogram",
-      "target": "hero_silkbackground_createshader",
-      "confidence_score": 1.0
+      "target": "hero_silkbackground_createshader"
     },
     {
       "relation": "contains",
@@ -4036,9 +4559,9 @@
       "source_file": "components/sections/hero/UserFlowDemo.tsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_userflowdemo",
-      "target": "hero_userflowdemo_flowrow",
-      "confidence_score": 1.0
+      "target": "hero_userflowdemo_flowrow"
     },
     {
       "relation": "contains",
@@ -4046,9 +4569,9 @@
       "source_file": "components/sections/hero/UserFlowDemo.tsx",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_userflowdemo",
-      "target": "hero_userflowdemo_flowrows",
-      "confidence_score": 1.0
+      "target": "hero_userflowdemo_flowrows"
     },
     {
       "relation": "contains",
@@ -4056,9 +4579,9 @@
       "source_file": "components/sections/hero/UserFlowDemo.tsx",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_userflowdemo",
-      "target": "hero_userflowdemo_userflowdemo",
-      "confidence_score": 1.0
+      "target": "hero_userflowdemo_userflowdemo"
     },
     {
       "relation": "contains",
@@ -4066,9 +4589,9 @@
       "source_file": "components/sections/hero/UserFlowDemo.tsx",
       "source_location": "L114",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_userflowdemo",
-      "target": "hero_userflowdemo_userflowdemoprops",
-      "confidence_score": 1.0
+      "target": "hero_userflowdemo_userflowdemoprops"
     },
     {
       "relation": "contains",
@@ -4076,9 +4599,9 @@
       "source_file": "components/sections/hero/UserFlowDemo.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_userflowdemo",
-      "target": "hero_userflowdemo_wireline",
-      "confidence_score": 1.0
+      "target": "hero_userflowdemo_wireline"
     },
     {
       "relation": "imports_from",
@@ -4087,9 +4610,9 @@
       "source_file": "components/sections/hero/UserFlowDemo.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "hero_userflowdemo",
-      "target": "lib_gsap_setup",
-      "confidence_score": 1.0
+      "target": "lib_gsap_setup"
     },
     {
       "relation": "contains",
@@ -4097,9 +4620,9 @@
       "source_file": "components/sections/hero/visuals/SystemCard.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "visuals_systemcard",
-      "target": "visuals_systemcard_colors",
-      "confidence_score": 1.0
+      "target": "visuals_systemcard_colors"
     },
     {
       "relation": "contains",
@@ -4107,9 +4630,9 @@
       "source_file": "components/sections/hero/visuals/SystemCard.tsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "visuals_systemcard",
-      "target": "visuals_systemcard_spacing",
-      "confidence_score": 1.0
+      "target": "visuals_systemcard_spacing"
     },
     {
       "relation": "contains",
@@ -4117,9 +4640,9 @@
       "source_file": "components/sections/hero/visuals/SystemCard.tsx",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "visuals_systemcard",
-      "target": "visuals_systemcard_systemcard",
-      "confidence_score": 1.0
+      "target": "visuals_systemcard_systemcard"
     },
     {
       "relation": "contains",
@@ -4127,9 +4650,9 @@
       "source_file": "components/sections/hero/visuals/SystemCard.tsx",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "visuals_systemcard",
-      "target": "visuals_systemcard_typescale",
-      "confidence_score": 1.0
+      "target": "visuals_systemcard_typescale"
     },
     {
       "relation": "contains",
@@ -4137,9 +4660,9 @@
       "source_file": "components/sections/work-gallery/WorkGallery.tsx",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "work_gallery_workgallery",
-      "target": "work_gallery_workgallery_hovertransition",
-      "confidence_score": 1.0
+      "target": "work_gallery_workgallery_hovertransition"
     },
     {
       "relation": "contains",
@@ -4147,9 +4670,9 @@
       "source_file": "components/sections/work-gallery/WorkGallery.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "work_gallery_workgallery",
-      "target": "work_gallery_workgallery_workcard",
-      "confidence_score": 1.0
+      "target": "work_gallery_workgallery_workcard"
     },
     {
       "relation": "contains",
@@ -4157,9 +4680,9 @@
       "source_file": "components/sections/work-gallery/WorkGallery.tsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "work_gallery_workgallery",
-      "target": "work_gallery_workgallery_workcards",
-      "confidence_score": 1.0
+      "target": "work_gallery_workgallery_workcards"
     },
     {
       "relation": "contains",
@@ -4167,9 +4690,9 @@
       "source_file": "components/sections/work-gallery/WorkGallery.tsx",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "work_gallery_workgallery",
-      "target": "work_gallery_workgallery_workgallery",
-      "confidence_score": 1.0
+      "target": "work_gallery_workgallery_workgallery"
     },
     {
       "relation": "contains",
@@ -4177,19 +4700,9 @@
       "source_file": "components/shared/footer/Footer.tsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "footer_footer",
-      "target": "footer_footer_footer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/shared/header/Header.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "header_header",
-      "target": "header_header_nav",
-      "confidence_score": 1.0
+      "target": "footer_footer_footer"
     },
     {
       "relation": "contains",
@@ -4198,8 +4711,28 @@
       "source_location": "L16",
       "weight": 1.0,
       "source": "header_header",
-      "target": "header_header_siteheader",
+      "target": "header_header_headerarrowicon",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/header/Header.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "header_header",
+      "target": "header_header_nav"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/shared/header/Header.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "header_header",
+      "target": "header_header_siteheader"
     },
     {
       "relation": "imports_from",
@@ -4208,9 +4741,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_button",
-      "target": "lib_utils",
-      "confidence_score": 1.0
+      "target": "lib_utils"
     },
     {
       "relation": "imports",
@@ -4219,9 +4752,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_button",
-      "target": "lib_utils_cn",
-      "confidence_score": 1.0
+      "target": "lib_utils_cn"
     },
     {
       "relation": "contains",
@@ -4229,9 +4762,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_button",
-      "target": "ui_button_button",
-      "confidence_score": 1.0
+      "target": "ui_button_button"
     },
     {
       "relation": "contains",
@@ -4239,9 +4772,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_button",
-      "target": "ui_button_buttonvariants",
-      "confidence_score": 1.0
+      "target": "ui_button_buttonvariants"
     },
     {
       "relation": "calls",
@@ -4250,9 +4783,9 @@
       "source_file": "components/ui/button.tsx",
       "source_location": "L52",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_button_button",
-      "target": "ui_button_buttonvariants",
-      "confidence_score": 1.0
+      "target": "ui_button_buttonvariants"
     },
     {
       "relation": "calls",
@@ -4271,9 +4804,9 @@
       "source_file": "components/utils/GsapSmoothScroll.tsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "utils_gsapsmoothscroll",
-      "target": "utils_gsapsmoothscroll_gsapsmoothscroll",
-      "confidence_score": 1.0
+      "target": "utils_gsapsmoothscroll_gsapsmoothscroll"
     },
     {
       "relation": "contains",
@@ -4281,8 +4814,28 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "eslint_config",
-      "target": "eslint_config_eslintconfig",
+      "target": "eslint_config_eslintconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/shot.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "kwork_shot",
+      "target": "kwork_shot_chromium",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/shot.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "kwork_shot",
+      "target": "kwork_shot_prep",
       "confidence_score": 1.0
     },
     {
@@ -4291,9 +4844,9 @@
       "source_file": "lib/design-system.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_design_system",
-      "target": "lib_design_system_designtokens",
-      "confidence_score": 1.0
+      "target": "lib_design_system_designtokens"
     },
     {
       "relation": "contains",
@@ -4301,9 +4854,9 @@
       "source_file": "lib/motion.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_motion",
-      "target": "lib_motion_createcascadetransition",
-      "confidence_score": 1.0
+      "target": "lib_motion_createcascadetransition"
     },
     {
       "relation": "contains",
@@ -4311,9 +4864,9 @@
       "source_file": "lib/motion.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_motion",
-      "target": "lib_motion_createfadeupvariants",
-      "confidence_score": 1.0
+      "target": "lib_motion_createfadeupvariants"
     },
     {
       "relation": "contains",
@@ -4321,9 +4874,9 @@
       "source_file": "lib/motion.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_motion",
-      "target": "lib_motion_easeoutexpo",
-      "confidence_score": 1.0
+      "target": "lib_motion_easeoutexpo"
     },
     {
       "relation": "contains",
@@ -4331,9 +4884,9 @@
       "source_file": "lib/motion.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_motion",
-      "target": "lib_motion_easeoutquint",
-      "confidence_score": 1.0
+      "target": "lib_motion_easeoutquint"
     },
     {
       "relation": "contains",
@@ -4341,9 +4894,9 @@
       "source_file": "lib/motion.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_motion",
-      "target": "lib_motion_revealviewport",
-      "confidence_score": 1.0
+      "target": "lib_motion_revealviewport"
     },
     {
       "relation": "contains",
@@ -4351,9 +4904,9 @@
       "source_file": "lib/portfolio-content.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_portfolio_content",
-      "target": "lib_portfolio_content_heropanels",
-      "confidence_score": 1.0
+      "target": "lib_portfolio_content_heropanels"
     },
     {
       "relation": "contains",
@@ -4361,9 +4914,9 @@
       "source_file": "lib/utils.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "lib_utils",
-      "target": "lib_utils_cn",
-      "confidence_score": 1.0
+      "target": "lib_utils_cn"
     },
     {
       "relation": "contains",
@@ -4371,9 +4924,9 @@
       "source_file": "next.config.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "next_config",
-      "target": "next_config_nextconfig",
-      "confidence_score": 1.0
+      "target": "next_config_nextconfig"
     },
     {
       "relation": "contains",
@@ -4381,9 +4934,9 @@
       "source_file": "package.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_dependencies",
-      "confidence_score": 1.0
+      "target": "package_dependencies"
     },
     {
       "relation": "contains",
@@ -4391,9 +4944,9 @@
       "source_file": "package.json",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_devdependencies",
-      "confidence_score": 1.0
+      "target": "package_devdependencies"
     },
     {
       "relation": "contains",
@@ -4401,9 +4954,9 @@
       "source_file": "package.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_name",
-      "confidence_score": 1.0
+      "target": "package_name"
     },
     {
       "relation": "contains",
@@ -4411,9 +4964,9 @@
       "source_file": "package.json",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_overrides",
-      "confidence_score": 1.0
+      "target": "package_overrides"
     },
     {
       "relation": "contains",
@@ -4421,9 +4974,9 @@
       "source_file": "package.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_private",
-      "confidence_score": 1.0
+      "target": "package_private"
     },
     {
       "relation": "contains",
@@ -4431,9 +4984,9 @@
       "source_file": "package.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_scripts",
-      "confidence_score": 1.0
+      "target": "package_scripts"
     },
     {
       "relation": "contains",
@@ -4441,9 +4994,9 @@
       "source_file": "package.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package",
-      "target": "package_version",
-      "confidence_score": 1.0
+      "target": "package_version"
     },
     {
       "relation": "contains",
@@ -4451,9 +5004,9 @@
       "source_file": "package.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_build",
-      "confidence_score": 1.0
+      "target": "package_scripts_build"
     },
     {
       "relation": "contains",
@@ -4461,9 +5014,9 @@
       "source_file": "package.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_dev",
-      "confidence_score": 1.0
+      "target": "package_scripts_dev"
     },
     {
       "relation": "contains",
@@ -4471,9 +5024,9 @@
       "source_file": "package.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_lint",
-      "confidence_score": 1.0
+      "target": "package_scripts_lint"
     },
     {
       "relation": "contains",
@@ -4481,9 +5034,9 @@
       "source_file": "package.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_scripts",
-      "target": "package_scripts_start",
-      "confidence_score": 1.0
+      "target": "package_scripts_start"
     },
     {
       "relation": "contains",
@@ -4491,9 +5044,59 @@
       "source_file": "package.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_base_ui_react",
-      "confidence_score": 1.0
+      "target": "package_dependencies_base_ui_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_class_variance_authority"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_clsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_framer_motion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_gsap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_dependencies",
+      "target": "package_dependencies_gsap_react"
     },
     {
       "relation": "contains",
@@ -4502,47 +5105,7 @@
       "source_location": "L14",
       "weight": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_class_variance_authority",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_clsx",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_framer_motion",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_gsap",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
-      "source_location": "L13",
-      "weight": 1.0,
-      "source": "package_dependencies",
-      "target": "package_dependencies_gsap_react",
+      "target": "package_dependencies_hcaptcha_react_hcaptcha",
       "confidence_score": 1.0
     },
     {
@@ -4551,9 +5114,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_lucide_react",
-      "confidence_score": 1.0
+      "target": "package_dependencies_lucide_react"
     },
     {
       "relation": "contains",
@@ -4561,9 +5124,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_next",
-      "confidence_score": 1.0
+      "target": "package_dependencies_next"
     },
     {
       "relation": "contains",
@@ -4571,9 +5134,9 @@
       "source_file": "package.json",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_react",
-      "confidence_score": 1.0
+      "target": "package_dependencies_react"
     },
     {
       "relation": "contains",
@@ -4581,9 +5144,9 @@
       "source_file": "package.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_react_dom",
-      "confidence_score": 1.0
+      "target": "package_dependencies_react_dom"
     },
     {
       "relation": "contains",
@@ -4591,9 +5154,9 @@
       "source_file": "package.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_shadcn",
-      "confidence_score": 1.0
+      "target": "package_dependencies_shadcn"
     },
     {
       "relation": "contains",
@@ -4601,9 +5164,9 @@
       "source_file": "package.json",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_tailwind_merge",
-      "confidence_score": 1.0
+      "target": "package_dependencies_tailwind_merge"
     },
     {
       "relation": "contains",
@@ -4611,9 +5174,9 @@
       "source_file": "package.json",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_dependencies",
-      "target": "package_dependencies_tw_animate_css",
-      "confidence_score": 1.0
+      "target": "package_dependencies_tw_animate_css"
     },
     {
       "relation": "contains",
@@ -4621,9 +5184,9 @@
       "source_file": "package.json",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_eslint"
     },
     {
       "relation": "contains",
@@ -4631,9 +5194,9 @@
       "source_file": "package.json",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_config_next",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_eslint_config_next"
     },
     {
       "relation": "contains",
@@ -4641,9 +5204,9 @@
       "source_file": "package.json",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_tailwindcss"
     },
     {
       "relation": "contains",
@@ -4651,9 +5214,9 @@
       "source_file": "package.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_tailwindcss_postcss",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_tailwindcss_postcss"
     },
     {
       "relation": "contains",
@@ -4661,9 +5224,9 @@
       "source_file": "package.json",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_node",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_types_node"
     },
     {
       "relation": "contains",
@@ -4671,9 +5234,9 @@
       "source_file": "package.json",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_types_react"
     },
     {
       "relation": "contains",
@@ -4681,9 +5244,9 @@
       "source_file": "package.json",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_types_react_dom"
     },
     {
       "relation": "contains",
@@ -4691,9 +5254,9 @@
       "source_file": "package.json",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_typescript",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_typescript"
     },
     {
       "relation": "contains",
@@ -4701,9 +5264,9 @@
       "source_file": "package.json",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_overrides",
-      "target": "package_overrides_postcss",
-      "confidence_score": 1.0
+      "target": "package_overrides_postcss"
     },
     {
       "relation": "contains",
@@ -4711,9 +5274,9 @@
       "source_file": "postcss.config.mjs",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "postcss_config",
-      "target": "postcss_config_config",
-      "confidence_score": 1.0
+      "target": "postcss_config_config"
     },
     {
       "relation": "contains",
@@ -4721,9 +5284,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig",
-      "target": "tsconfig_compileroptions",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions"
     },
     {
       "relation": "contains",
@@ -4731,9 +5294,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig",
-      "target": "tsconfig_exclude",
-      "confidence_score": 1.0
+      "target": "tsconfig_exclude"
     },
     {
       "relation": "contains",
@@ -4741,9 +5304,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig",
-      "target": "tsconfig_include",
-      "confidence_score": 1.0
+      "target": "tsconfig_include"
     },
     {
       "relation": "contains",
@@ -4751,9 +5314,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_allowjs",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_allowjs"
     },
     {
       "relation": "contains",
@@ -4761,9 +5324,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_esmoduleinterop",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_esmoduleinterop"
     },
     {
       "relation": "contains",
@@ -4771,9 +5334,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_incremental",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_incremental"
     },
     {
       "relation": "contains",
@@ -4781,9 +5344,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_isolatedmodules",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_isolatedmodules"
     },
     {
       "relation": "contains",
@@ -4791,9 +5354,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_jsx",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_jsx"
     },
     {
       "relation": "contains",
@@ -4801,9 +5364,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_lib",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_lib"
     },
     {
       "relation": "contains",
@@ -4811,9 +5374,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_module",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_module"
     },
     {
       "relation": "contains",
@@ -4821,9 +5384,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_moduleresolution",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_moduleresolution"
     },
     {
       "relation": "contains",
@@ -4831,9 +5394,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_noemit",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_noemit"
     },
     {
       "relation": "contains",
@@ -4841,9 +5404,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_paths",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_paths"
     },
     {
       "relation": "contains",
@@ -4851,9 +5414,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_plugins",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_plugins"
     },
     {
       "relation": "contains",
@@ -4861,9 +5424,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_resolvejsonmodule",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_resolvejsonmodule"
     },
     {
       "relation": "contains",
@@ -4871,9 +5434,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_skiplibcheck",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_skiplibcheck"
     },
     {
       "relation": "contains",
@@ -4881,9 +5444,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_strict",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_strict"
     },
     {
       "relation": "contains",
@@ -4891,9 +5454,9 @@
       "source_file": "tsconfig.json",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions",
-      "target": "tsconfig_compileroptions_target",
-      "confidence_score": 1.0
+      "target": "tsconfig_compileroptions_target"
     },
     {
       "relation": "contains",
@@ -4901,8 +5464,18 @@
       "source_file": "tsconfig.json",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tsconfig_compileroptions_paths",
-      "target": "tsconfig_paths",
+      "target": "tsconfig_paths"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_project_rules",
       "confidence_score": 1.0
     },
     {
@@ -4916,6 +5489,16 @@
       "target": "agents_clean_presentation_over_decoration"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "agents_project_rules",
+      "target": "agents_expectations",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4924,6 +5507,466 @@
       "weight": 1.0,
       "source": "agents_project_rules",
       "target": "agents_preserve_authors_voice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "agents_project_rules",
+      "target": "agents_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "design_md_design",
+      "target": "design_design_system_portfolio_site",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_colors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L156",
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L195",
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_do_s_and_don_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_elevation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_typography"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_color_tokens"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_split_editorial_hero"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "design_structured_editorial_grid"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "product_anti_references"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_design_system_portfolio_site",
+      "target": "product_brand_personality"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L117",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_named_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_neutral",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_primary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_secondary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "design_colors",
+      "target": "design_tertiary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_type_carries_authority_rule",
+      "target": "design_typography"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "design_typography",
+      "target": "design_hierarchy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "design_typography",
+      "target": "design_named_rules_139",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "design_elevation",
+      "target": "design_named_rules_152",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "design_elevation",
+      "target": "design_shadow_vocabulary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_flat_by_default_rule",
+      "target": "design_elevation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_buttons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L168",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_cards_containers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_chips",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L176",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_inputs_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L181",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L186",
+      "weight": 1.0,
+      "source": "design_components",
+      "target": "design_signature_component",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L197",
+      "weight": 1.0,
+      "source": "design_do_s_and_don_ts",
+      "target": "design_do",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "DESIGN.md",
+      "source_location": "L205",
+      "weight": 1.0,
+      "source": "design_do_s_and_don_ts",
+      "target": "design_don_t",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "product",
+      "target": "product_product",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "product_product",
+      "target": "product_accessibility_inclusion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "product_product",
+      "target": "product_anti_references",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "product_product",
+      "target": "product_brand_personality",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "product_product",
+      "target": "product_design_principles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "product_product",
+      "target": "product_product_purpose",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "product_product",
+      "target": "product_register",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PRODUCT.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "product_product",
+      "target": "product_users",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_product_purpose",
+      "target": "product_accessibility_inclusion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_product_purpose",
+      "target": "product_anti_references"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_product_purpose",
+      "target": "product_brand_personality"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_product_purpose",
+      "target": "product_design_principles"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_product_purpose",
+      "target": "product_target_users"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_product_purpose",
+      "target": "product_websites_as_systems"
     },
     {
       "relation": "conceptually_related_to",
@@ -4936,6 +5979,186 @@
       "target": "product_brand_personality"
     },
     {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_anti_references",
+      "target": "product_design_principles"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "PRODUCT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "product_design_principles",
+      "target": "product_websites_as_systems"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "DESIGN.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "design_purposeful_motion",
+      "target": "product_accessibility_inclusion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs",
+      "target": "kwork_kwork_gigs_\u043a\u0432\u043e\u0440\u043a\u0438_shtq_pro_\u0434\u043b\u044f_kwork",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs",
+      "target": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u043a\u0432\u043e\u0440\u043a\u0438_shtq_pro_\u0434\u043b\u044f_kwork",
+      "target": "kwork_kwork_gigs_\u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f_\u043a\u0430\u043a\u0438\u0435_\u043a\u0432\u043e\u0440\u043a\u0438_\u0437\u0430\u0432\u043e\u0434\u0438\u0442\u044c",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u044f_\u043a\u0430\u043a\u0438\u0435_\u043a\u0432\u043e\u0440\u043a\u0438_\u0437\u0430\u0432\u043e\u0434\u0438\u0442\u044c",
+      "target": "kwork_kwork_gigs_\u043f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442_\u0437\u0430\u043f\u0443\u0441\u043a\u0430",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L294",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_10_\u0434\u043e\u0440\u0430\u0431\u043e\u0442\u043a\u0430_\u0438_\u043f\u0440\u0430\u0432\u043a\u0438_\u0441\u0430\u0439\u0442\u0430",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_1_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_\u043d\u0430_tilda_zero_block",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_2_\u043c\u043d\u043e\u0433\u043e\u0441\u0442\u0440\u0430\u043d\u0438\u0447\u043d\u044b\u0439_\u0441\u0430\u0439\u0442_\u043d\u0430_tilda",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_3_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_\u043d\u0430_next_js_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_4_\u0441\u0430\u0439\u0442_\u043d\u0430_next_js_cms_sanity",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_5_\u0441\u0430\u0439\u0442_\u043d\u0430_wordpress_acf_classic_\u0431\u0435\u0437_gutenberg",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_6_\u0434\u0438\u0437\u0430\u0439\u043d_\u0441\u0430\u0439\u0442\u0430_\u0432_figma_ui_ux_\u0441_\u043d\u0443\u043b\u044f",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_7_\u0432\u0451\u0440\u0441\u0442\u043a\u0430_\u043f\u043e_\u043c\u0430\u043a\u0435\u0442\u0443_figma",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L238",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_8_\u0440\u0435\u0434\u0438\u0437\u0430\u0439\u043d_\u0441\u0430\u0439\u0442\u0430",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L267",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_9_\u0441\u0442\u0430\u0442\u0438\u0447\u043d\u044b\u0439_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_html_css_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "kwork/kwork-gigs.md",
+      "source_location": "L321",
+      "weight": 1.0,
+      "source": "kwork_kwork_gigs_\u0442\u0435\u043a\u0441\u0442\u044b_\u043a\u0432\u043e\u0440\u043a\u043e\u0432",
+      "target": "kwork_kwork_gigs_\u0447\u0442\u043e_\u0432\u044b\u043d\u0435\u0441\u0442\u0438_\u0432_\u043f\u043e\u0440\u0442\u0444\u043e\u043b\u0438\u043e_\u043a\u0430\u0436\u0434\u043e\u0433\u043e_\u043a\u0432\u043e\u0440\u043a\u0430",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.75,
@@ -4944,76 +6167,6 @@
       "weight": 1.0,
       "source": "agents_clean_presentation_over_decoration",
       "target": "design_visible_structure_rule"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_portfolio_design_system",
-      "target": "design_color_tokens"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_portfolio_design_system",
-      "target": "design_elevation"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_portfolio_design_system",
-      "target": "design_split_editorial_hero"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_portfolio_design_system",
-      "target": "design_structured_editorial_grid"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_portfolio_design_system",
-      "target": "design_typography"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_portfolio_design_system",
-      "target": "product_anti_references"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_portfolio_design_system",
-      "target": "product_brand_personality"
     },
     {
       "relation": "conceptually_related_to",
@@ -5084,116 +6237,6 @@
       "weight": 1.0,
       "source": "design_rare_accent_rule",
       "target": "design_signal_violet"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_type_carries_authority_rule",
-      "target": "design_typography"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_flat_by_default_rule",
-      "target": "design_elevation"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.75,
-      "source_file": "DESIGN.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "design_purposeful_motion",
-      "target": "product_accessibility"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_product_purpose",
-      "target": "product_accessibility"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_product_purpose",
-      "target": "product_anti_references"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_product_purpose",
-      "target": "product_brand_personality"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_product_purpose",
-      "target": "product_design_principles"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_product_purpose",
-      "target": "product_target_users"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_product_purpose",
-      "target": "product_websites_as_systems"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_design_principles",
-      "target": "product_websites_as_systems"
-    },
-    {
-      "relation": "semantically_similar_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.7,
-      "source_file": "PRODUCT.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "product_anti_references",
-      "target": "product_design_principles"
     }
   ],
   "hyperedges": [
@@ -5226,5 +6269,5 @@
       "source_file": "DESIGN.md"
     }
   ],
-  "built_at_commit": "7899a6596a2d3e6a1d9b26b8e94b2fc1209ab9fa"
+  "built_at_commit": "9f0f8f9958ab81d3731f68e7880e2ace951c945c"
 }
