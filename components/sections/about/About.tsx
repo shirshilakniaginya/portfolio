@@ -68,11 +68,11 @@ export function About() {
 
           <div className={styles.photoWrap} data-reveal>
             <Image
-              src="/about/portraitnobg-512.webp"
+              src="/about/section-portrait.png"
               alt="Дмитрий — веб-дизайнер и разработчик"
               className={styles.photo}
-              width={512}
-              height={512}
+              width={1254}
+              height={1254}
             />
           </div>
 

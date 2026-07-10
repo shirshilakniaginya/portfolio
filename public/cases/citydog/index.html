@@ -11,8 +11,8 @@
   >
   <link rel="stylesheet" href="./assets/css/fonts.css?v=20260705-1">
   <link rel="stylesheet" href="./assets/css/tokens.css?v=20260705-8">
-  <link rel="stylesheet" href="./assets/css/base.css?v=20260705-2">
-  <link rel="stylesheet" href="./assets/css/sections.css?v=20260705-8">
+  <link rel="stylesheet" href="./assets/css/base.css?v=20260710-1">
+  <link rel="stylesheet" href="./assets/css/sections.css?v=20260710-1">
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
@@ -161,7 +161,7 @@
           <h2 id="facts-title">Популярные услуги</h2>
         </div>
 
-        <div class="facts-grid">
+        <div class="facts-grid" data-facts-track>
           <article class="fact-card">
             <div class="fact-card__media media-placeholder">
               <img src="./assets/img/дрессировка.webp" alt="Дрессировка собаки на площадке" loading="lazy">
@@ -228,6 +228,15 @@
               <div class="fact-card__price"><strong>от 2 800 ₽</strong><svg width="20" height="20" aria-hidden="true"><use href="#icon-arrow"></use></svg></div>
             </div>
           </article>
+        </div>
+
+        <div class="facts-nav">
+          <button class="facts-nav__arrow facts-nav__arrow--prev" type="button" aria-label="Предыдущая услуга" data-facts-prev>
+            <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </button>
+          <button class="facts-nav__arrow facts-nav__arrow--next" type="button" aria-label="Следующая услуга" data-facts-next>
+            <svg width="16" height="16" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+          </button>
         </div>
 
         <div class="facts-cta">
@@ -544,6 +553,6 @@
 
   <script src="./assets/js/vendor/gsap.min.js"></script>
   <script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
-  <script src="./assets/js/app.js?v=20260705-8"></script>
+  <script src="./assets/js/app.js?v=20260710-1"></script>
 </body>
 </html>

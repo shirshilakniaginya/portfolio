@@ -104,6 +104,14 @@
   outline-offset: 4px;
 }
 
+/* The vertical frame lines are a desktop-only editorial detail. */
+@media (max-width: 980px) {
+  .inner {
+    border-left: none;
+    border-right: none;
+  }
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr 1fr;

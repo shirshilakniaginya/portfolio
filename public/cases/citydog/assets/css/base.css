@@ -400,6 +400,8 @@ footer[id] {
     border-radius: var(--wp--preset--radius--md);
     background: rgba(255, 253, 250, 0.98);
     box-shadow: var(--wp--preset--shadow--soft);
+    justify-content: start;
+    align-items: stretch;
     justify-items: start;
     text-align: left;
     opacity: 0;

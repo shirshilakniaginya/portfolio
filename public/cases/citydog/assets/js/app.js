@@ -4,6 +4,9 @@ const navToggle = document.querySelector("[data-nav-toggle]");
 const reviewsTrack = document.querySelector("[data-reviews-track]");
 const reviewsPrev = document.querySelector("[data-reviews-prev]");
 const reviewsNext = document.querySelector("[data-reviews-next]");
+const factsTrack = document.querySelector("[data-facts-track]");
+const factsPrev = document.querySelector("[data-facts-prev]");
+const factsNext = document.querySelector("[data-facts-next]");
 const leadForm = document.querySelector("[data-lead-form]");
 const leadStatus = document.querySelector("[data-lead-status]");
 
@@ -44,6 +47,16 @@ if (reviewsTrack && reviewsPrev && reviewsNext) {
 
   reviewsNext.addEventListener("click", () => {
     reviewsTrack.scrollBy({ left: getStep(), behavior: "smooth" });
+  });
+}
+
+if (factsTrack && factsPrev && factsNext) {
+  factsPrev.addEventListener("click", () => {
+    factsTrack.scrollBy({ left: -factsTrack.clientWidth, behavior: "smooth" });
+  });
+
+  factsNext.addEventListener("click", () => {
+    factsTrack.scrollBy({ left: factsTrack.clientWidth, behavior: "smooth" });
   });
 }
 

@@ -97,6 +97,7 @@
 
 .railLinkLabel {
   min-width: 0;
+  white-space: nowrap;
 }
 
 .railLink:hover {
@@ -536,6 +537,10 @@
     grid-template-columns: 1fr;
   }
 
+  .left {
+    padding-bottom: 12px;
+  }
+
   .portraitWrap {
     position: relative;
     inset: auto;
@@ -560,7 +565,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    padding: 18px 0 0;
+    padding: 8px 0 0;
   }
 
   .ghost {
@@ -610,6 +615,27 @@
   .colA {
     flex-direction: column;
     gap: 18px;
+  }
+
+  /* Let the portrait bleed full-bleed past the padded column so it reads much
+     larger, without shifting the text/CTA elements above it. The source clip
+     is native 16:9 (landscape), so contain-at-100vw still renders a short,
+     small-looking subject — crop to a taller frame instead so the subject
+     actually fills more of the screen. */
+  .center {
+    overflow: visible;
+  }
+
+  .portraitWrap {
+    margin-inline: calc(50% - 50vw);
+  }
+
+  .portrait {
+    width: 100vw;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: 50% 20%;
   }
 }
 

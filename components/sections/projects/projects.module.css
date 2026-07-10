@@ -239,6 +239,14 @@
 }
 
 /* ---- Responsive ---- */
+/* The vertical frame lines are a desktop-only editorial detail. */
+@media (max-width: 980px) {
+  .inner {
+    border-left: none;
+    border-right: none;
+  }
+}
+
 @media (max-width: 1180px) {
   .rowCard {
     grid-template-columns: minmax(0, 1fr) minmax(180px, 0.5fr);

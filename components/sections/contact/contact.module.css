@@ -391,6 +391,14 @@
 }
 
 /* ---- Responsive ---- */
+/* The vertical frame lines are a desktop-only editorial detail. */
+@media (max-width: 980px) {
+  .section {
+    border-left: none;
+    border-right: none;
+  }
+}
+
 @media (max-width: 1000px) {
   .topGrid {
     grid-template-columns: 1fr 1fr;

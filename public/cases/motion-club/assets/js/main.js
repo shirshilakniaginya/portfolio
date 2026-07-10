@@ -19,9 +19,19 @@
   var toggle = document.querySelector('.nav-toggle');
   var mobileNav = document.getElementById('mobile-nav');
   if (toggle && mobileNav) {
+    var closeTimer;
     var setNav = function (open) {
       toggle.setAttribute('aria-expanded', String(open));
-      mobileNav.hidden = !open;
+      window.clearTimeout(closeTimer);
+      if (open) {
+        mobileNav.hidden = false;
+        window.requestAnimationFrame(function () { mobileNav.classList.add('is-open'); });
+      } else {
+        mobileNav.classList.remove('is-open');
+        closeTimer = window.setTimeout(function () {
+          if (toggle.getAttribute('aria-expanded') !== 'true') mobileNav.hidden = true;
+        }, 360);
+      }
       toggle.querySelector('.visually-hidden').textContent = open ? 'Закрыть меню' : 'Открыть меню';
     };
     toggle.addEventListener('click', function () {

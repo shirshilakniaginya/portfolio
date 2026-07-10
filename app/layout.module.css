@@ -3,3 +3,12 @@
   --bg: #010307;
   background-color: var(--page-bg);
 }
+
+/* Below the desktop rail breakpoint, sections butt up edge-to-edge (no more
+   framing border lines), so the page canvas and section backgrounds must
+   match exactly or the seam between them reads as a visible patch. */
+@media (max-width: 980px) {
+  .body {
+    background-color: var(--bg);
+  }
+}

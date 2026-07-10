@@ -1,38 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import styles from "./header.module.css";
 
 const NAV = [
-  { id: "work", label: "Работы" },
-  { id: "about", label: "Обо мне" },
-  { id: "contact", label: "Контакты" },
+  { id: "work", num: "01", label: "Работы" },
+  { id: "about", num: "02", label: "Обо мне" },
+  { id: "contact", num: "03", label: "Контакты" },
 ] as const;
 
 const HEADER_OFFSET = "top 72px";
-
-function HeaderArrowIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      className={styles.ctaArrow}
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M4 10H15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
-      <path
-        d="M10.5 5.5L15 10L10.5 14.5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="square"
-        strokeLinejoin="miter"
-      />
-    </svg>
-  );
-}
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -114,14 +92,7 @@ export function SiteHeader() {
     >
       <div className={styles.inner}>
         <a className={styles.brand} href="#hero" aria-label="В начало">
-          <Image
-            alt="Логотип"
-            className={styles.brandLogo}
-            height={58}
-            priority
-            src="/about/LogoTransparent.svg"
-            width={40}
-          />
+          <span className={styles.brandBox}>SHTQ</span>
         </a>
 
         <nav className={styles.nav} aria-label="Разделы">
@@ -132,16 +103,11 @@ export function SiteHeader() {
               className={`${styles.navLink} ${active === item.id ? styles.navLinkActive : ""}`}
               href={`#${item.id}`}
             >
-              {item.label}
+              <em>{item.num}</em>
+              <span>{item.label}</span>
             </a>
           ))}
         </nav>
-
-        <a className={styles.ctaLink} href="#contact">
-          <span className={styles.ctaDot} aria-hidden="true" />
-          Обсудить проект
-          <HeaderArrowIcon />
-        </a>
 
         <button
           ref={toggleRef}
@@ -175,15 +141,11 @@ export function SiteHeader() {
               className={`${styles.menuLink} ${active === item.id ? styles.menuLinkActive : ""}`}
               href={`#${item.id}`}
             >
-              {item.label}
+              <em>{item.num}</em>
+              <span>{item.label}</span>
             </a>
           ))}
         </nav>
-
-        <a className={styles.menuCtaLink} href="#contact">
-          Обсудить проект
-          <HeaderArrowIcon />
-        </a>
       </div>
     </header>
   );
