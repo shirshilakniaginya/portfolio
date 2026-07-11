@@ -284,7 +284,7 @@
 
 /* The hero rail is the desktop navigation. Keep this header for the
    rail-less tablet and mobile layouts only. */
-@media (min-width: 981px) {
+@media (min-width: 1181px) {
   .header {
     display: none;
   }
