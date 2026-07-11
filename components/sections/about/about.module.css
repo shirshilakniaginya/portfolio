@@ -215,6 +215,7 @@
   }
 
   .photoWrap {
+    width: 100%;
     max-width: 260px;
     min-height: 0;
     aspect-ratio: 1;
