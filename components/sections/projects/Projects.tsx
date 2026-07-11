@@ -112,7 +112,7 @@ export function Projects() {
         <header className={styles.head} data-reveal>
           <div className={styles.headLeft}>
             <span className={styles.kicker}>{"// 01 Работы"}</span>
-            <span className={styles.kickerSub}>Избранные проекты</span>
+            <h2 className={styles.kickerSub}>Примеры сайтов — избранные проекты</h2>
           </div>
 
           <a

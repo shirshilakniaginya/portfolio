@@ -8,7 +8,7 @@ import styles from "./about.module.css";
 const FIELDS = [
   { label: "Имя", value: "Дмитрий" },
   { label: "Роль", value: profile.role },
-  { label: "Формат", value: "Удалённо" },
+  { label: "Формат", value: "Удалённо · вся Россия" },
   { label: "Статус", value: "Открыт к проектам" },
 ] as const;
 
@@ -21,6 +21,9 @@ const SKILLS = [
 
 const SECOND_PARAGRAPH =
   "Верю в ясность, точность и осознанный подход: каждый блок и каждый пиксель на странице работают на заявку.";
+
+const GEO_PARAGRAPH =
+  "Работаю удалённо — с клиентами из Москвы и любых городов России. Все этапы, от брифа до запуска сайта, проходят онлайн.";
 
 export function About() {
   const rootRef = useRef<HTMLElement | null>(null);
@@ -63,7 +66,7 @@ export function About() {
         <div className={styles.grid}>
           <div className={styles.label} data-reveal>
             <span className={styles.kicker}>{"// 02 Обо мне"}</span>
-            <span className={styles.kickerSub}>Профиль</span>
+            <h2 className={styles.kickerSub}>Веб-дизайнер и разработчик</h2>
           </div>
 
           <div className={styles.photoWrap} data-reveal>
@@ -88,6 +91,7 @@ export function About() {
           <div className={styles.text} data-reveal>
             <p>{profile.about}</p>
             <p>{SECOND_PARAGRAPH}</p>
+            <p>{GEO_PARAGRAPH}</p>
           </div>
 
           <div className={styles.bars}>

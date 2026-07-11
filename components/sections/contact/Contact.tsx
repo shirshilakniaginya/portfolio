@@ -2,6 +2,7 @@
 
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { type ChangeEvent, type FormEvent, useEffect, useRef, useState } from "react";
+import { reachGoal } from "@/lib/metrika";
 import styles from "./contact.module.css";
 
 const TG_HANDLE_URL = "https://t.me/DSVRandom";
@@ -160,6 +161,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
       pendingSubmitRef.current = false;
       resetCaptcha();
       setStatus("sent");
+      reachGoal("lead");
       onSent();
     } catch {
       pendingSubmitRef.current = false;
@@ -291,7 +293,13 @@ function BriefForm({ onSent }: { onSent: () => void }) {
             {validationError ?? (
               <>
                 Не отправилось. Напишите напрямую в{" "}
-                <a className={styles.formErrorLink} href={TG_HANDLE_URL} rel="noreferrer" target="_blank">
+                <a
+                  className={styles.formErrorLink}
+                  href={TG_HANDLE_URL}
+                  onClick={() => reachGoal("tg_click")}
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   Telegram
                 </a>
                 .
@@ -340,7 +348,7 @@ export function Contact() {
         <div className={styles.topGrid}>
           <div className={styles.label}>
             <span className={styles.kicker}>{"// 03 Контакт"}</span>
-            <span className={styles.kickerSub}>На связи</span>
+            <h2 className={styles.kickerSub}>Заказать сайт — на связи</h2>
           </div>
 
           <div className={styles.statement}>
@@ -351,7 +359,13 @@ export function Contact() {
           <div className={styles.direct}>
             <div className={styles.directItem}>
               <span className="d-label">Telegram</span>
-              <a className={styles.directLink} href={TG_HANDLE_URL} rel="noreferrer" target="_blank">
+              <a
+                className={styles.directLink}
+                href={TG_HANDLE_URL}
+                onClick={() => reachGoal("tg_click")}
+                rel="noreferrer"
+                target="_blank"
+              >
                 @DSVRandom
               </a>
             </div>
@@ -373,6 +387,7 @@ export function Contact() {
                   <a
                     className={styles.connectLink}
                     href={item.href}
+                    onClick={item.href === TG_HANDLE_URL ? () => reachGoal("tg_click") : undefined}
                     {...(item.href.startsWith("http")
                       ? { target: "_blank", rel: "noreferrer" }
                       : {})}

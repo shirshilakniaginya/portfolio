@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import styles from "./header.module.css";
 
@@ -69,11 +70,14 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   // Delegate all in-header hash links through ScrollSmoother for a clean glide.
+  // On case pages (/work/*) the section ids don't exist — the default
+  // navigation to /#section takes over instead.
   const handleNavClick = (e: React.MouseEvent<HTMLElement>) => {
     const anchor = (e.target as HTMLElement).closest("a");
     const href = anchor?.getAttribute("href");
-    if (!href || !href.startsWith("#")) return;
-    const target = document.getElementById(href.slice(1));
+    const hashIndex = href?.indexOf("#") ?? -1;
+    if (!href || hashIndex === -1) return;
+    const target = document.getElementById(href.slice(hashIndex + 1));
     if (!target) return;
     e.preventDefault();
     if (menuOpen) {
@@ -91,21 +95,21 @@ export function SiteHeader() {
       onClick={handleNavClick}
     >
       <div className={styles.inner}>
-        <a className={styles.brand} href="#hero" aria-label="В начало">
+        <Link className={styles.brand} href="/#hero" aria-label="В начало">
           <span className={styles.brandBox}>SHTQ</span>
-        </a>
+        </Link>
 
         <nav className={styles.nav} aria-label="Разделы">
           {NAV.map((item) => (
-            <a
+            <Link
               key={item.id}
               aria-current={active === item.id ? "true" : undefined}
               className={`${styles.navLink} ${active === item.id ? styles.navLinkActive : ""}`}
-              href={`#${item.id}`}
+              href={`/#${item.id}`}
             >
               <em>{item.num}</em>
               <span>{item.label}</span>
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -135,15 +139,15 @@ export function SiteHeader() {
       >
         <nav className={styles.menuNav} aria-label="Мобильная навигация">
           {NAV.map((item) => (
-            <a
+            <Link
               key={item.id}
               aria-current={active === item.id ? "true" : undefined}
               className={`${styles.menuLink} ${active === item.id ? styles.menuLinkActive : ""}`}
-              href={`#${item.id}`}
+              href={`/#${item.id}`}
             >
               <em>{item.num}</em>
               <span>{item.label}</span>
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
