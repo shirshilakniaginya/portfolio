@@ -5,7 +5,7 @@
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
   border-right: 1px solid var(--line);
-  font-family: var(--font-sans), var(--font-body), sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
 
 .inner {
@@ -30,9 +30,9 @@
 
 .kicker {
   font-family: var(--font-mono), monospace;
-  font-size: clamp(15px, 1.1vw, 18px);
+  font-size: var(--text-kicker);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--tracking-kicker);
   text-transform: uppercase;
   color: var(--text);
 }
@@ -40,9 +40,9 @@
 .kickerSub {
   margin: 0;
   font-family: var(--font-mono), monospace;
-  font-size: 11px;
+  font-size: var(--text-label);
   font-weight: 500;
-  letter-spacing: 0.3em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--muted-soft);
 }
@@ -56,8 +56,8 @@
 
 .statement p {
   margin: 0;
-  font-size: clamp(14.5px, 1.1vw, 16.5px);
-  line-height: 1.75;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   color: var(--muted);
   text-wrap: pretty;
 }
@@ -78,16 +78,37 @@
 }
 
 .directLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   font-family: var(--font-mono), monospace;
-  font-size: clamp(15px, 1.15vw, 17px);
+  font-size: var(--text-small);
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--text);
   transition: color 0.2s ease;
 }
 
 .directLink:hover {
   color: var(--accent-strong);
+}
+
+.directArrow {
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 0;
+  transition: transform 0.25s ease;
+}
+
+.directLink:hover .directArrow {
+  transform: translateX(4px);
 }
 
 .response {
@@ -129,6 +150,12 @@
   padding-left: clamp(24px, 2.6vw, 48px);
 }
 
+@media (min-width: 1001px) {
+  .connect {
+    margin-top: -4px;
+  }
+}
+
 .connectList {
   list-style: none;
   margin: 0;
@@ -145,12 +172,12 @@
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
   font-family: var(--font-mono), monospace;
-  font-size: 13px;
+  font-size: var(--text-small);
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--text);
-  transition: color 0.2s ease, padding-left 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .connectList li:first-child .connectLink {
@@ -159,7 +186,14 @@
 
 .connectLink:hover {
   color: var(--accent-strong);
-  padding-left: 6px;
+}
+
+.connectLabel {
+  transition: transform 0.25s ease;
+}
+
+.connectLink:hover .connectLabel {
+  transform: translateX(6px);
 }
 
 .connectArrow {
@@ -339,7 +373,7 @@
 
 .formError {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--text-small);
   line-height: 1.4;
   color: var(--error);
 }
@@ -377,7 +411,7 @@
 }
 
 .formSuccessTitle {
-  font-family: var(--font-sans), var(--font-body), sans-serif;
+  font-family: var(--font-sans), sans-serif;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -422,6 +456,10 @@
 }
 
 @media (max-width: 560px) {
+  .kicker {
+    font-size: 1.0625rem;
+  }
+
   .topGrid {
     grid-template-columns: 1fr;
   }

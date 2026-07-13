@@ -8,11 +8,13 @@ import { Footer } from "@/components/shared/footer/Footer";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Projects />
-      <About />
-      <Contact />
-      <Faq />
+      <main>
+        <Hero />
+        <Projects />
+        <About />
+        <Contact />
+        <Faq />
+      </main>
       <Footer />
     </>
   );

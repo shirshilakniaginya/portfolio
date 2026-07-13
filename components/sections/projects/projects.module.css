@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  font-family: var(--font-sans), var(--font-body), sans-serif;
+  font-family: var(--font-sans), sans-serif;
   padding: 0;
 }
 
@@ -30,9 +30,9 @@
 
 .kicker {
   font-family: var(--font-mono), monospace;
-  font-size: 13px;
+  font-size: var(--text-kicker);
   font-weight: 700;
-  letter-spacing: 0.26em;
+  letter-spacing: var(--tracking-kicker);
   text-transform: uppercase;
   color: var(--text);
 }
@@ -40,9 +40,9 @@
 .kickerSub {
   margin: 0;
   font-family: var(--font-mono), monospace;
-  font-size: 11px;
+  font-size: var(--text-label);
   font-weight: 500;
-  letter-spacing: 0.3em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--muted-soft);
 }
@@ -132,9 +132,9 @@
 
 .rowKicker {
   font-family: var(--font-mono), monospace;
-  font-size: 11px;
+  font-size: var(--text-label);
   font-weight: 500;
-  letter-spacing: 0.3em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--muted-soft);
   margin-bottom: 14px;
@@ -154,20 +154,10 @@
 .rowSummary {
   margin: 16px 0 0;
   max-width: 32ch;
-  font-size: clamp(13.5px, 1vw, 15px);
-  line-height: 1.7;
+  font-size: var(--text-body);
+  line-height: var(--leading-body-dense);
   color: var(--muted);
   text-wrap: pretty;
-}
-
-.rowYear {
-  margin-top: 18px;
-  font-family: var(--font-mono), monospace;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--muted-soft);
 }
 
 .rowMock {
@@ -209,10 +199,12 @@
 }
 
 .rowOpen {
+  position: relative;
   display: grid;
   place-items: center;
   width: 34px;
   height: 34px;
+  flex-shrink: 0;
   border: 1px solid var(--line-strong);
   font-family: var(--font-mono), monospace;
   font-size: 15px;
@@ -225,6 +217,13 @@
   color: var(--accent-strong);
   border-color: var(--accent);
   transform: rotate(90deg);
+}
+
+/* Invisible hit-area extension: visual box stays 34px, touch target is 44px */
+.rowOpen::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
 }
 
 /* ---- Reveal (JS-applied; default state is fully visible) ---- */
@@ -262,6 +261,10 @@
 }
 
 @media (max-width: 640px) {
+  .kicker {
+    font-size: 1.0625rem;
+  }
+
   .row {
     grid-template-columns: 1fr;
     min-height: 0;

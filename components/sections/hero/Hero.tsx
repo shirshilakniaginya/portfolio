@@ -5,23 +5,26 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "@/lib/gsap-setup";
-import { profile } from "@/lib/home-content";
 import styles from "./hero.module.css";
 
 const TITLE_LINES = ["Создам сайт", "Сделаю редизайн."] as const;
 
 const PARAGRAPH =
-  "Делаю лендинги, промо-сайты и сайты услуг для бизнеса: продумываю структуру, дизайн, адаптив и фронтенд так, чтобы страница выглядела цельно и вела человека к заявке.";
+  "Делаю лендинги, промо-сайты и сайты услуг. Выстраиваю структуру, дизайн, адаптив и фронтенд, чтобы сайт ясно объяснял предложение и вёл к заявке.";
+
+const CAPTION =
+  "Веду проект целиком: от структуры и дизайна до адаптивной вёрстки и запуска.";
 
 const RAIL_NAV = [
   { href: "#work", num: "01", label: "Работы" },
   { href: "#about", num: "02", label: "Обо мне" },
   { href: "#contact", num: "03", label: "Контакты" },
+  { href: "#faq", num: "04", label: "FAQ" },
 ] as const;
 
 const FIELDS = [
   { label: "Роль", value: "Веб-дизайн / Фронтенд" },
-  { label: "Класс", value: "Лендинги · Промо" },
+  { label: "Сайты", value: "Лендинги · Промо-сайты" },
 ] as const;
 
 function scrollToHash(event: MouseEvent<HTMLElement>) {
@@ -166,7 +169,7 @@ export function Hero() {
               </p>
 
               <a className={styles.cta} href="#contact" onClick={scrollToHash} data-d-reveal>
-                Открыт к проектам
+                Обсудить проект
                 <span className={styles.ctaPlus} aria-hidden="true">
                   +
                 </span>
@@ -191,7 +194,7 @@ export function Hero() {
               </span>
 
               <p className={styles.caption} data-d-reveal>
-                {profile.about}
+                {CAPTION}
               </p>
             </div>
           </div>
@@ -222,7 +225,7 @@ export function Hero() {
             <path d="M8 1v14M1 8h14" stroke="currentColor" strokeWidth="1" />
           </svg>
 
-          <span className={styles.colBLabel}>Сайты под заявки — 2026</span>
+          <span className={styles.colBLabel}>Сайты под заявки · 2026</span>
         </div>
       </div>
     </section>

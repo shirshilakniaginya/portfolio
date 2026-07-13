@@ -4,7 +4,7 @@
   border: 1px solid var(--line-strong);
   background: var(--surface);
   overflow: hidden;
-  font-family: var(--font-sans), var(--font-body), sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
 
 /* ---------- Real project preview ---------- */

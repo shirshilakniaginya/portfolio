@@ -18,7 +18,6 @@ function ProjectRow({ project }: { project: Project }) {
         <span className={styles.rowKicker}>{project.kind}</span>
         <h3 className={styles.rowName}>{project.name}</h3>
         <p className={styles.rowSummary}>{project.summary}</p>
-        <span className={styles.rowYear}>{project.team}</span>
       </div>
 
       <a
@@ -112,7 +111,7 @@ export function Projects() {
         <header className={styles.head} data-reveal>
           <div className={styles.headLeft}>
             <span className={styles.kicker}>{"// 01 Работы"}</span>
-            <h2 className={styles.kickerSub}>Примеры сайтов — избранные проекты</h2>
+            <h2 className={styles.kickerSub}>Избранные сайты</h2>
           </div>
 
           <a
@@ -121,7 +120,7 @@ export function Projects() {
             target="_blank"
             rel="noreferrer"
           >
-            Все проекты
+            Больше работ
             <span className={styles.allPlus} aria-hidden="true">
               +
             </span>

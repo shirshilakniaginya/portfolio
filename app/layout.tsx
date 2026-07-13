@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { Manrope, Geist, JetBrains_Mono } from "next/font/google";
-import localFont from "next/font/local";
+import { Geist, JetBrains_Mono } from "next/font/google";
 import { METRIKA_ID } from "@/lib/metrika";
 import { GsapSmoothScroll } from "@/components/utils/GsapSmoothScroll";
 import { SiteHeader } from "@/components/shared/header/Header";
@@ -11,42 +10,14 @@ import { cn } from "@/lib/utils";
 
 // Geist is the redesigned homepage's grotesk system family (headlines + body + labels).
 // Cyrillic subset is required for the Russian copy in the hero/projects.
-const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans", display: "block" });
-
-const manrope = Manrope({
-  variable: "--font-body",
-  subsets: ["latin", "cyrillic"],
-  display: "block",
-});
+const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans", display: "swap" });
 
 // Dossier system: mono face for archive labels, codes and data pairs.
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "700"],
-  display: "block",
-});
-
-const hikasami = localFont({
-  variable: "--font-display",
-  display: "block",
-  src: [
-    {
-      path: "./fonts/Hikasami-Regular.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./fonts/Hikasami-Bold.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./fonts/Hikasami-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-  ],
+  display: "swap",
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shtq.pro";
@@ -72,7 +43,7 @@ const serviceJsonLd = {
       "@id": `${SITE_URL}/#person`,
       name: "Дмитрий",
       url: SITE_URL,
-      image: `${SITE_URL}/about/portraitnobg.png`,
+      image: `${SITE_URL}/about/portrait-schema.webp`,
       jobTitle: "Веб-дизайнер и веб-разработчик",
       sameAs: ["https://kwork.ru/user/dmitrydezign", "https://dribbble.com/Shtutik"],
     },
@@ -238,7 +209,7 @@ export default function RootLayout({
     <html
       lang="ru"
       data-theme="dark"
-      className={cn(manrope.variable, hikasami.variable, "font-sans", geist.variable, jetbrainsMono.variable)}
+      className={cn("font-sans", geist.variable, jetbrainsMono.variable)}
     >
       <body className={styles.body}>
         <script

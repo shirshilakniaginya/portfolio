@@ -35,10 +35,8 @@ function countLinks(value: string) {
 }
 
 const CONNECT = [
-  { label: "Telegram", href: TG_HANDLE_URL },
   { label: "Kwork", href: "https://kwork.ru/user/dmitrydezign" },
   { label: "Dribbble", href: "https://dribbble.com/Shtutik" },
-  { label: "Behance", href: "#" },
 ] as const;
 
 function CheckIcon() {
@@ -100,22 +98,22 @@ function BriefForm({ onSent }: { onSent: () => void }) {
       return "Подождите 3 секунды перед отправкой формы.";
     }
     if (niche.length < MIN_NICHE_LENGTH) {
-      return "Укажите нишу и тип проекта.";
+      return "Укажите, чем вы занимаетесь и какой сайт нужен.";
     }
     if (niche.length > MAX_NICHE_LENGTH) {
-      return "Поле с нишей слишком длинное.";
+      return "Сократите описание направления до 120 символов.";
     }
     if (task.length < MIN_TASK_LENGTH) {
-      return "Опишите задачу чуть подробнее.";
+      return "Кратко опишите, какую задачу должен решить сайт.";
     }
     if (task.length > MAX_TASK_LENGTH) {
-      return "Описание задачи слишком длинное.";
+      return "Сократите описание задачи до 1200 символов.";
     }
     if (contact.length < MIN_CONTACT_LENGTH) {
       return "Укажите, как с вами связаться.";
     }
     if (contact.length > MAX_CONTACT_LENGTH) {
-      return "Контактные данные слишком длинные.";
+      return "Сократите контактные данные до 160 символов.";
     }
 
     const totalLinks = countLinks([niche, task, contact].join("\n"));
@@ -166,7 +164,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
     } catch {
       pendingSubmitRef.current = false;
       resetCaptcha();
-      setValidationError("Не отправилось. Попробуйте ещё раз или напишите в Telegram.");
+      setValidationError("Не удалось отправить бриф. Попробуйте ещё раз или напишите в Telegram.");
       setStatus("error");
     }
   };
@@ -182,7 +180,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
     }
 
     if (!captchaRef.current) {
-      setValidationError("Проверка captcha не загрузилась. Попробуйте ещё раз.");
+      setValidationError("Проверка безопасности не загрузилась. Обновите страницу и попробуйте ещё раз.");
       setStatus("error");
       return;
     }
@@ -228,7 +226,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
 
         <div className={styles.field}>
           <label className={styles.fieldLabel} htmlFor="niche">
-            Ниша и тип проекта
+            Чем вы занимаетесь и какой сайт нужен
           </label>
           <input
             className={styles.fieldInput}
@@ -236,7 +234,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
             maxLength={MAX_NICHE_LENGTH}
             name="niche"
             onChange={set("niche")}
-            placeholder="Лендинг, корп. сайт, SaaS"
+            placeholder="Например: услуги юриста, нужен лендинг"
             type="text"
             value={fields.niche}
           />
@@ -252,7 +250,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
             maxLength={MAX_TASK_LENGTH}
             name="task"
             onChange={set("task")}
-            placeholder="Дизайн с нуля, редизайн, правки"
+            placeholder="Например: создать сайт с нуля или обновить текущий"
             rows={5}
             value={fields.task}
           />
@@ -314,12 +312,12 @@ function BriefForm({ onSent }: { onSent: () => void }) {
           ref={captchaRef}
           onError={() => {
             pendingSubmitRef.current = false;
-            setValidationError("Ошибка captcha. Попробуйте ещё раз.");
+            setValidationError("Проверка безопасности не прошла. Попробуйте ещё раз.");
             setStatus("error");
           }}
           onExpire={() => {
             pendingSubmitRef.current = false;
-            setValidationError("Проверка истекла. Нажмите отправку ещё раз.");
+            setValidationError("Проверка безопасности истекла. Нажмите «Отправить бриф» ещё раз.");
             setStatus("error");
           }}
           onVerify={(token) => {
@@ -348,12 +346,12 @@ export function Contact() {
         <div className={styles.topGrid}>
           <div className={styles.label}>
             <span className={styles.kicker}>{"// 03 Контакт"}</span>
-            <h2 className={styles.kickerSub}>Заказать сайт — на связи</h2>
+            <h2 className={styles.kickerSub}>Обсудить сайт</h2>
           </div>
 
           <div className={styles.statement}>
-            <p>Напиши, нужен ли сайт с нуля, редизайн или правки.</p>
-            <p>Разберём задачу, структуру и найдём формат под вашу цель.</p>
+            <p>Напишите, что нужно: новый сайт, редизайн или точечные правки.</p>
+            <p>Я уточню детали и предложу подходящий формат работы.</p>
           </div>
 
           <div className={styles.direct}>
@@ -366,7 +364,10 @@ export function Contact() {
                 rel="noreferrer"
                 target="_blank"
               >
-                @DSVRandom
+                <span>Написать в Telegram</span>
+                <span className={styles.directArrow} aria-hidden="true">
+                  →
+                </span>
               </a>
             </div>
 
@@ -380,19 +381,18 @@ export function Contact() {
           </div>
 
           <div className={styles.connect}>
-            <span className="d-label">Связи</span>
+            <span className="d-label">Профили</span>
             <ul className={styles.connectList}>
               {CONNECT.map((item) => (
                 <li key={item.label}>
                   <a
                     className={styles.connectLink}
                     href={item.href}
-                    onClick={item.href === TG_HANDLE_URL ? () => reachGoal("tg_click") : undefined}
                     {...(item.href.startsWith("http")
                       ? { target: "_blank", rel: "noreferrer" }
                       : {})}
                   >
-                    {item.label}
+                    <span className={styles.connectLabel}>{item.label}</span>
                     <span className={styles.connectArrow} aria-hidden="true">
                       →
                     </span>

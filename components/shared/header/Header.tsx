@@ -9,6 +9,7 @@ const NAV = [
   { id: "work", num: "01", label: "Работы" },
   { id: "about", num: "02", label: "Обо мне" },
   { id: "contact", num: "03", label: "Контакты" },
+  { id: "faq", num: "04", label: "FAQ" },
 ] as const;
 
 const HEADER_OFFSET = "top 72px";

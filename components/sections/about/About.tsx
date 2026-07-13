@@ -8,22 +8,22 @@ import styles from "./about.module.css";
 const FIELDS = [
   { label: "Имя", value: "Дмитрий" },
   { label: "Роль", value: profile.role },
-  { label: "Формат", value: "Удалённо · вся Россия" },
+  { label: "Формат", value: "Удалённо · по всей России" },
   { label: "Статус", value: "Открыт к проектам" },
 ] as const;
 
 const SKILLS = [
-  { label: "UX/UI дизайн", value: 95 },
-  { label: "Веб-дизайн", value: 92 },
-  { label: "Проектирование", value: 88 },
-  { label: "Фронтенд", value: 80 },
+  { label: "Структура", value: 95, level: "Основной" },
+  { label: "Дизайн", value: 92, level: "Сильный" },
+  { label: "Адаптив", value: 88, level: "Уверенный" },
+  { label: "Фронтенд", value: 80, level: "Рабочий" },
 ] as const;
 
 const SECOND_PARAGRAPH =
-  "Верю в ясность, точность и осознанный подход: каждый блок и каждый пиксель на странице работают на заявку.";
+  "Каждый блок решает задачу: объясняет предложение, снимает вопросы или ведёт к заявке.";
 
 const GEO_PARAGRAPH =
-  "Работаю удалённо — с клиентами из Москвы и любых городов России. Все этапы, от брифа до запуска сайта, проходят онлайн.";
+  "Работаю удалённо с клиентами по всей России. Бриф, согласования, правки и запуск проходят онлайн.";
 
 export function About() {
   const rootRef = useRef<HTMLElement | null>(null);
@@ -71,11 +71,11 @@ export function About() {
 
           <div className={styles.photoWrap} data-reveal>
             <Image
-              src="/about/section-portrait.png"
-              alt="Дмитрий — веб-дизайнер и разработчик"
+              src="/about/section-portrait.webp"
+              alt="Дмитрий, веб-дизайнер и разработчик"
               className={styles.photo}
-              width={1254}
-              height={1254}
+              width={1000}
+              height={1000}
             />
           </div>
 
@@ -99,7 +99,7 @@ export function About() {
               <div className={styles.bar} data-reveal key={skill.label}>
                 <div className={styles.barHead}>
                   <span className={styles.barLabel}>{skill.label}</span>
-                  <span className={styles.barValue}>{skill.value}%</span>
+                  <span className={styles.barValue}>{skill.level}</span>
                 </div>
                 <span className={styles.barTrack}>
                   <i
