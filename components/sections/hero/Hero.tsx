@@ -7,13 +7,13 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { gsap } from "@/lib/gsap-setup";
 import styles from "./hero.module.css";
 
-const TITLE_LINES = ["Создам сайт", "Сделаю редизайн."] as const;
+const TITLE_LINES = ["Создаю сайты", "для услуг и бизнеса."] as const;
 
 const PARAGRAPH =
-  "Делаю лендинги, промо-сайты и сайты услуг. Выстраиваю структуру, дизайн, адаптив и фронтенд, чтобы сайт ясно объяснял предложение и вёл к заявке.";
+  "Делаю лендинги, промо-сайты и сайты услуг. Сам отвечаю за структуру, дизайн и разработку — от первого экрана до запуска.";
 
 const CAPTION =
-  "Веду проект целиком: от структуры и дизайна до адаптивной вёрстки и запуска.";
+  "Один исполнитель на весь проект. Без передачи между дизайнером и разработчиком.";
 
 const RAIL_NAV = [
   { href: "#work", num: "01", label: "Работы" },
@@ -104,8 +104,8 @@ export function Hero() {
           </nav>
 
           <span className={styles.railStatus}>
-            <em>Система</em>
-            Онлайн
+            <em>Статус</em>
+            На связи
             <i className={styles.railStatusDot} aria-hidden="true" />
           </span>
         </aside>
@@ -117,10 +117,10 @@ export function Hero() {
         <div className={styles.center}>
           <div className={styles.codes}>
             <span className={styles.code} data-d-reveal>
-              <em>Сессия</em>SHTQ-2026
+              <em>Статус</em>Открыт к проектам
             </span>
             <span className={styles.code} data-d-reveal>
-              <em>Формат</em>Сайты под заявки
+              <em>Формат</em>Удалённо по России
             </span>
           </div>
 
@@ -168,7 +168,7 @@ export function Hero() {
               </p>
 
               <a className={styles.cta} href="#contact" onClick={scrollToHash} data-d-reveal>
-                Обсудить проект
+                Рассказать о задаче
                 <span className={styles.ctaPlus} aria-hidden="true">
                   +
                 </span>
@@ -224,7 +224,7 @@ export function Hero() {
             <path d="M8 1v14M1 8h14" stroke="currentColor" strokeWidth="1" />
           </svg>
 
-          <span className={styles.colBLabel}>Сайты под заявки · 2026</span>
+          <span className={styles.colBLabel}>Лендинги · сайты услуг · редизайн</span>
         </div>
       </div>
     </section>

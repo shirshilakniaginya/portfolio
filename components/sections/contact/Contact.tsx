@@ -346,12 +346,12 @@ export function Contact() {
         <div className={styles.topGrid}>
           <div className={styles.label}>
             <span className={styles.kicker}>{"// 03 Контакт"}</span>
-            <h2 className={styles.kickerSub}>Обсудить сайт</h2>
+            <h2 className={styles.kickerSub}>Расскажите о задаче</h2>
           </div>
 
           <div className={styles.statement}>
-            <p>Напишите, что нужно: новый сайт, редизайн или точечные правки.</p>
-            <p>Я уточню детали и предложу подходящий формат работы.</p>
+            <p>Напишите, чем занимаетесь и какой сайт нужен. Если сайт уже есть — пришлите ссылку.</p>
+            <p>Я задам несколько вопросов и назову предварительный состав работы, срок и диапазон стоимости.</p>
           </div>
 
           <div className={styles.direct}>

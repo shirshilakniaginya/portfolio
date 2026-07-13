@@ -2,10 +2,10 @@
 import styles from "./footer.module.css";
 
 const MANIFEST = [
-  "Структура, дизайн и фронтенд в одних руках.",
-  "Каждый блок решает задачу.",
+  "Лендинги, промо-сайты и сайты услуг.",
+  "Структуру, дизайн и разработку делаю сам.",
   "Работаю удалённо по всей России.",
-  "Сайты, которые объясняют и ведут к действию.",
+  "Открыт к новым проектам.",
 ] as const;
 
 export function Footer() {
@@ -36,8 +36,8 @@ export function Footer() {
           </div>
 
           <div className={styles.block}>
-            <span>Версия 1.0.0</span>
-            <span className={styles.blockMuted}>Сделано с умыслом</span>
+            <span>Дизайн и разработка</span>
+            <span className={styles.blockMuted}>Дмитрий</span>
           </div>
 
           <a
