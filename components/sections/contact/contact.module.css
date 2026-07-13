@@ -25,6 +25,7 @@
 .label {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 8px;
 }
 
@@ -456,10 +457,6 @@
 }
 
 @media (max-width: 560px) {
-  .kicker {
-    font-size: 1.0625rem;
-  }
-
   .topGrid {
     grid-template-columns: 1fr;
   }

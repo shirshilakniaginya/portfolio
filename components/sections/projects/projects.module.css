@@ -261,10 +261,6 @@
 }
 
 @media (max-width: 640px) {
-  .kicker {
-    font-size: 1.0625rem;
-  }
-
   .row {
     grid-template-columns: 1fr;
     min-height: 0;

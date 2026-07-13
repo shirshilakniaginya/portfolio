@@ -13,10 +13,10 @@ const FIELDS = [
 ] as const;
 
 const SKILLS = [
-  { label: "Структура", value: 95, level: "Основной" },
-  { label: "Дизайн", value: 92, level: "Сильный" },
-  { label: "Адаптив", value: 88, level: "Уверенный" },
-  { label: "Фронтенд", value: 80, level: "Рабочий" },
+  { label: "Структура", value: 95 },
+  { label: "Дизайн", value: 92 },
+  { label: "Адаптив", value: 88 },
+  { label: "Фронтенд", value: 80 },
 ] as const;
 
 const SECOND_PARAGRAPH =
@@ -99,7 +99,6 @@ export function About() {
               <div className={styles.bar} data-reveal key={skill.label}>
                 <div className={styles.barHead}>
                   <span className={styles.barLabel}>{skill.label}</span>
-                  <span className={styles.barValue}>{skill.level}</span>
                 </div>
                 <span className={styles.barTrack}>
                   <i

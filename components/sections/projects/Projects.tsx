@@ -45,10 +45,6 @@ function ProjectRow({ project }: { project: Project }) {
             <span className="d-value">{project.kind}</span>
           </div>
           <div className={styles.rowField}>
-            <span className="d-label">Роль</span>
-            <span className="d-value">{project.role}</span>
-          </div>
-          <div className={styles.rowField}>
             <span className="d-label">Теги</span>
             <span className="d-value">{project.tags.join(", ")}</span>
           </div>

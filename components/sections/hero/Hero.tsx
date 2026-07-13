@@ -23,7 +23,6 @@ const RAIL_NAV = [
 ] as const;
 
 const FIELDS = [
-  { label: "Роль", value: "Веб-дизайн / Фронтенд" },
   { label: "Сайты", value: "Лендинги · Промо-сайты" },
 ] as const;
 

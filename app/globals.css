@@ -34,11 +34,11 @@
   --text-label: 11px;                         /* mono uppercase metadata labels */
   --text-micro: 10px;                         /* smallest decorative meta: indices, vertical labels */
   --text-value: clamp(14px, 1.05vw, 16px);    /* data-pair values */
-  --text-kicker: clamp(15px, 1.1vw, 18px);    /* section kickers */
+  --text-kicker: clamp(1rem, 1.4vw, 1.45rem);   /* section kickers: must outrank row titles inside the section */
   --leading-body: 1.75;                       /* main prose paragraphs */
   --leading-body-dense: 1.7;                  /* narrow-measure prose: summaries, captions */
   --tracking-label: 0.3em;                    /* uppercase metadata labels */
-  --tracking-kicker: 0.2em;                   /* section kickers */
+  --tracking-kicker: 0.04em;                  /* section kickers: wide label-style tracking falls apart at display sizes */
   /* Legacy alias, kept while var(--text-body) references remain */
   --body-text-size: var(--text-body);
 
