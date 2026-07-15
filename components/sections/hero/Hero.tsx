@@ -105,8 +105,10 @@ export function Hero() {
 
           <span className={styles.railStatus}>
             <em>Статус</em>
-            На связи
-            <i className={styles.railStatusDot} aria-hidden="true" />
+            <span className={styles.railStatusValue}>
+              На связи
+              <i className={styles.railStatusDot} aria-hidden="true" />
+            </span>
           </span>
         </aside>
 
