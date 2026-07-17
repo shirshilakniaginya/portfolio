@@ -136,12 +136,12 @@ export function Hero() {
                 muted
                 playsInline
                 preload="metadata"
-                poster="/about/hero-portrait-dima.png"
+                poster="/about/hero-portrait-dima.webp"
               >
                 <source src="/about/hero-portrait-dima-loop.mp4" type="video/mp4" />
               </video>
               <Image
-                src="/about/hero-portrait-dima.png"
+                src="/about/hero-portrait-dima.webp"
                 alt=""
                 className={`${styles.portrait} ${styles.portraitFallback}`}
                 width={1280}
