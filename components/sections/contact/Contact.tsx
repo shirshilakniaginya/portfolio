@@ -1,6 +1,7 @@
 "use client";
 
 import { type ChangeEvent, type FormEvent, useEffect, useRef, useState } from "react";
+import { SuccessIcon } from "@/components/shared/SuccessIcon";
 import { reachGoal } from "@/lib/metrika";
 import styles from "./contact.module.css";
 
@@ -36,20 +37,6 @@ const CONNECT = [
   { label: "Kwork", href: "https://kwork.ru/user/dmitrydezign" },
   { label: "Dribbble", href: "https://dribbble.com/Shtutik" },
 ] as const;
-
-function CheckIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M5 12L10 17L19 7"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 function BriefForm() {
   const [status, setStatus] = useState<Status>("idle");
@@ -164,6 +151,7 @@ function BriefForm() {
 
   return (
     <div className={styles.formState} data-state={status}>
+      <h3 className={styles.noteTitle}>Пришлите задачу</h3>
       <form
         aria-hidden={status === "sent"}
         className={styles.form}
@@ -267,9 +255,7 @@ function BriefForm() {
 
       {status === "sent" && (
         <div className={styles.formSuccess} aria-live="polite" role="status">
-          <span className={styles.formSuccessIcon}>
-            <CheckIcon />
-          </span>
+          <SuccessIcon className={styles.formSuccessIcon} size={42} />
           <strong className={styles.formSuccessTitle}>Бриф получен</strong>
           <p className={styles.formSuccessText}>Отвечу в течение 24 часов.</p>
         </div>
@@ -321,7 +307,6 @@ export function Contact() {
 
           {SHOW_BRIEF_FORM && (
             <div className={styles.formWrap}>
-              <h3 className={styles.noteTitle}>Пришлите задачу</h3>
               <BriefForm />
             </div>
           )}
