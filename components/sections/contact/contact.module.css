@@ -10,16 +10,21 @@
 
 .inner {
   width: 100%;
-  padding: clamp(56px, 7vw, 120px) var(--d-pad);
+  padding: clamp(56px, 7vw, 112px) var(--d-pad);
 }
 
-/* ---- Top grid: label | statement | direct | connect ---- */
+/* ---- Original four-column composition ---- */
 .topGrid {
   display: grid;
-  grid-template-columns: minmax(140px, 0.55fr) minmax(0, 1.15fr) minmax(220px, 0.8fr) minmax(200px, 0.7fr);
+  grid-template-columns: minmax(140px, 0.55fr) minmax(260px, 1.15fr) minmax(220px, 0.8fr) minmax(200px, 0.7fr);
   gap: clamp(24px, 2.6vw, 48px);
-  align-items: stretch;
-  padding-bottom: clamp(36px, 5vw, 72px);
+  align-items: start;
+}
+
+.copyColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
 }
 
 .label {
@@ -41,11 +46,12 @@
 .kickerSub {
   margin: 0;
   font-family: var(--font-mono), monospace;
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: var(--tracking-label);
+  font-size: var(--text-section-meta);
+  font-weight: var(--weight-section-meta);
+  line-height: var(--leading-section-meta);
+  letter-spacing: var(--tracking-section-meta);
   text-transform: uppercase;
-  color: var(--muted-soft);
+  color: var(--color-section-meta);
 }
 
 .statement {
@@ -63,98 +69,16 @@
   text-wrap: pretty;
 }
 
-/* Vertical divider before direct contacts */
-.direct {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(20px, 3vh, 30px);
-  border-left: 1px solid var(--line);
-  padding-left: clamp(24px, 2.6vw, 48px);
+.contactChannels {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: var(--d-pad);
 }
 
-.directItem {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.directLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  min-height: 44px;
-  padding: 11px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  font-family: var(--font-mono), monospace;
-  font-size: var(--text-small);
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text);
-  transition: color 0.2s ease;
-}
-
-.directLink:hover {
-  color: var(--accent-strong);
-}
-
-.directArrow {
-  color: var(--accent);
-  font-size: 1rem;
-  letter-spacing: 0;
-  transition: transform 0.25s ease;
-}
-
-.directLink:hover .directArrow {
-  transform: translateX(4px);
-}
-
-.response {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(13.5px, 1.05vw, 15px);
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-
-.responseDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: responsePulse 2.4s ease-in-out infinite;
-}
-
-@keyframes responsePulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-
-/* Second vertical divider before the connect list */
 .connect {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  border-left: 1px solid var(--line);
-  padding-left: clamp(24px, 2.6vw, 48px);
-}
-
-@media (min-width: 1001px) {
-  .connect {
-    margin-top: -4px;
-  }
 }
 
 .connectList {
@@ -178,15 +102,12 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--text);
-  transition: color 0.2s ease;
-}
-
-.connectList li:first-child .connectLink {
-  border-top: 1px solid var(--line);
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
 }
 
 .connectLink:hover {
   color: var(--accent-strong);
+  border-bottom-color: var(--accent);
 }
 
 .connectLabel {
@@ -212,26 +133,27 @@
 .formWrap {
   display: flex;
   flex-direction: column;
-  max-width: 760px;
-  padding-top: clamp(28px, 3.6vw, 48px);
-  border-top: 1px solid var(--line);
+  grid-column: 3 / 5;
+  min-width: 0;
+  padding-left: clamp(24px, 2.6vw, 48px);
+  border-left: 1px solid var(--line);
 }
 
 .noteTitle {
-  margin: 0 0 20px;
+  margin: 0 0 1.125rem;
   font-family: var(--font-mono), monospace;
-  font-size: clamp(13px, 1.05vw, 15px);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  font-size: var(--text-kicker);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: var(--tracking-kicker);
   color: var(--text);
+  font-kerning: normal;
 }
 
 /* ============ Form (logic-bound classes — keep names stable) ============ */
 .form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .formState {
@@ -254,22 +176,36 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  padding: clamp(20px, 2vw, 28px) 0;
+  gap: 0.625rem;
+  padding: clamp(1rem, 1.4vw, 1.25rem) 0;
   border-bottom: 1px solid var(--line-strong);
+  transition: border-color 180ms ease;
 }
 
-.field:first-of-type {
+.fieldNiche {
   border-top: 1px solid var(--line-strong);
 }
 
+.fieldNiche,
+.fieldContact,
+.fieldTask {
+  grid-column: 1;
+  grid-row: auto;
+}
+
+.field:hover,
+.field:focus-within {
+  border-bottom-color: var(--accent);
+}
+
 .fieldLabel {
-  font-family: var(--font-mono), monospace;
-  font-size: 9px;
-  line-height: 1;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--muted-soft);
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  font-kerning: normal;
 }
 
 .fieldInput,
@@ -280,15 +216,19 @@
   border: none;
   border-radius: 0;
   color: var(--text);
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(13px, 1vw, 15px);
-  letter-spacing: 0.04em;
-  line-height: 1.6;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.0625rem;
+  letter-spacing: -0.01em;
+  line-height: 1.65;
   outline: none;
   resize: none;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.fieldTextarea {
+  min-height: 4.75rem;
 }
 
 .fieldTextarea::-webkit-scrollbar {
@@ -310,7 +250,8 @@
 
 .fieldInput::placeholder,
 .fieldTextarea::placeholder {
-  color: var(--muted-soft);
+  color: var(--muted);
+  opacity: 0.92;
 }
 
 .captchaHidden {
@@ -327,15 +268,16 @@
   justify-content: space-between;
   gap: 16px;
   width: 100%;
-  min-height: 64px;
-  padding: clamp(20px, 2vw, 26px) 0;
+  grid-column: 1 / -1;
+  min-height: 54px;
+  padding: 14px 0;
   background: transparent;
   color: var(--text);
   border: none;
   border-bottom: 1px solid var(--line-strong);
   border-radius: 0;
   font-family: var(--font-mono), monospace;
-  font-size: 12px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -368,8 +310,8 @@
 }
 
 .formFeedback {
-  min-height: 44px;
-  padding-top: 12px;
+  min-height: 32px;
+  padding-top: 10px;
 }
 
 .formError {
@@ -437,42 +379,93 @@
 
 @media (max-width: 1000px) {
   .topGrid {
-    grid-template-columns: 1fr 1fr;
-    row-gap: clamp(28px, 5vw, 40px);
+    grid-template-columns: minmax(180px, 0.7fr) minmax(0, 1.3fr);
+    row-gap: clamp(44px, 7vw, 64px);
   }
 
-  .label {
+  .formWrap {
     grid-column: 1 / -1;
-  }
-
-  .statement {
-    grid-column: 1 / -1;
-    max-width: none;
-  }
-
-  .direct {
-    border-left: none;
+    padding-top: clamp(36px, 5vw, 56px);
     padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: none;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
+  .inner {
+    padding: 48px var(--d-pad) 56px;
+  }
+
   .topGrid {
     grid-template-columns: 1fr;
+    row-gap: 0;
+  }
+
+  .copyColumn {
+    margin-top: 32px;
+  }
+
+  .contactChannels {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: var(--d-pad);
   }
 
   .connect {
-    border-left: none;
-    padding-left: 0;
+    gap: 10px;
   }
 
-  .field {
-    gap: 8px;
-    padding: 16px 0;
+  .formWrap {
+    grid-column: 1;
+    margin-top: 40px;
+    padding-top: 36px;
+  }
+
+  .noteTitle {
+    margin-bottom: 1rem;
+  }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldNiche,
+  .fieldTask,
+  .fieldContact {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .fieldTask {
+    order: 2;
+  }
+
+  .fieldContact {
+    order: 3;
+    border-top: none;
   }
 
   .formSubmit {
+    order: 4;
+  }
+
+  .field {
     padding: 16px 0;
-    font-size: 11px;
+  }
+
+  .fieldLabel {
+    font-size: 0.875rem;
+  }
+
+  .fieldInput,
+  .fieldTextarea {
+    font-size: 1rem;
+  }
+
+  .formSubmit {
+    min-height: 56px;
+    padding: 16px 0;
+    font-size: 0.75rem;
   }
 }

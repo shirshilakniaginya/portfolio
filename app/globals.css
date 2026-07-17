@@ -35,10 +35,15 @@
   --text-micro: 10px;                         /* smallest decorative meta: indices, vertical labels */
   --text-value: clamp(14px, 1.05vw, 16px);    /* data-pair values */
   --text-kicker: clamp(1rem, 1.4vw, 1.45rem);   /* section kickers: must outrank row titles inside the section */
+  --text-section-meta: clamp(0.75rem, 0.7vw, 0.8125rem); /* readable section subtitles and case kickers */
   --leading-body: 1.75;                       /* main prose paragraphs */
   --leading-body-dense: 1.7;                  /* narrow-measure prose: summaries, captions */
+  --leading-section-meta: 1.45;
   --tracking-label: 0.3em;                    /* uppercase metadata labels */
   --tracking-kicker: 0.04em;                  /* section kickers: wide label-style tracking falls apart at display sizes */
+  --tracking-section-meta: 0.12em;
+  --weight-section-meta: 500;
+  --color-section-meta: color-mix(in oklab, var(--muted) 80%, var(--bg));
   /* Legacy alias, kept while var(--text-body) references remain */
   --body-text-size: var(--text-body);
 
@@ -122,6 +127,24 @@ html::-webkit-scrollbar {
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 4px 0;
+}
+
+@media (max-width: 640px) {
+  html {
+    scrollbar-width: auto;
+  }
+
+  html::-webkit-scrollbar {
+    display: initial;
+  }
+
+  #smooth-content {
+    will-change: auto;
+  }
+
+  .custom-scrollbar-track {
+    display: none;
+  }
 }
 
 body {

@@ -2,10 +2,7 @@
 
 import { useRef } from "react";
 import gsap from "gsap";
-import { reachGoal } from "@/lib/metrika";
 import styles from "./faq.module.css";
-
-const TG_HANDLE_URL = "https://t.me/DSVRandom";
 
 // Answers must stay in sync with the visible text: the same strings feed the
 // FAQPage JSON-LD below, and Yandex/Google check that markup matches the page.
@@ -127,19 +124,6 @@ export function Faq() {
             {FAQ_ITEMS.map((item) => (
               <FaqItem key={item.q} q={item.q} a={item.a} />
             ))}
-
-            <a
-              className={styles.closing}
-              href={TG_HANDLE_URL}
-              onClick={() => reachGoal("tg_click")}
-              rel="noreferrer"
-              target="_blank"
-            >
-              Задать вопрос в Telegram
-              <span className={styles.closingPlus} aria-hidden="true">
-                +
-              </span>
-            </a>
           </div>
         </div>
       </div>

@@ -12,7 +12,8 @@ export function GsapSmoothScroll() {
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduceMotion) return;
+    const mobile = window.matchMedia("(max-width: 640px)").matches;
+    if (reduceMotion || mobile) return;
 
     // Allow Ctrl+wheel browser zoom — intercept before GSAP's normalizeScroll takes it
     const allowCtrlZoom = (e: WheelEvent) => {

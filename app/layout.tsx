@@ -10,14 +10,14 @@ import { cn } from "@/lib/utils";
 
 // Geist is the redesigned homepage's grotesk system family (headlines + body + labels).
 // Cyrillic subset is required for the Russian copy in the hero/projects.
-const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans", display: "block" });
+const geist = Geist({ subsets: ["latin", "cyrillic"], variable: "--font-sans", display: "swap" });
 
 // Dossier system: mono face for archive labels, codes and data pairs.
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "700"],
-  display: "block",
+  display: "swap",
 });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shtq.pro";
@@ -212,7 +212,15 @@ export default function RootLayout({
       lang="ru"
       data-theme="dark"
       className={cn("font-sans", geist.variable, jetbrainsMono.variable)}
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.dataset.js = 'true';",
+          }}
+        />
+      </head>
       <body className={styles.body}>
         <script
           type="application/ld+json"

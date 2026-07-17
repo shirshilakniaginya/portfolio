@@ -8,6 +8,25 @@
   font-family: var(--font-sans), sans-serif;
 }
 
+/* The server-rendered hero is visible without JavaScript. When the tiny head
+   marker confirms JS is available, desktop-only intro elements start hidden
+   before the first paint so GSAP never causes a visible -> hidden flash. */
+@media (min-width: 641px) and (prefers-reduced-motion: no-preference) {
+  :global(html[data-js="true"]) .hero:not([data-intro-ready="true"]) [data-d-title] {
+    opacity: 0;
+  }
+
+  :global(html[data-js="true"]) .hero:not([data-intro-ready="true"]) [data-d-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  :global(html[data-js="true"]) .hero:not([data-intro-ready="true"]) [data-d-portrait] {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+
 /* ---- Column frame: rail | spacer | center | colA | colB ---- */
 .inner {
   position: relative;
@@ -243,11 +262,12 @@
 
 .kicker {
   font-family: var(--font-mono), monospace;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.32em;
+  font-size: var(--text-section-meta);
+  font-weight: var(--weight-section-meta);
+  line-height: var(--leading-section-meta);
+  letter-spacing: var(--tracking-section-meta);
   text-transform: uppercase;
-  color: var(--muted-soft);
+  color: var(--color-section-meta);
   margin-bottom: clamp(12px, 1.6vh, 16px);
 }
 
@@ -733,6 +753,7 @@
     object-fit: cover;
     object-position: 50% 20%;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

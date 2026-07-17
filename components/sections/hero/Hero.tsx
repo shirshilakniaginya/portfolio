@@ -62,24 +62,35 @@ export function Hero() {
     const reveals = gsap.utils.toArray<HTMLElement>("[data-d-reveal]", root);
     const portrait = root.querySelector<HTMLElement>("[data-d-portrait]");
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const mobile = window.matchMedia("(max-width: 640px)").matches;
 
-    if (reduce) {
-      gsap.set([...masks, ...reveals], { opacity: 1, y: 0, yPercent: 0 });
-      if (portrait) gsap.set(portrait, { opacity: 1, y: 0 });
+    if (reduce || mobile) {
+      root.dataset.introReady = "true";
       return;
     }
 
     const ctx = gsap.context(() => {
-      gsap.set(masks, { yPercent: 110 });
-      gsap.set(reveals, { opacity: 0, y: 14 });
-      if (portrait) gsap.set(portrait, { opacity: 0, y: 26 });
-
       const tl = gsap.timeline({ defaults: { ease: "editorialOut" } });
-      tl.to(masks, { yPercent: 0, duration: 0.9, stagger: 0.1 }, 0.15)
-        .to(reveals, { opacity: 1, y: 0, duration: 0.7, stagger: 0.05 }, 0.35);
+      tl.fromTo(
+        masks,
+        { opacity: 0, yPercent: 110 },
+        { opacity: 1, yPercent: 0, duration: 0.9, stagger: 0.1 },
+        0.15,
+      ).fromTo(
+        reveals,
+        { opacity: 0, y: 14 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.05 },
+        0.35,
+      );
       if (portrait) {
-        tl.to(portrait, { opacity: 1, y: 0, duration: 1.1, ease: "editorialSoft" }, 0.3);
+        tl.fromTo(
+          portrait,
+          { opacity: 0, y: 26 },
+          { opacity: 1, y: 0, duration: 1.1, ease: "editorialSoft" },
+          0.3,
+        );
       }
+      root.dataset.introReady = "true";
     }, root);
 
     return () => ctx.revert();

@@ -40,12 +40,12 @@
 .kickerSub {
   margin: 0;
   font-family: var(--font-mono), monospace;
-  font-size: var(--text-label);
-  font-weight: 500;
-  line-height: 1.55;
-  letter-spacing: var(--tracking-label);
+  font-size: var(--text-section-meta);
+  font-weight: var(--weight-section-meta);
+  line-height: var(--leading-section-meta);
+  letter-spacing: var(--tracking-section-meta);
   text-transform: uppercase;
-  color: var(--muted-soft);
+  color: var(--color-section-meta);
 }
 
 /* Photo height follows the fields column height */

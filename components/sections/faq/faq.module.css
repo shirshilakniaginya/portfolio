@@ -41,11 +41,12 @@
 .kickerSub {
   margin: 0;
   font-family: var(--font-mono), monospace;
-  font-size: var(--text-label);
-  font-weight: 500;
-  letter-spacing: var(--tracking-label);
+  font-size: var(--text-section-meta);
+  font-weight: var(--weight-section-meta);
+  line-height: var(--leading-section-meta);
+  letter-spacing: var(--tracking-section-meta);
   text-transform: uppercase;
-  color: var(--muted-soft);
+  color: var(--color-section-meta);
 }
 
 .list {
@@ -109,40 +110,6 @@
   text-wrap: pretty;
 }
 
-.closing {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: clamp(20px, 2.4vw, 32px);
-  padding: clamp(16px, 1.8vw, 22px) 0;
-  border-top: 1px solid var(--line);
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(13px, 1vw, 15px);
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text);
-  transition: color 0.25s ease, border-color 0.25s ease;
-}
-
-.closing:hover {
-  color: var(--accent-strong);
-  border-color: color-mix(in oklab, var(--accent) 50%, transparent);
-}
-
-.closingPlus {
-  flex-shrink: 0;
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--accent);
-  transition: transform 0.35s ease;
-}
-
-.closing:hover .closingPlus {
-  transform: rotate(90deg);
-}
-
 @media (max-width: 980px) {
   .section {
     border-left: none;
@@ -153,15 +120,10 @@
     grid-template-columns: 1fr;
     row-gap: 28px;
   }
-
-  .closing {
-    font-size: 13px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .closing,
-  .closingPlus {
+  .plus {
     transition: none;
   }
 }

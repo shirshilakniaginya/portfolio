@@ -33,8 +33,9 @@ export function About() {
     if (!root) return;
     const els = Array.from(root.querySelectorAll<HTMLElement>("[data-reveal]"));
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const mobile = window.matchMedia("(max-width: 640px)").matches;
 
-    if (reduce || !("IntersectionObserver" in window)) {
+    if (reduce || mobile || !("IntersectionObserver" in window)) {
       els.forEach((el) => el.classList.add(styles.in));
       return;
     }

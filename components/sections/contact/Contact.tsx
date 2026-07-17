@@ -196,7 +196,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
           />
         </div>
 
-        <div className={styles.field}>
+        <div className={`${styles.field} ${styles.fieldNiche}`}>
           <label className={styles.fieldLabel} htmlFor="niche">
             Чем вы занимаетесь и какой сайт нужен
           </label>
@@ -212,9 +212,9 @@ function BriefForm({ onSent }: { onSent: () => void }) {
           />
         </div>
 
-        <div className={styles.field}>
+        <div className={`${styles.field} ${styles.fieldTask}`}>
           <label className={styles.fieldLabel} htmlFor="task">
-            Задача
+            Что нужно сделать
           </label>
           <textarea
             className={styles.fieldTextarea}
@@ -223,14 +223,14 @@ function BriefForm({ onSent }: { onSent: () => void }) {
             name="task"
             onChange={set("task")}
             placeholder="Например: создать сайт с нуля или обновить текущий"
-            rows={5}
+            rows={3}
             value={fields.task}
           />
         </div>
 
-        <div className={styles.field}>
+        <div className={`${styles.field} ${styles.fieldContact}`}>
           <label className={styles.fieldLabel} htmlFor="contact-method">
-            Как связаться
+            Куда вам ответить
           </label>
           <input
             className={styles.fieldInput}
@@ -238,7 +238,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
             maxLength={MAX_CONTACT_LENGTH}
             name="contact"
             onChange={set("contact")}
-            placeholder="@username или email"
+            placeholder="@username в Telegram или email"
             type="text"
             value={fields.contact}
           />
@@ -293,66 +293,44 @@ export function Contact() {
             <h2 className={styles.kickerSub}>Расскажите о задаче</h2>
           </div>
 
-          <div className={styles.statement}>
-            <p>Напишите, чем занимаетесь и какой сайт нужен. Если сайт уже есть — пришлите ссылку.</p>
-            <p>Я задам несколько вопросов и назову предварительный состав работы, срок и диапазон стоимости.</p>
-          </div>
-
-          <div className={styles.direct}>
-            <div className={styles.directItem}>
-              <span className="d-label">Telegram</span>
-              <a
-                className={styles.directLink}
-                href={TG_HANDLE_URL}
-                onClick={() => reachGoal("tg_click")}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <span>Написать в Telegram</span>
-                <span className={styles.directArrow} aria-hidden="true">
-                  →
-                </span>
-              </a>
+          <div className={styles.copyColumn}>
+            <div className={styles.statement}>
+              <p>Напишите, чем занимаетесь и какой сайт нужен. Если сайт уже есть — пришлите ссылку.</p>
+              <p>Я задам несколько вопросов и назову предварительный состав работы, срок и диапазон стоимости.</p>
             </div>
 
-            <div className={styles.directItem}>
-              <span className="d-label">Ответ</span>
-              <span className={styles.response}>
-                В течение 24 часов
-                <i className={styles.responseDot} aria-hidden="true" />
-              </span>
+            <div className={styles.contactChannels}>
+              <div className={styles.connect}>
+                <span className="d-label">Профили</span>
+                <ul className={styles.connectList}>
+                  {CONNECT.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        className={styles.connectLink}
+                        href={item.href}
+                        {...(item.href.startsWith("http")
+                          ? { target: "_blank", rel: "noreferrer" }
+                          : {})}
+                      >
+                        <span className={styles.connectLabel}>{item.label}</span>
+                        <span className={styles.connectArrow} aria-hidden="true">
+                          →
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
-          <div className={styles.connect}>
-            <span className="d-label">Профили</span>
-            <ul className={styles.connectList}>
-              {CONNECT.map((item) => (
-                <li key={item.label}>
-                  <a
-                    className={styles.connectLink}
-                    href={item.href}
-                    {...(item.href.startsWith("http")
-                      ? { target: "_blank", rel: "noreferrer" }
-                      : {})}
-                  >
-                    <span className={styles.connectLabel}>{item.label}</span>
-                    <span className={styles.connectArrow} aria-hidden="true">
-                      →
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {SHOW_BRIEF_FORM && (
+            <div className={styles.formWrap}>
+              {!sent && <h3 className={styles.noteTitle}>Пришлите задачу</h3>}
+              <BriefForm onSent={() => setSent(true)} />
+            </div>
+          )}
         </div>
-
-        {SHOW_BRIEF_FORM && (
-          <div className={styles.formWrap}>
-            {!sent && <h3 className={styles.noteTitle}>Пришлите задачу</h3>}
-            <BriefForm onSent={() => setSent(true)} />
-          </div>
-        )}
       </div>
     </section>
   );
