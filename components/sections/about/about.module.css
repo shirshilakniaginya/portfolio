@@ -4,7 +4,7 @@
   margin: 0 auto;
   background: var(--bg);
   font-family: var(--font-sans), sans-serif;
-  padding: clamp(48px, 6vw, 100px) 0;
+  padding: var(--space-section-fluid) 0;
   border-left: 1px solid var(--line);
   border-right: 1px solid var(--line);
 }
@@ -17,7 +17,7 @@
 .grid {
   display: grid;
   grid-template-columns: minmax(210px, 0.62fr) minmax(160px, 0.55fr) minmax(180px, 0.6fr) minmax(0, 1.15fr) minmax(230px, 0.9fr);
-  gap: clamp(24px, 2.6vw, 48px);
+  gap: var(--space-grid-fluid);
   align-items: stretch;
 }
 
@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 
 .kicker {
@@ -81,23 +81,23 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: clamp(14px, 2vh, 22px);
+  gap: clamp(var(--space-sm), 2vh, var(--space-lg));
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: var(--space-xs);
 }
 
 /* Vertical divider before the text column */
 .text {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-md);
   max-width: 50ch;
   border-left: 1px solid var(--line);
-  padding-left: clamp(24px, 2.6vw, 48px);
+  padding-left: var(--space-grid-fluid);
 }
 
 .text p {
@@ -113,15 +113,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(18px, 2.4vh, 26px);
+  gap: clamp(var(--space-md), 2.4vh, var(--space-lg));
   border-left: 1px solid var(--line);
-  padding-left: clamp(24px, 2.6vw, 48px);
+  padding-left: var(--space-grid-fluid);
 }
 
 .bar {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-sm);
 }
 
 .barHead {
@@ -183,7 +183,7 @@
 @media (max-width: 1180px) {
   .grid {
     grid-template-columns: minmax(150px, 0.6fr) minmax(160px, 0.6fr) minmax(0, 1fr);
-    row-gap: clamp(28px, 5vw, 44px);
+    row-gap: clamp(var(--space-lg), 5vw, var(--space-2xl));
   }
 
   .text {
@@ -223,6 +223,10 @@
     grid-column: 1 / -1;
     border-left: none;
     padding-left: 0;
+  }
+
+  .grid {
+    row-gap: var(--space-xl);
   }
 }
 

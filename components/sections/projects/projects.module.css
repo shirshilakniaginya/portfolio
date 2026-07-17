@@ -17,15 +17,16 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px;
-  padding: clamp(28px, 3.2vw, 52px) var(--d-pad) clamp(22px, 2.4vw, 36px);
+  gap: var(--space-lg);
+  padding: clamp(var(--space-xl), 3.2vw, var(--space-2xl)) var(--d-pad)
+    clamp(var(--space-lg), 2.4vw, var(--space-xl));
   border-bottom: 1px solid var(--line);
 }
 
 .headLeft {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 
 .kicker {
@@ -51,7 +52,7 @@
 .allLink {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-sm);
   padding: 6px 0;
   font-family: var(--font-mono), monospace;
   font-size: 12px;
@@ -117,9 +118,9 @@
 .rowCard {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr) minmax(200px, 0.55fr);
-  gap: clamp(20px, 2.4vw, 48px);
+  gap: var(--space-grid-fluid);
   align-items: center;
-  padding: clamp(24px, 2vw, 34px) clamp(24px, 2.4vw, 44px);
+  padding: clamp(var(--space-lg), 2vw, var(--space-xl)) var(--space-grid-fluid);
   min-width: 0;
 }
 
@@ -154,7 +155,7 @@
 }
 
 .rowSummary {
-  margin: 16px 0 0;
+  margin: var(--space-md) 0 0;
   max-width: 32ch;
   font-size: var(--text-body);
   line-height: var(--leading-body-dense);
@@ -197,7 +198,7 @@
 .rowField {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: var(--space-xs);
 }
 
 .rowOpen {
@@ -258,7 +259,7 @@
   .rowMock {
     grid-column: 1 / -1;
     order: 4;
-    margin-top: clamp(16px, 2.6vw, 24px);
+    margin-top: clamp(var(--space-md), 2.6vw, var(--space-lg));
   }
 }
 
@@ -277,7 +278,8 @@
 
   .rowCard {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--d-pad);
   }
 
   .rowMeta {
@@ -289,7 +291,7 @@
 
   .rowMetaGroup {
     flex-direction: column;
-    gap: 12px;
+    gap: var(--space-sm);
   }
 
   .rowSummary {

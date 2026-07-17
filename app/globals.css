@@ -48,6 +48,18 @@
   /* Legacy alias, kept while var(--text-body) references remain */
   --body-text-size: var(--text-body);
 
+  /* ---- Spacing scale ---- */
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-section: 64px;
+  --space-3xl: 96px;
+  --space-section-fluid: clamp(var(--space-2xl), 6vw, var(--space-3xl));
+  --space-grid-fluid: clamp(var(--space-lg), 2.6vw, var(--space-2xl));
+
   /* ---- Layout ---- */
   --page-padding-x: 0px;
   --page-grid-columns: repeat(4, minmax(0, 1fr));
@@ -239,8 +251,8 @@ h3 {
 
 @media (max-width: 560px) {
   .main-container {
-    width: min(100%, calc(100vw - 24px));
-    padding: 0 12px;
+    width: min(100%, calc(100vw - var(--space-lg)));
+    padding: 0 var(--space-sm);
   }
 }
 
@@ -263,13 +275,13 @@ h3 {
 
 @media (max-width: 1180px) {
   :root {
-    --d-inner: calc(100vw - 48px);
+    --d-inner: calc(100vw - var(--space-2xl));
   }
 }
 
 @media (max-width: 560px) {
   :root {
-    --d-inner: calc(100vw - 32px);
+    --d-inner: calc(100vw - var(--space-xl));
   }
 }
 
