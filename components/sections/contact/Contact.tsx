@@ -51,7 +51,7 @@ function CheckIcon() {
   );
 }
 
-function BriefForm({ onSent }: { onSent: () => void }) {
+function BriefForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [validationError, setValidationError] = useState<string | null>(null);
   const [fields, setFields] = useState<Fields>({
@@ -141,7 +141,6 @@ function BriefForm({ onSent }: { onSent: () => void }) {
 
       setStatus("sent");
       reachGoal("lead");
-      onSent();
     } catch {
       setValidationError("Не удалось отправить бриф. Попробуйте ещё раз или напишите в Telegram.");
       setStatus("error");
@@ -163,26 +162,15 @@ function BriefForm({ onSent }: { onSent: () => void }) {
     void submitBrief();
   };
 
-  if (status === "sent") {
-    return (
-      <div className={styles.formState}>
-        <div className={styles.formSuccessCard}>
-          <div className={styles.formSuccess}>
-            <span className={styles.formSuccessIcon}>
-              <CheckIcon />
-            </span>
-            <strong className={styles.formSuccessTitle}>Бриф получен</strong>
-            <p className={styles.formSuccessText}>Отвечу в течение 24 часов.</p>
-          </div>
-        </div>
-        <div className={styles.formFeedback} aria-hidden="true" />
-      </div>
-    );
-  }
-
   return (
-    <>
-      <form className={styles.form} onSubmit={handleSubmit} noValidate>
+    <div className={styles.formState} data-state={status}>
+      <form
+        aria-hidden={status === "sent"}
+        className={styles.form}
+        inert={status === "sent"}
+        onSubmit={handleSubmit}
+        noValidate
+      >
         <div aria-hidden="true" className={styles.botField}>
           <label htmlFor="website">Не заполняйте это поле</label>
           <input
@@ -277,13 +265,20 @@ function BriefForm({ onSent }: { onSent: () => void }) {
         )}
       </div>
 
-    </>
+      {status === "sent" && (
+        <div className={styles.formSuccess} aria-live="polite" role="status">
+          <span className={styles.formSuccessIcon}>
+            <CheckIcon />
+          </span>
+          <strong className={styles.formSuccessTitle}>Бриф получен</strong>
+          <p className={styles.formSuccessText}>Отвечу в течение 24 часов.</p>
+        </div>
+      )}
+    </div>
   );
 }
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
-
   return (
     <section className={styles.section} id="contact">
       <div className={styles.inner}>
@@ -326,8 +321,8 @@ export function Contact() {
 
           {SHOW_BRIEF_FORM && (
             <div className={styles.formWrap}>
-              {!sent && <h3 className={styles.noteTitle}>Пришлите задачу</h3>}
-              <BriefForm onSent={() => setSent(true)} />
+              <h3 className={styles.noteTitle}>Пришлите задачу</h3>
+              <BriefForm />
             </div>
           )}
         </div>
