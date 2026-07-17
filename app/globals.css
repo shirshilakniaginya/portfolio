@@ -35,6 +35,7 @@
   --text-micro: 10px;                         /* smallest decorative meta: indices, vertical labels */
   --text-value: clamp(14px, 1.05vw, 16px);    /* data-pair values */
   --text-kicker: clamp(1rem, 1.4vw, 1.45rem);   /* section kickers: must outrank row titles inside the section */
+  --text-heading-sm: clamp(1.375rem, 1.6vw, 1.75rem); /* compact H3 headings */
   --text-section-meta: clamp(0.75rem, 0.7vw, 0.8125rem); /* readable section subtitles and case kickers */
   --leading-body: 1.75;                       /* main prose paragraphs */
   --leading-body-dense: 1.7;                  /* narrow-measure prose: summaries, captions */

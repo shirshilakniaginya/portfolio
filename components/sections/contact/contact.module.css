@@ -142,7 +142,7 @@
 .noteTitle {
   margin: 0 0 1.125rem;
   font-family: var(--font-mono), monospace;
-  font-size: var(--text-kicker);
+  font-size: var(--text-heading-sm);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: var(--tracking-kicker);
@@ -183,8 +183,8 @@
 .field {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  padding: clamp(1rem, 1.4vw, 1.25rem) 0;
+  gap: 8px;
+  padding: clamp(20px, 1.4vw, 24px) 0 8px;
   border-bottom: 1px solid var(--line-strong);
   transition: border-color 180ms ease;
 }
@@ -235,7 +235,8 @@
 }
 
 .fieldTextarea {
-  min-height: 4.75rem;
+  height: 3.25rem;
+  min-height: 3.25rem;
 }
 
 .fieldTextarea::-webkit-scrollbar {
@@ -356,7 +357,7 @@
 
 .formSuccessTitle {
   font-family: var(--font-mono), monospace;
-  font-size: var(--text-kicker);
+  font-size: var(--text-heading-sm);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: var(--tracking-kicker);
@@ -422,7 +423,7 @@
   .formWrap {
     grid-column: 1;
     margin-top: 40px;
-    padding-top: 36px;
+    padding-top: 0;
     border-top: none;
   }
 
@@ -455,7 +456,7 @@
   }
 
   .field {
-    padding: 16px 0;
+    padding: 20px 0 8px;
   }
 
   .fieldLabel {
