@@ -423,6 +423,7 @@
     grid-column: 1;
     margin-top: 40px;
     padding-top: 36px;
+    border-top: none;
   }
 
   .noteTitle {
