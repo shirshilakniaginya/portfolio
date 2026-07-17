@@ -152,11 +152,14 @@ jobs:
 
           sudo /usr/bin/systemctl restart portfolio-contact.service
           sudo /usr/bin/systemctl is-active portfolio-contact.service
-          curl --fail --silent --show-error --retry 5 --retry-delay 2 http://127.0.0.1:3001/health
+          curl --fail --silent --show-error --retry 5 --retry-delay 2 --retry-connrefused \
+            http://127.0.0.1:3001/health
           ACTIVATE
 
-          curl --fail --silent --show-error --retry 5 --retry-delay 2 "${SITE_URL%/}/health"
-          curl --fail --silent --show-error --retry 5 --retry-delay 2 "${SITE_URL%/}/" > /dev/null
+          curl --fail --silent --show-error --retry 5 --retry-delay 2 --retry-connrefused \
+            "${SITE_URL%/}/health"
+          curl --fail --silent --show-error --retry 5 --retry-delay 2 --retry-connrefused \
+            "${SITE_URL%/}/" > /dev/null
 
           trap - ERR
 
