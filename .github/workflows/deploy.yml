@@ -1,0 +1,178 @@
+name: Deploy portfolio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-production
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
+      NEXT_PUBLIC_GOOGLE_VERIFICATION: ${{ vars.GOOGLE_VERIFICATION }}
+      NEXT_PUBLIC_YANDEX_VERIFICATION: ${{ vars.YANDEX_VERIFICATION }}
+      VPS_HOST: ${{ secrets.VPS_HOST }}
+      VPS_PORT: ${{ secrets.VPS_PORT }}
+      VPS_USER: ${{ secrets.VPS_USER }}
+      VPS_SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_PRIVATE_KEY }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+      CONTACT_API_PATH: ${{ secrets.CONTACT_API_PATH }}
+      SITE_URL: ${{ vars.SITE_URL }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.15.0
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            contact-api/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm ci --prefix contact-api
+
+      - name: Lint and typecheck
+        run: |
+          npm run lint
+          npm run typecheck
+          npm run typecheck --prefix contact-api
+
+      - name: Test contact API
+        run: npm test --prefix contact-api
+
+      - name: Build site and API
+        run: |
+          npm run build
+          npm run build --prefix contact-api
+          test -d out
+          test -f out/index.html
+          test -f contact-api/dist/server.js
+
+      - name: Validate deployment inputs
+        run: |
+          set -Eeuo pipefail
+          [[ "${VPS_HOST}" =~ ^[A-Za-z0-9.:-]+$ ]]
+          [[ "${VPS_PORT}" =~ ^[0-9]{1,5}$ ]]
+          (( VPS_PORT >= 1 && VPS_PORT <= 65535 ))
+          [[ "${VPS_USER}" =~ ^[a-z_][a-z0-9_-]*$ ]]
+          [[ "${DEPLOY_PATH}" =~ ^/[A-Za-z0-9._/-]+$ && "${DEPLOY_PATH}" != "/" ]]
+          [[ "${CONTACT_API_PATH}" =~ ^/[A-Za-z0-9._/-]+$ && "${CONTACT_API_PATH}" != "/" ]]
+          [[ "${SITE_URL}" =~ ^https://[A-Za-z0-9.-]+/?$ ]]
+
+      - name: Prepare SSH
+        run: |
+          set -Eeuo pipefail
+          install -d -m 0700 ~/.ssh
+          printf '%s\n' "${VPS_SSH_PRIVATE_KEY}" > ~/.ssh/portfolio_deploy
+          chmod 0600 ~/.ssh/portfolio_deploy
+          ssh-keyscan -H -p "${VPS_PORT}" "${VPS_HOST}" >> ~/.ssh/known_hosts
+          chmod 0600 ~/.ssh/known_hosts
+
+      - name: Upload immutable releases
+        id: upload
+        run: |
+          set -Eeuo pipefail
+          release_id="$(date -u +%Y%m%dT%H%M%SZ)-${GITHUB_SHA::12}"
+          echo "release_id=${release_id}" >> "${GITHUB_OUTPUT}"
+
+          ssh -i ~/.ssh/portfolio_deploy -p "${VPS_PORT}" "${VPS_USER}@${VPS_HOST}" \
+            "mkdir -p '${DEPLOY_PATH}/releases/${release_id}' '${CONTACT_API_PATH}/releases/${release_id}/dist'"
+
+          rsync -az --delete -e "ssh -i ~/.ssh/portfolio_deploy -p ${VPS_PORT}" \
+            out/ "${VPS_USER}@${VPS_HOST}:${DEPLOY_PATH}/releases/${release_id}/"
+          rsync -az --delete -e "ssh -i ~/.ssh/portfolio_deploy -p ${VPS_PORT}" \
+            contact-api/dist/ "${VPS_USER}@${VPS_HOST}:${CONTACT_API_PATH}/releases/${release_id}/dist/"
+          rsync -az -e "ssh -i ~/.ssh/portfolio_deploy -p ${VPS_PORT}" \
+            contact-api/package.json "${VPS_USER}@${VPS_HOST}:${CONTACT_API_PATH}/releases/${release_id}/package.json"
+
+      - name: Activate, verify, and retain five releases
+        env:
+          RELEASE_ID: ${{ steps.upload.outputs.release_id }}
+        run: |
+          set -Eeuo pipefail
+
+          previous_site="$(ssh -i ~/.ssh/portfolio_deploy -p "${VPS_PORT}" "${VPS_USER}@${VPS_HOST}" "readlink -f '${DEPLOY_PATH}/current' || true")"
+          previous_api="$(ssh -i ~/.ssh/portfolio_deploy -p "${VPS_PORT}" "${VPS_USER}@${VPS_HOST}" "readlink -f '${CONTACT_API_PATH}/current' || true")"
+
+          rollback() {
+            trap - ERR
+            echo "Deployment verification failed; restoring the previous release."
+            ssh -i ~/.ssh/portfolio_deploy -p "${VPS_PORT}" "${VPS_USER}@${VPS_HOST}" bash -s -- \
+              "${DEPLOY_PATH}" "${CONTACT_API_PATH}" "${previous_site}" "${previous_api}" <<'ROLLBACK'
+          set -Eeuo pipefail
+          deploy_path="$1"
+          api_path="$2"
+          previous_site="$3"
+          previous_api="$4"
+
+          if [[ "${previous_site}" == "${deploy_path}/releases/"* && -d "${previous_site}" ]]; then
+            ln -sfn "${previous_site}" "${deploy_path}/current.rollback"
+            mv -Tf "${deploy_path}/current.rollback" "${deploy_path}/current"
+          fi
+          if [[ "${previous_api}" == "${api_path}/releases/"* && -d "${previous_api}" ]]; then
+            ln -sfn "${previous_api}" "${api_path}/current.rollback"
+            mv -Tf "${api_path}/current.rollback" "${api_path}/current"
+            sudo /usr/bin/systemctl restart portfolio-contact.service
+          fi
+          ROLLBACK
+          }
+          trap rollback ERR
+
+          ssh -i ~/.ssh/portfolio_deploy -p "${VPS_PORT}" "${VPS_USER}@${VPS_HOST}" bash -s -- \
+            "${DEPLOY_PATH}" "${CONTACT_API_PATH}" "${RELEASE_ID}" <<'ACTIVATE'
+          set -Eeuo pipefail
+          deploy_path="$1"
+          api_path="$2"
+          release_id="$3"
+          site_release="${deploy_path}/releases/${release_id}"
+          api_release="${api_path}/releases/${release_id}"
+
+          test -f "${site_release}/index.html"
+          test -f "${api_release}/dist/server.js"
+
+          ln -sfn "${site_release}" "${deploy_path}/current.next"
+          mv -Tf "${deploy_path}/current.next" "${deploy_path}/current"
+          ln -sfn "${api_release}" "${api_path}/current.next"
+          mv -Tf "${api_path}/current.next" "${api_path}/current"
+
+          sudo /usr/bin/systemctl restart portfolio-contact.service
+          sudo /usr/bin/systemctl is-active portfolio-contact.service
+          curl --fail --silent --show-error --retry 5 --retry-delay 2 http://127.0.0.1:3001/health
+          ACTIVATE
+
+          curl --fail --silent --show-error --retry 5 --retry-delay 2 "${SITE_URL%/}/health"
+          curl --fail --silent --show-error --retry 5 --retry-delay 2 "${SITE_URL%/}/" > /dev/null
+
+          trap - ERR
+
+          ssh -i ~/.ssh/portfolio_deploy -p "${VPS_PORT}" "${VPS_USER}@${VPS_HOST}" bash -s -- \
+            "${DEPLOY_PATH}" "${CONTACT_API_PATH}" <<'CLEANUP'
+          set -Eeuo pipefail
+          for root in "$1" "$2"; do
+            mapfile -t releases < <(
+              find "${root}/releases" -mindepth 1 -maxdepth 1 -type d -printf '%T@ %p\n' \
+                | sort -nr \
+                | cut -d' ' -f2-
+            )
+            for ((index = 5; index < ${#releases[@]}; index++)); do
+              release="${releases[index]}"
+              [[ "${release}" == "${root}/releases/"* ]]
+              rm -rf -- "${release}"
+            done
+          done
+          CLEANUP

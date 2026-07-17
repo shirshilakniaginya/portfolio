@@ -1,5 +1,6 @@
 # dependencies
 /node_modules
+**/node_modules
 
 # next.js
 /.next
@@ -7,6 +8,7 @@
 
 # production
 /build
+/contact-api/dist
 
 # misc
 .DS_Store
@@ -24,6 +26,7 @@ test-results/
 
 # env
 .env*
+!**/.env.example
 .claude/settings.local.json
 **/.claude/settings.local.json
 

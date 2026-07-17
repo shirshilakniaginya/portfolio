@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint app components lib",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@hcaptcha/react-hcaptcha": "^2.0.2",
     "clsx": "^2.1.1",
     "gsap": "^3.15.0",
     "next": "^16.2.7",

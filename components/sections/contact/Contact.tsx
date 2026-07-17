@@ -1,14 +1,12 @@
 "use client";
 
-import HCaptcha from "@hcaptcha/react-hcaptcha";
 import { type ChangeEvent, type FormEvent, useEffect, useRef, useState } from "react";
 import { reachGoal } from "@/lib/metrika";
 import styles from "./contact.module.css";
 
 const TG_HANDLE_URL = "https://t.me/DSVRandom";
-const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
-const WEB3FORMS_HCAPTCHA_SITE_KEY = "50b2fe65-b00b-4b9e-ad62-3ba471098be2";
+const CONTACT_ENDPOINT = "/api/contact";
+const REQUEST_TIMEOUT_MS = 10_000;
 
 const MIN_READY_MS = 3000;
 const MAX_LINKS = 2;
@@ -19,15 +17,15 @@ const MAX_TASK_LENGTH = 1600;
 const MIN_CONTACT_LENGTH = 3;
 const MAX_CONTACT_LENGTH = 160;
 const URL_PATTERN = /\b(?:https?:\/\/|www\.)[^\s<]+/gi;
-const SHOW_BRIEF_FORM = false;
+const SHOW_BRIEF_FORM = true;
 
-type Status = "idle" | "verifying" | "sending" | "sent" | "error";
+type Status = "idle" | "sending" | "sent" | "error";
 
 type Fields = {
   niche: string;
   task: string;
   contact: string;
-  botcheck: string;
+  website: string;
 };
 
 function countLinks(value: string) {
@@ -60,19 +58,13 @@ function BriefForm({ onSent }: { onSent: () => void }) {
     niche: "",
     task: "",
     contact: "",
-    botcheck: "",
+    website: "",
   });
   const openedAtRef = useRef(0);
-  const captchaRef = useRef<HCaptcha>(null);
-  const pendingSubmitRef = useRef(false);
 
   useEffect(() => {
     openedAtRef.current = Date.now();
   }, []);
-
-  const resetCaptcha = () => {
-    captchaRef.current?.resetCaptcha();
-  };
 
   const set =
     (key: keyof Fields) => (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -93,7 +85,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
     const task = fields.task.trim();
     const contact = fields.contact.trim();
 
-    if (fields.botcheck.trim()) return "Проверка не пройдена.";
+    if (fields.website.trim()) return "Проверка не пройдена.";
     if (Date.now() - openedAtRef.current < MIN_READY_MS) {
       return "Подождите 3 секунды перед отправкой формы.";
     }
@@ -124,52 +116,41 @@ function BriefForm({ onSent }: { onSent: () => void }) {
     return null;
   };
 
-  const submitBrief = async (token: string) => {
-    if (!WEB3FORMS_KEY) {
-      setValidationError("Форма временно недоступна. Напишите напрямую в Telegram.");
-      setStatus("error");
-      pendingSubmitRef.current = false;
-      return;
-    }
-
+  const submitBrief = async () => {
     setValidationError(null);
     setStatus("sending");
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
 
     try {
-      const res = await fetch(WEB3FORMS_ENDPOINT, {
+      const res = await fetch(CONTACT_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: "Новая заявка на сайт",
-          from_name: "SHTQ - форма заявки на сайт",
-          botcheck: fields.botcheck,
-          "h-captcha-response": token,
-          Ниша: fields.niche.trim(),
-          Задача: fields.task.trim(),
-          Контакт: fields.contact.trim(),
+          name: fields.niche.trim(),
+          contact: fields.contact.trim(),
+          message: fields.task.trim(),
+          website: fields.website,
         }),
+        signal: controller.signal,
       });
 
-      const data = await res.json();
-      if (!res.ok || !data.success) {
-        throw new Error(data.message ?? "send failed");
+      if (!res.ok) {
+        throw new Error("send failed");
       }
 
-      pendingSubmitRef.current = false;
-      resetCaptcha();
       setStatus("sent");
       reachGoal("lead");
       onSent();
     } catch {
-      pendingSubmitRef.current = false;
-      resetCaptcha();
       setValidationError("Не удалось отправить бриф. Попробуйте ещё раз или напишите в Telegram.");
       setStatus("error");
+    } finally {
+      window.clearTimeout(timeoutId);
     }
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
     const fieldsError = validateFields();
@@ -179,16 +160,7 @@ function BriefForm({ onSent }: { onSent: () => void }) {
       return;
     }
 
-    if (!captchaRef.current) {
-      setValidationError("Проверка безопасности не загрузилась. Обновите страницу и попробуйте ещё раз.");
-      setStatus("error");
-      return;
-    }
-
-    pendingSubmitRef.current = true;
-    setValidationError(null);
-    setStatus("verifying");
-    void captchaRef.current.execute();
+    void submitBrief();
   };
 
   if (status === "sent") {
@@ -212,15 +184,15 @@ function BriefForm({ onSent }: { onSent: () => void }) {
     <>
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <div aria-hidden="true" className={styles.botField}>
-          <label htmlFor="botcheck">Не заполняйте это поле</label>
+          <label htmlFor="website">Не заполняйте это поле</label>
           <input
             autoComplete="off"
-            id="botcheck"
-            name="botcheck"
-            onChange={set("botcheck")}
+            id="website"
+            name="website"
+            onChange={set("website")}
             tabIndex={-1}
             type="text"
-            value={fields.botcheck}
+            value={fields.website}
           />
         </div>
 
@@ -274,14 +246,12 @@ function BriefForm({ onSent }: { onSent: () => void }) {
 
         <button
           className={styles.formSubmit}
-          disabled={status === "sending" || status === "verifying"}
+          disabled={status === "sending"}
           type="submit"
         >
           {status === "sending"
             ? "Отправляю..."
-            : status === "verifying"
-              ? "Проверяю..."
-              : "Отправить бриф"}
+            : "Отправить бриф"}
         </button>
       </form>
 
@@ -307,32 +277,6 @@ function BriefForm({ onSent }: { onSent: () => void }) {
         )}
       </div>
 
-      <div aria-hidden="true" className={styles.captchaHidden}>
-        <HCaptcha
-          ref={captchaRef}
-          onError={() => {
-            pendingSubmitRef.current = false;
-            setValidationError("Проверка безопасности не прошла. Попробуйте ещё раз.");
-            setStatus("error");
-          }}
-          onExpire={() => {
-            pendingSubmitRef.current = false;
-            setValidationError("Проверка безопасности истекла. Нажмите «Отправить бриф» ещё раз.");
-            setStatus("error");
-          }}
-          onVerify={(token) => {
-            if (!pendingSubmitRef.current) {
-              resetCaptcha();
-              return;
-            }
-            void submitBrief(token);
-          }}
-          reCaptchaCompat={false}
-          sitekey={WEB3FORMS_HCAPTCHA_SITE_KEY}
-          size="invisible"
-          theme="dark"
-        />
-      </div>
     </>
   );
 }
