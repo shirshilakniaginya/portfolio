@@ -246,8 +246,19 @@
   display: block;
 }
 
+.portraitVideo {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 240ms ease-out;
+}
+
+.portraitWrap[data-video-ready="true"] .portraitVideo {
+  opacity: 1;
+}
+
 .portraitFallback {
-  display: none;
+  z-index: 0;
+  display: block;
 }
 
 .left {
@@ -744,9 +755,12 @@
 
   .portraitWrap {
     margin-inline: calc(50% - 50vw);
+    display: grid;
+    justify-items: center;
   }
 
   .portrait {
+    grid-area: 1 / 1;
     width: 100vw;
     height: auto;
     aspect-ratio: 1 / 1;
@@ -757,7 +771,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .portrait:not(.portraitFallback) {
+  .portraitVideo {
     display: none;
   }
 

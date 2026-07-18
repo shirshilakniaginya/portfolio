@@ -41,6 +41,8 @@ function scrollToHash(event: MouseEvent<HTMLElement>) {
 export function Hero() {
   const rootRef = useRef<HTMLElement | null>(null);
   const clockRef = useRef<HTMLSpanElement | null>(null);
+  const portraitWrapRef = useRef<HTMLDivElement | null>(null);
+  const portraitVideoRef = useRef<HTMLVideoElement | null>(null);
 
   // Live local time — DOM-direct so the component never re-renders.
   useEffect(() => {
@@ -52,6 +54,20 @@ export function Hero() {
     tick();
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const video = portraitVideoRef.current;
+    const wrap = portraitWrapRef.current;
+    if (!video || !wrap) return;
+
+    const markReady = () => {
+      wrap.dataset.videoReady = "true";
+    };
+
+    if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) markReady();
+    video.addEventListener("canplay", markReady);
+    return () => video.removeEventListener("canplay", markReady);
   }, []);
 
   useLayoutEffect(() => {
@@ -139,16 +155,26 @@ export function Hero() {
 
           <div className={styles.centerStage}>
             {/* Portrait as a backdrop, anchored to the hero bottom */}
-            <div className={styles.portraitWrap} data-d-portrait aria-hidden="true">
+            <div
+              ref={portraitWrapRef}
+              className={styles.portraitWrap}
+              data-d-portrait
+              aria-hidden="true"
+            >
               <video
-                className={styles.portrait}
+                ref={portraitVideoRef}
+                className={`${styles.portrait} ${styles.portraitVideo}`}
                 autoPlay
                 loop
                 muted
                 playsInline
-                preload="metadata"
-                poster="/about/hero-portrait-dima.webp"
+                preload="auto"
               >
+                <source
+                  media="(max-width: 640px)"
+                  src="/about/hero-portrait-dima-loop-mobile.mp4"
+                  type="video/mp4"
+                />
                 <source src="/about/hero-portrait-dima-loop.mp4" type="video/mp4" />
               </video>
               <Image
@@ -158,6 +184,7 @@ export function Hero() {
                 width={1280}
                 height={720}
                 priority
+                fetchPriority="high"
               />
             </div>
 
